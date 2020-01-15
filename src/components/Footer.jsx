@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "@emotion/styled";
 import colors from "styles/colors";
 import Logo from "components/_ui/Logo";
-import spooch from "images/oscar-icon.png"
+import spooch from "images/icon-mel.png"
 
 const FooterContainer = styled("div")`
     padding-top: 3.75em;
@@ -49,15 +49,15 @@ const FooterSpooch = styled("img")`
 `
 
 const Footer = () => (
-    <FooterContainer>
-        <Link to="/">
-            <Logo />
-        </Link>
-        <FooterAuthor href="https://marguerite.io">
-            © 2019 — Designed & developed by Marguerite Roth
-            <FooterSpooch className="FooterSpooch" src={spooch} />
-        </FooterAuthor>
-    </FooterContainer>
+  <FooterContainer>
+    <Link to="/">
+      <Logo />
+    </Link>
+    <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
+      © 2020 Mel Jones — Gatsby Starter by Marguerite Roth
+      <FooterSpooch className="FooterSpooch" src={spooch} />
+    </FooterAuthor>
+  </FooterContainer>
 )
 
 export default Footer;
