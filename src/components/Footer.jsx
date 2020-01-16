@@ -58,7 +58,9 @@ const Footer = () => (
       <Logo />
     </Link>
     <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
-      ©️ 2020 Mel Jones 💝 Gatsby Starter by Marguerite Roth 💝 Many thanks❣️
+      ©️ 2020 Mel Jones <span>💪</span> Gatsby Starter by Marguerite Roth{" "}
+      <span>💝</span>
+      Many thanks lovers!
       <FooterSpooch className="FooterSpooch" src={spooch} />
     </FooterAuthor>
   </FooterContainer>
