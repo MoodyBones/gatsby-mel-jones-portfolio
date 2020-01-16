@@ -25,6 +25,7 @@ const FooterAuthor = styled("a")`
   align-items: center;
   text-decoration: none;
   margin-top: 1.5em;
+  line-height: 2em;
 
   &:hover {
     color: ${colors.blue900};
@@ -58,7 +59,7 @@ const Footer = () => (
       <Logo />
     </Link>
     <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
-      ©️ 2020 Mel Jones <span>💪</span> Gatsby Starter by Marguerite Roth{" "}
+      ©️ 2020 Mel Jones <span>✨</span> Gatsby Starter by Marguerite Roth{" "}
       <span>💝</span>
       Many thanks lovers!
       <FooterSpooch className="FooterSpooch" src={spooch} />
