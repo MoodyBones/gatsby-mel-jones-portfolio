@@ -28,14 +28,14 @@ const HeaderLinks = styled("div")`
   }
 
   @media(max-width: ${dimensions.maxwidthMobile}px) {
-    grid-gap: 2.5em;
+    grid-gap: 1em;
   }
 
   a {
     color: currentColor;
     text-decoration: none;
     border-bottom: 3px solid transparent;
-    font-weight: 600;
+    font-weight: 800;
     letter-spacing: 2px;
     text-transform: uppercase;
     font-size: 0.95em;
