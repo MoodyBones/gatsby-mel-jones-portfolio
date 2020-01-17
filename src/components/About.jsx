@@ -1,25 +1,28 @@
 import React from "react";
 import Button from "components/_ui/Button";
 import styled from "@emotion/styled";
+import colors from "styles/colors"
 import dimensions from "styles/dimensions";
 import { RichText } from "prismic-reactjs";
 import PropTypes from "prop-types";
 
 const AboutContainer = styled("div")`
-    padding-top: 1em;
-    display: grid;
-    grid-template-columns: 8em 1fr 8em;
-    grid-gap: 3em;
+  padding-top: 1em;
+  display: grid;
+  grid-template-columns: 8em 1fr 8em;
+  grid-gap: 3em;
+  border-bottom: 1.5px solid ${colors.grey200};
+  
+  @media
+    (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
 
-    @media(max-width: ${dimensions.maxwidthTablet}px) {
-        grid-template-columns: 1fr 3fr 1fr;
-    }
-
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-template-columns: 7em 1fr;
-        grid-template-rows: 3em 1fr;
-        grid-gap: 2em;
-    }
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-template-columns: 7em 1fr;
+    grid-template-rows: 3em 1fr;
+    grid-gap: 2em;
+  }
 `
 
 const AboutLinkContainer = styled("div")`
