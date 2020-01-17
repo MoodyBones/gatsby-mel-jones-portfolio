@@ -11,7 +11,7 @@ const AboutContainer = styled("div")`
   display: grid;
   grid-template-columns: 8em 1fr 8em;
   grid-gap: 3em;
-  border-bottom: 1.5px solid ${colors.grey200};
+  border-bottom: 1.5px solid ${colors.grey300};
   
   @media
     (max-width: ${dimensions.maxwidthTablet}px) {
