@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import Logo from "components/_ui/Logo"
-import spooch from "images/icon-mel.png"
+import Icon from "images/icon-mel.png"
+import SocialIcons from "components/SocialIcons"
 
 const FooterContainer = styled("div")`
   padding-top: 3.75em;
@@ -16,6 +17,7 @@ const FooterContainer = styled("div")`
     max-width: 80px;
   }
 `
+
 
 const FooterAuthor = styled("a")`
   font-size: 0.75em;
@@ -30,7 +32,7 @@ const FooterAuthor = styled("a")`
   &:hover {
     color: ${colors.blue900};
 
-    .FooterSpooch {
+    .FooterIcon {
       animation-name: rotate;
       animation-duration: 1.5s;
       animation-iteration-count: infinite;
@@ -48,21 +50,21 @@ const FooterAuthor = styled("a")`
   }
 `
 
-const FooterSpooch = styled("img")`
+const FooterIcon = styled("img")`
   max-width: 33px;
   margin-top: 2em;
 `
 
 const Footer = () => (
   <FooterContainer>
+    <SocialIcons />
     <Link to="/">
       <Logo />
     </Link>
     <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
-      ©️ 2020 Mel Jones  ✨  Gatsby Starter by Marguerite Roth{" "}
-      <span>💝</span>
+      ©️ 2020 Mel Jones ✨ Gatsby Starter by Marguerite Roth <span>💝</span>
       Many thanks lovers!
-      <FooterSpooch className="FooterSpooch" src={spooch} />
+      <FooterIcon className="FooterIcon" src={Icon} />
     </FooterAuthor>
   </FooterContainer>
 )
