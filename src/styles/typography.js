@@ -40,6 +40,8 @@ const typeStyles = css`
     font-size: 0.9em;
     font-weight: 500;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   p {
