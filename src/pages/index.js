@@ -77,6 +77,7 @@ const Section = styled("div")`
   margin-bottom: 10em;
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid ${colors.grey200};
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin-bottom: 4em;
@@ -93,6 +94,7 @@ const WorkAction = styled(Link)`
   color: currentColor;
   transition: all 150ms ease-in-out;
   margin-left: auto;
+  padding-bottom: 4em;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin: 0 auto;
