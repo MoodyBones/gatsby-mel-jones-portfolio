@@ -2,22 +2,28 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
+import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 import Icon from "images/icon-mel.png"
 import SocialIcons from "components/SocialIcons"
 
 const FooterContainer = styled("div")`
-  padding-top: 3.75em;
+  padding-top: 1em;
   padding-bottom: 3em;
   display: flex;
   flex-direction: column;
   align-items: center;
 
   svg {
-    max-width: 80px;
+    max-width: 70px;
+    height: 100%;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      max-width: 50px;
+      height: 100%;
+    }
   }
 `
-
 
 const FooterAuthor = styled("a")`
   font-size: 0.75em;
