@@ -8,16 +8,18 @@ import PropTypes from "prop-types"
 
 const AboutContainer = styled("div")`
   padding-top: 1em;
+  padding-bottom: 4em;
   display: grid;
   grid-template-columns: 8em 1fr 8em;
   grid-gap: 3em;
-  border-bottom: 1.5px solid ${colors.orange500};
+  border-bottom: 1px solid ${colors.grey200};
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     grid-template-columns: 1fr 3fr 1fr;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding-bottom: 2em;
     grid-template-columns: 7em 1fr;
     grid-template-rows: 3em 1fr;
     grid-gap: 2em;
