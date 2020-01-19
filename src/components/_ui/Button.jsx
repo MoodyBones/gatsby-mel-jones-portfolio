@@ -4,6 +4,7 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 
 const ButtonContainer = styled("button")`
+  margin-top: 3em;
   padding: 1em 2em;
   background: ${colors.blue200};
   font-family: "IBM Plex Mono", monospace;
@@ -17,6 +18,7 @@ const ButtonContainer = styled("button")`
   transition: background 100ms ease-in-out;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    margin-top: 2em;
     padding: 0.8em 1.8em;
     font-size: 1em;
   }
@@ -51,6 +53,7 @@ const ButtonContainer = styled("button")`
   &.Button--secondary {
     padding: 0.95em 1.8em;
     font-size: 0.95rem;
+    margin: 0;
   }
 `
 
