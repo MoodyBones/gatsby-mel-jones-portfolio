@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
-import styled from "@emotion/styled";
-import colors from "styles/colors";
-import dimensions from "styles/dimensions";
+import React, { Component } from "react"
+import styled from "@emotion/styled"
+import colors from "styles/colors"
+import dimensions from "styles/dimensions"
 
 const ButtonContainer = styled("button")`
   padding: 1em 2em;
-  background: ${colors.blue400};
+  background: ${colors.blue200};
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 800;
-  color: white;
+  color: ${colors.blue600};
   outline: none;
   border: 1px;
   font-size: 1rem;
@@ -34,8 +35,8 @@ const ButtonContainer = styled("button")`
     height: 100%;
     background: linear-gradient(
       135deg,
-      ${colors.pink400} 0%,
-      ${colors.purple400} 100%
+      ${colors.pink300} 0%,
+      ${colors.purple300} 100%
     );
     z-index: -1;
   }
@@ -44,32 +45,24 @@ const ButtonContainer = styled("button")`
     cursor: pointer;
     background: transparent;
     transition: background 100ms ease-in-out;
+    color: ${colors.purple900};
   }
 
   &.Button--secondary {
-    background: ${colors.blue200};
-    color: ${colors.blue600};
     padding: 0.95em 1.8em;
     font-size: 0.95rem;
-
-    &:hover {
-      background: ${colors.blue300};
-      transition: background 100ms ease-in-out;
-    }
   }
 `
 
 class Button extends Component {
-    render() {
-        const { children, ...props } = this.props;
-        return (
-            <ButtonContainer
-                onClick={this.props.onClick}
-                {...props}>
-                {this.props.children}
-            </ButtonContainer>
-        );
-    }
+  render() {
+    const { children, ...props } = this.props
+    return (
+      <ButtonContainer onClick={this.props.onClick} {...props}>
+        {this.props.children}
+      </ButtonContainer>
+    )
+  }
 }
 
-export default Button;
+export default Button
