@@ -23,6 +23,7 @@ const Hero = styled("div")`
 
   h1 {
     margin-bottom: 1em;
+    letter-spacing: -2px;
 
     a {
       text-decoration: none;
