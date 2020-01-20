@@ -6,6 +6,7 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("div")`
+  margin-bottom: 2em;
   padding-top: 3.75em;
   padding-bottom: 3em;
   border-bottom: 1px solid ${colors.grey200};
