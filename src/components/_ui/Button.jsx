@@ -15,7 +15,7 @@ const ButtonContainer = styled("button")`
   font-size: 1rem;
   border-radius: 30px;
   position: relative;
-  transition: background 100ms ease-in-out;
+  transition: background 150ms ease-in-out;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-top: 2em;
@@ -46,7 +46,7 @@ const ButtonContainer = styled("button")`
   &:hover {
     cursor: pointer;
     background: transparent;
-    transition: background 100ms ease-in-out;
+    transition: background 150ms ease-in-out;
     color: ${colors.purple900};
   }
 

@@ -10,12 +10,19 @@ import Button from "components/_ui/Button"
 import About from "components/About"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
+import HeroImage from "images/icon-mel.png"
+
+const ImageHero = styled("img")`
+  max-width: 500px;
+  height: auto;
+  margin-top: 2em;
+`
 
 const Hero = styled("div")`
   padding-top: 0.5em;
   padding-bottom: 3em;
   margin-bottom: 6em;
-  max-width: 830px;
+  max-width: 680px;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-bottom: 3em;
@@ -23,6 +30,7 @@ const Hero = styled("div")`
 
   h1 {
     margin-bottom: 1em;
+    letter-spacing: -2px;
 
     a {
       text-decoration: none;
@@ -161,6 +169,8 @@ const RenderBody = ({ home, projects, meta }) => (
     />
     <Hero>
       <>{RichText.render(home.hero_title)}</>
+      <ImageHero src={HeroImage} />
+
       <a
         href={home.hero_button_link.url}
         target="_blank"
