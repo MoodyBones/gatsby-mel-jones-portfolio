@@ -25,44 +25,43 @@ const SocialContainer = styled("div")`
     }
 
     &:hover {
-        cursor: pointer;
-        transition: all 150ms ease-in-out;
-      
-        &:nth-of-type(1) {
-          color: ${colors.orange600};
-        }
-        &:nth-of-type(2) {
-          color: ${colors.green600};
-        }
-        &:nth-of-type(3) {
-          color: ${colors.blue600};
-        }
-        &:nth-of-type(4) {
-          color: ${colors.teal600};
-        }
-      }
-  }
+      cursor: pointer;
+      transition: all 150ms ease-in-out;
 
+      &:nth-of-type(1) {
+        color: ${colors.orange600};
+      }
+      &:nth-of-type(2) {
+        color: ${colors.green600};
+      }
+      &:nth-of-type(3) {
+        color: ${colors.blue600};
+      }
+      &:nth-of-type(4) {
+        color: ${colors.teal600};
+      }
+    }
+  }
 `
 
 const Social = () => (
   <SocialContainer>
     <a
-      href="https://github.com/MoodyBones"
+      href="https://twitter.com/_moodybones"
       target="_blank"
       rel="noopener noreferrer"
     >
       <IconTwitter />
     </a>
     <a
-      href="https://github.com/MoodyBones"
+      href="https://www.instagram.com/moody.bones/"
       target="_blank"
       rel="noopener noreferrer"
     >
       <IconInstagram />
     </a>
     <a
-      href="https://github.com/MoodyBones"
+      href="https://www.linkedin.com/in/mel-jones-4a5835182/"
       target="_blank"
       rel="noopener noreferrer"
     >
