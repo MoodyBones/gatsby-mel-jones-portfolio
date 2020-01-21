@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-prismic-starter-prist",
+  "name": "mel-jones-portfolio-prist",
   "private": true,
-  "description": "A starter powered by Gatsby and Prismic to showcase portfolios and blogs.",
+  "description": "A portfolio & blog site for Web Developer Mel Jones, powered by Gatsby and Prismic.",
   "version": "0.1.0",
-  "author": "Marguerite Roth | marguerite.io | marguerite.roth@gmail.com",
+  "author": "Mel Jones",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",
