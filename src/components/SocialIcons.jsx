@@ -20,8 +20,8 @@ const SocialContainer = styled("div")`
 
     svg {
       margin-bottom: 2em;
-      max-width: 33px;
-      height: auto;
+      // max-width: 33px;
+      // height: auto;
     }
 
     &:hover {
