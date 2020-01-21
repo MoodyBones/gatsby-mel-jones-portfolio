@@ -52,29 +52,31 @@ const HeaderLinks = styled("div")`
     position: relative;
 
     &:after {
-      position: absolute;
       content: "";
-      bottom: 0;
-      width: 18px;
-      height: 3px;
-      background: transparent;
-      bottom: -3px;
-      right: 50%;
-      margin-right: -9px;
-      transition: 100ms ease-in-out background;
+      display: block;
+      position: absolute;
+      width: 95%;
+      height: 2px;
+      bottom: 80px;
+      // margin-right: -9px;
+      background: ${colors.grey900};
+      visibility: hidden;
+      transform-origin: left;
+      transform: scale(0);
+      transition: 0.25s ease-out;
     }
 
     &:hover {
       &:after {
-        background: ${colors.blue500};
-        transition: 100ms ease-in-out background;
+        visibility: visible;
+        transform: scale(1);
       }
     }
 
     &.Link--is-active {
       &:after {
-        background: ${colors.blue500};
-        transition: 100ms ease-in-out background;
+        visibility: visible;
+        transform: scale(1);
       }
     }
   }
