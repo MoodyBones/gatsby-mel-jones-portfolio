@@ -1,14 +1,17 @@
 // @import url("https://rsms.me/inter/inter.css");
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 html {
-  // font-family: 'Inter', sans-serif;
-  font-family: "IBM Plex Mono", monospace;
+  // font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
+  // font-family: "IBM Plex Mono", monospace;
 }
 
 @supports (font-variation-settings: normal) {
   html {
     // font-family: "Inter var", sans-serif;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "Montserrat", sans-serif;
+    // font-family: "IBM Plex Mono", monospace;
   }
 }

@@ -3,14 +3,21 @@ import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 
 const typeStyles = css`
+  h1,
+  h2,
+  h3 {
+    font-family: "Montserrat", sans-serif;
+  }
+
   h1 {
     font-size: 2em;
     line-height: 1.45;
-    font-weight: 300;
-    color: ${colors.grey800};
+    font-weight: 500;
+    color: ${colors.grey700};
+    letter-spacing: -0.5px;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 2.25em;
+      font-size: 1.75em;
     }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -26,7 +33,7 @@ const typeStyles = css`
 
   h3 {
     line-height: 1.2;
-    font-size: 1.5em;
+    font-size: 1.4em;
   }
 
   h5 {
@@ -38,10 +45,10 @@ const typeStyles = css`
 
   h6 {
     font-size: 0.9em;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
   }
 
   p {
