@@ -19,10 +19,15 @@ const ImageHero = styled("img")`
 `
 
 const Hero = styled("div")`
-  padding-top: 0.5em;
-  padding-bottom: 3em;
-  margin-bottom: 6em;
+  padding-top: 2em;
+
+  padding-left: ${dimensions.paddingHorizontalDesktop}em;
+  padding-right: ${dimensions.paddingHorizontalDesktop}em;
+  // padding-top: 0.5em;
+  // padding-bottom: 3em;
+  // margin-bottom: 6em;
   max-width: 680px;
+  background: #f9fcfc;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-bottom: 3em;
@@ -30,7 +35,6 @@ const Hero = styled("div")`
 
   h1 {
     margin-bottom: 1em;
-    letter-spacing: -2px;
 
     a {
       text-decoration: none;
@@ -81,14 +85,21 @@ const Hero = styled("div")`
   }
 `
 
-const Section = styled("div")`
-  margin-bottom: 10em;
+const SectionWork = styled("div")`
+  padding-left: ${dimensions.paddingHorizontalDesktop}em;
+  padding-right: ${dimensions.paddingHorizontalDesktop}em;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid ${colors.grey200};
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin-bottom: 4em;
+    padding-left: ${dimensions.paddingHorizontalTablet}em;
+    padding-right: ${dimensions.paddingHorizontalTablet}em;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding-left: ${dimensions.paddingHorizontalMobile}em;
+    padding-right: ${dimensions.paddingHorizontalMobile}em;
   }
 
   &:last-of-type {
@@ -124,6 +135,37 @@ const WorkAction = styled(Link)`
       opacity: 1;
       transition: transform 150ms ease-in-out;
     }
+  }
+`
+
+const SectionAbout = styled("div")`
+  padding-top: 10em;
+  margin-bottom: 10em;
+  display: flex;
+  flex-direction: column;
+  background: #f9fcfc;
+  border-bottom: 1px solid ${colors.grey200};
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    margin-bottom: 4em;
+  }
+
+  h3 {
+    padding-left: ${dimensions.paddingHorizontalDesktop}em;
+    padding-right: ${dimensions.paddingHorizontalDesktop}em;
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      padding-left: ${dimensions.paddingHorizontalTablet}em;
+      padding-right: ${dimensions.paddingHorizontalTablet}em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      padding-left: ${dimensions.paddingHorizontalMobile}em;
+      padding-right: ${dimensions.paddingHorizontalMobile}em;
+    }
+  }
+  &:last-of-type {
+    margin-bottom: 0;
   }
 `
 
@@ -179,7 +221,7 @@ const RenderBody = ({ home, projects, meta }) => (
         <Button>{RichText.render(home.hero_button_text)}</Button>
       </a>
     </Hero>
-    <Section>
+    <SectionWork>
       {projects.map((project, i) => (
         <ProjectCard
           key={i}
@@ -193,11 +235,11 @@ const RenderBody = ({ home, projects, meta }) => (
       <WorkAction to={"/work"}>
         See more work <span>&#8594;</span>
       </WorkAction>
-    </Section>
-    <Section>
+    </SectionWork>
+    <SectionAbout>
       {RichText.render(home.about_title)}
       <About bio={home.about_bio} socialLinks={home.about_links} />
-    </Section>
+    </SectionAbout>
   </>
 )
 
