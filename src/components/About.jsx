@@ -7,6 +7,8 @@ import { RichText } from "prismic-reactjs"
 import PropTypes from "prop-types"
 
 const AboutContainer = styled("div")`
+  padding-left: ${dimensions.paddingHorizontalDesktop}em;
+  padding-right: ${dimensions.paddingHorizontalDesktop}em;
   padding-top: 1em;
   padding-bottom: 4em;
   display: grid;
@@ -15,10 +17,14 @@ const AboutContainer = styled("div")`
   border-bottom: 1px solid ${colors.grey200};
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
+    padding-left: ${dimensions.paddingHorizontalTablet}em;
+    padding-right: ${dimensions.paddingHorizontalTablet}em;
     grid-template-columns: 1fr 3fr 1fr;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding-left: ${dimensions.paddingHorizontalMobile}em;
+    padding-right: ${dimensions.paddingHorizontalMobile}em;
     padding-bottom: 2em;
     grid-template-columns: 7em 1fr;
     grid-template-rows: 3em 1fr;

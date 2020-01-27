@@ -6,13 +6,20 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("div")`
-  margin-bottom: 2em;
+  padding-left: ${dimensions.paddingHorizontalDesktop}em;
+  padding-right: ${dimensions.paddingHorizontalDesktop}em;
   padding-top: 3.75em;
   padding-bottom: 3em;
   border-bottom: 1px solid ${colors.grey200};
 
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    padding-left: ${dimensions.paddingHorizontalTablet}em;
+    padding-right: ${dimensions.paddingHorizontalTablet}em;
+  }
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 2em 0;
+    padding-left: ${dimensions.paddingHorizontalMobile}em;
+    padding-right: ${dimensions.paddingHorizontalMobile}em;
   }
 `
 
@@ -30,7 +37,7 @@ const HeaderLinks = styled("div")`
   max-width: 200px;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-gap: 5.5em;
+    grid-gap: 2em;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
