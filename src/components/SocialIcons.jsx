@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
+import dimensions from "styles/dimensions"
 import IconTwitter from "components/_ui/TwitterIcon"
 import IconInstagram from "components/_ui/InstagramIcon"
 import IconLinkedIn from "components/_ui/LinkedInIcon"
@@ -16,12 +17,17 @@ const SocialContainer = styled("div")`
 
   a {
     text-decoration: none;
-    color: ${colors.grey900};
+    color: ${colors.grey800};
 
     svg {
-      margin-bottom: 2em;
-      // max-width: 33px;
-      // height: auto;
+      margin-top: 2em;
+      max-width: 50px;
+      height: auto;
+
+      @media (max-width: ${dimensions.maxwidthMobile}px) {
+        max-width: 40px;
+        height: auto;
+      }
     }
 
     &:hover {
