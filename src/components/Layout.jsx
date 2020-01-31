@@ -13,8 +13,8 @@ import "styles/fonts.scss"
 const LayoutContainer = styled.div`
   background: white;
   max-width: ${dimensions.maxwidthDesktop}px;
-  // padding-left: ${dimensions.paddingHorizontalDesktop}em;
-  // padding-right: ${dimensions.paddingHorizontalDesktop}em;
+  padding-left: ${dimensions.paddingHorizontalDesktop}em;
+  padding-right: ${dimensions.paddingHorizontalDesktop}em;
   margin: 0 auto;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
@@ -23,6 +23,8 @@ const LayoutContainer = styled.div`
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding-left: 0;
+    padding-right: 0;
     padding-left: ${dimensions.paddingHorizontalMobile}em;
     padding-right: ${dimensions.paddingHorizontalMobile}em;
   }

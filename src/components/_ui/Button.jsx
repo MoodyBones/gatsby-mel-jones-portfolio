@@ -7,8 +7,8 @@ const ButtonContainer = styled("button")`
   margin-top: 3em;
   padding: 1em 2em;
   background: ${colors.blue200};
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 800;
+  font-family: inherit;
+  font-weight: 900;
   color: ${colors.blue600};
   outline: none;
   border: 1px;

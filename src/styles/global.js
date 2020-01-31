@@ -10,15 +10,13 @@ const globalStyles = css`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100%;
-    background: #f2e9de;
-    // background: #f2f2f2;
   }
 
   body {
     width: 100%;
     margin: 0 auto;
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: ${colors.grey900};
     -webkit-font-smoothing: antialiased;
 

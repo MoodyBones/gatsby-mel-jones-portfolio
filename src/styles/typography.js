@@ -1,6 +1,5 @@
 import css from "@emotion/css"
 import dimensions from "styles/dimensions"
-import colors from "styles/colors"
 
 const typeStyles = css`
   h1,
@@ -10,10 +9,8 @@ const typeStyles = css`
   }
 
   h1 {
-    font-size: 2em;
-    line-height: 1.45;
-    font-weight: 500;
-    color: ${colors.grey700};
+    font-size: 2.2em;
+    font-weight: 400;
     letter-spacing: -0.5px;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
@@ -28,18 +25,17 @@ const typeStyles = css`
   h2 {
     margin-bottom: 2rem;
     font-size: 1.9em;
-    line-height: 1.1;
   }
 
   h3 {
-    line-height: 1.2;
-    font-size: 1.4em;
+    line-height: 1;
+    font-size: 1.5em;
+    font-weight: 900;
   }
 
   h5 {
     margin-bottom: 1.45rem;
-    font-weight: 500;
-    line-height: 20px;
+    font-weight: 600;
     font-size: 0.95em;
   }
 
@@ -48,7 +44,7 @@ const typeStyles = css`
     font-weight: 600;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
 
   p {

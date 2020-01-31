@@ -20,14 +20,11 @@ const ImageHero = styled("img")`
 
 const Hero = styled("div")`
   padding-top: 2em;
-
-  padding-left: ${dimensions.paddingHorizontalDesktop}em;
-  padding-right: ${dimensions.paddingHorizontalDesktop}em;
-  // padding-top: 0.5em;
-  // padding-bottom: 3em;
-  // margin-bottom: 6em;
-  max-width: 680px;
-  background: #f9fcfc;
+  padding-bottom: 3em;
+  margin-top: 2em;
+  margin-bottom: 6em;
+  border-bottom: 1px solid ${colors.grey200};
+}
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-bottom: 3em;
@@ -86,21 +83,9 @@ const Hero = styled("div")`
 `
 
 const SectionWork = styled("div")`
-  padding-left: ${dimensions.paddingHorizontalDesktop}em;
-  padding-right: ${dimensions.paddingHorizontalDesktop}em;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid ${colors.grey200};
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    padding-left: ${dimensions.paddingHorizontalTablet}em;
-    padding-right: ${dimensions.paddingHorizontalTablet}em;
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding-left: ${dimensions.paddingHorizontalMobile}em;
-    padding-right: ${dimensions.paddingHorizontalMobile}em;
-  }
 
   &:last-of-type {
     margin-bottom: 0;
@@ -143,27 +128,12 @@ const SectionAbout = styled("div")`
   margin-bottom: 10em;
   display: flex;
   flex-direction: column;
-  background: #f9fcfc;
   border-bottom: 1px solid ${colors.grey200};
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin-bottom: 4em;
   }
 
-  h3 {
-    padding-left: ${dimensions.paddingHorizontalDesktop}em;
-    padding-right: ${dimensions.paddingHorizontalDesktop}em;
-
-    @media (max-width: ${dimensions.maxwidthTablet}px) {
-      padding-left: ${dimensions.paddingHorizontalTablet}em;
-      padding-right: ${dimensions.paddingHorizontalTablet}em;
-    }
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      padding-left: ${dimensions.paddingHorizontalMobile}em;
-      padding-right: ${dimensions.paddingHorizontalMobile}em;
-    }
-  }
   &:last-of-type {
     margin-bottom: 0;
   }

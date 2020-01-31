@@ -6,21 +6,9 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("div")`
-  padding-left: ${dimensions.paddingHorizontalDesktop}em;
-  padding-right: ${dimensions.paddingHorizontalDesktop}em;
   padding-top: 3.75em;
   padding-bottom: 3em;
   border-bottom: 1px solid ${colors.grey200};
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    padding-left: ${dimensions.paddingHorizontalTablet}em;
-    padding-right: ${dimensions.paddingHorizontalTablet}em;
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding-left: ${dimensions.paddingHorizontalMobile}em;
-    padding-right: ${dimensions.paddingHorizontalMobile}em;
-  }
 `
 
 const HeaderContent = styled("div")`
@@ -48,8 +36,8 @@ const HeaderLinks = styled("div")`
     color: currentColor;
     text-decoration: none;
     border-bottom: 3px solid transparent;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     font-size: 0.95em;
     height: 100%;
