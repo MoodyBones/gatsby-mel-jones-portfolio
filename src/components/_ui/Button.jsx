@@ -13,9 +13,10 @@ const ButtonContainer = styled("button")`
   outline: none;
   border: 1px;
   font-size: 1rem;
-  border-radius: 30px;
+  border-radius: 7.5px;
   position: relative;
   transition: background 150ms ease-in-out;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-top: 2em;
