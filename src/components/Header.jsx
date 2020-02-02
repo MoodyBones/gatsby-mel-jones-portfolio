@@ -9,6 +9,10 @@ const HeaderContainer = styled("div")`
   padding-top: 3.75em;
   padding-bottom: 3em;
   border-bottom: 1px solid ${colors.grey200};
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 2em 0 1em 0;
+  }
 `
 
 const HeaderContent = styled("div")`
@@ -50,7 +54,7 @@ const HeaderLinks = styled("div")`
       content: "";
       display: block;
       position: absolute;
-      width: 95%;
+      width: 97%;
       height: 2px;
       bottom: 80px;
       // margin-right: -9px;
