@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import Logo from "components/_ui/Logo"
-import Icon from "images/icon-mel.png"
+import Icon from "images/hero-mel-jones.png"
 import SocialIcons from "components/SocialIcons"
 
 const FooterContainer = styled("div")`
