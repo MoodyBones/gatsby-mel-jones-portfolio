@@ -13,13 +13,13 @@ const PostCardContainer = styled(Link)`
   text-decoration: none;
   color: currentColor;
   background: white;
-  border: 1px solid ${colors.grey200};
-  border-radius: 3px;
-  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid white;
+  border-radius: 7.5px;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   transition: all 150ms ease-in-out;
 
   &:hover {
-    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1);
     transition: all 150ms ease-in-out;
     cursor: pointer;
 

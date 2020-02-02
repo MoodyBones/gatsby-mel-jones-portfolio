@@ -9,7 +9,7 @@ import PropTypes from "prop-types"
 const ProjectCardContainer = styled(Link)`
   display: grid;
   grid-template-columns: 4fr 7fr;
-  box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   margin-bottom: 4em;
   transition: all 150ms ease-in-out;
   text-decoration: none;
@@ -28,7 +28,7 @@ const ProjectCardContainer = styled(Link)`
   }
 
   &:hover {
-    box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1);
     transition: all 150ms ease-in-out;
 
     .ProjectCardAction {
@@ -115,7 +115,7 @@ const ProjectCardAction = styled("div")`
 `
 
 const ProjectCardImageContainer = styled("div")`
-  background: ${colors.grey200};
+  background: ${colors.grey300};
   display: flex;
   justify-content: center;
   align-items: flex-end;

@@ -10,28 +10,67 @@ import Button from "components/_ui/Button"
 import About from "components/About"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import HeroImage from "images/icon-mel.png"
-
-const ImageHero = styled("img")`
-  max-width: 500px;
-  height: auto;
-  margin-top: 2em;
-`
+import Image from "images/hero-mel-jones.png"
 
 const Hero = styled("div")`
-  padding-top: 2em;
-  padding-bottom: 3em;
-  margin-top: 2em;
-  margin-bottom: 6em;
-  border-bottom: 1px solid ${colors.grey200};
-}
+  margin: 2em 0 6em 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, auto);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin-bottom: 3em;
+    margin: 0.8em 0 4em 0;
+    grid-template-rows: auto 80px auto 50px;
+  }
+
+  div,
+  img {
+    grid-row: 1 / 3;
+  }
+
+  div {
+    grid-column: 1 / 11;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 3;
+    }
+  }
+
+  img {
+    grid-column: 10 / -1;
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      grid-column: 6 / 12;
+      grid-row: 2 / -1;
+    }
+  }
+
+  a {
+    grid-column: 9 / -1;
+    grid-row: 3 / -1;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      grid-column: 2 / -1;
+      grid-row: 4 / 5;
+    }
+  }
+`
+const HeroTitle = styled("div")`
+  padding: .6em 6em .9em 2em;
+  background: ${colors.grey900};
+  border-radius: 7.5px;
+  // box-shadow: 9px 9px 0 .5px ${colors.purple500};
+  box-shadow: 6px 6px ${colors.blue600};
+  // box-shadow: 6px 6px ${colors.blue600};
+  // box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 1);
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 1em 1.2em 2em 1.8em;
   }
 
   h1 {
     margin-bottom: 1em;
+    color: ${colors.grey100};
 
     a {
       text-decoration: none;
@@ -80,6 +119,16 @@ const Hero = styled("div")`
       }
     }
   }
+`
+
+const HeroImage = styled("img")`
+  width: 100%;
+  height: auto;
+  margin-top: 2em;
+  border: 12px solid white;
+  border-radius: 7.5px;
+  box-shadow: 6px 6px ${colors.grey900};
+  // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 `
 
 const SectionWork = styled("div")`
@@ -180,9 +229,8 @@ const RenderBody = ({ home, projects, meta }) => (
       ].concat(meta)}
     />
     <Hero>
-      <>{RichText.render(home.hero_title)}</>
-      <ImageHero src={HeroImage} />
-
+      <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
+      <HeroImage src={Image} width="500" height="750" />
       <a
         href={home.hero_button_link.url}
         target="_blank"

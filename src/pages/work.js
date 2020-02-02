@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
-const WorkTitle = styled("h1")`
+const WorkTitle = styled("h2")`
   margin-bottom: 1em;
 `
 

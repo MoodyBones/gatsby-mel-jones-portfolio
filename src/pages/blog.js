@@ -7,7 +7,7 @@ import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
 import PostCard from "components/PostCard"
 
-const BlogTitle = styled("h1")`
+const BlogTitle = styled("h2")`
   margin-bottom: 1em;
 `
 

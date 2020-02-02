@@ -2,16 +2,11 @@ import css from "@emotion/css"
 import dimensions from "styles/dimensions"
 
 const typeStyles = css`
-  h1,
-  h2,
-  h3 {
-    font-family: "Montserrat", sans-serif;
-  }
-
   h1 {
-    font-size: 2.2em;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 2em;
     font-weight: 400;
-    letter-spacing: -0.5px;
+    letter-spacing: -2px;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 1.75em;

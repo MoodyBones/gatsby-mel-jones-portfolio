@@ -6,10 +6,10 @@ import dimensions from "styles/dimensions"
 const ButtonContainer = styled("button")`
   margin-top: 3em;
   padding: 1em 2em;
-  background: ${colors.blue200};
+  background: ${colors.blue600};
   font-family: inherit;
   font-weight: 900;
-  color: ${colors.blue600};
+  color: ${colors.grey100};
   outline: none;
   border: 1px;
   font-size: 1rem;

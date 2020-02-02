@@ -4,7 +4,7 @@ const colors = {
   blue800: "#2a4a7f",
   blue700: "#3a67b2",
   blue600: "#4834d4",
-  blue500: "#5393fe",
+  blue500: "#686de0",
   blue400: "#73abff",
   blue300: "#cbdfff",
   blue200: "#e3efff",
