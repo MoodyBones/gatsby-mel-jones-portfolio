@@ -6,16 +6,17 @@ import dimensions from "styles/dimensions"
 const ButtonContainer = styled("button")`
   margin-top: 3em;
   padding: 1em 2em;
-  background: ${colors.blue200};
-  font-family: "IBM Plex Mono", monospace;
-  font-weight: 800;
-  color: ${colors.blue600};
+  background: ${colors.blue600};
+  font-family: inherit;
+  font-weight: 900;
+  color: ${colors.grey100};
   outline: none;
   border: 1px;
   font-size: 1rem;
-  border-radius: 30px;
+  border-radius: 7.5px;
   position: relative;
   transition: background 150ms ease-in-out;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin-top: 2em;

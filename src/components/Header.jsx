@@ -6,13 +6,12 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("div")`
-  margin-bottom: 2em;
   padding-top: 3.75em;
   padding-bottom: 3em;
   border-bottom: 1px solid ${colors.grey200};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 2em 0;
+    padding: 2em 0 1em 0;
   }
 `
 
@@ -30,7 +29,7 @@ const HeaderLinks = styled("div")`
   max-width: 200px;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-gap: 5.5em;
+    grid-gap: 2em;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -41,8 +40,8 @@ const HeaderLinks = styled("div")`
     color: currentColor;
     text-decoration: none;
     border-bottom: 3px solid transparent;
-    font-weight: 800;
-    letter-spacing: 2px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     font-size: 0.95em;
     height: 100%;
@@ -55,7 +54,7 @@ const HeaderLinks = styled("div")`
       content: "";
       display: block;
       position: absolute;
-      width: 95%;
+      width: 97%;
       height: 2px;
       bottom: 80px;
       // margin-right: -9px;

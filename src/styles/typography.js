@@ -1,16 +1,15 @@
 import css from "@emotion/css"
 import dimensions from "styles/dimensions"
-import colors from "styles/colors"
 
 const typeStyles = css`
   h1 {
+    font-family: "IBM Plex Mono", monospace;
     font-size: 2em;
-    line-height: 1.45;
-    font-weight: 300;
-    color: ${colors.grey800};
+    font-weight: 400;
+    letter-spacing: -2px;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 2.25em;
+      font-size: 1.75em;
     }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -21,27 +20,26 @@ const typeStyles = css`
   h2 {
     margin-bottom: 2rem;
     font-size: 1.9em;
-    line-height: 1.1;
   }
 
   h3 {
-    line-height: 1.2;
+    line-height: 1;
     font-size: 1.5em;
+    font-weight: 900;
   }
 
   h5 {
     margin-bottom: 1.45rem;
-    font-weight: 500;
-    line-height: 20px;
+    font-weight: 600;
     font-size: 0.95em;
   }
 
   h6 {
     font-size: 0.9em;
-    font-weight: 500;
+    font-weight: 600;
     margin: 0;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.5px;
   }
 
   p {
