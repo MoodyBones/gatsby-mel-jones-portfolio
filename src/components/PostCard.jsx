@@ -24,7 +24,7 @@ const PostCardContainer = styled(Link)`
     cursor: pointer;
 
     .PostCardAction {
-      color: ${colors.blue500};
+      color: ${colors.blue5600};
       transition: all 150ms ease-in-out;
 
       span {

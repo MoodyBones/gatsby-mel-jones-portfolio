@@ -32,7 +32,7 @@ const ProjectCardContainer = styled(Link)`
     transition: all 150ms ease-in-out;
 
     .ProjectCardAction {
-      color: currentColor;
+      color: ${colors.blue600};
       transition: all 150ms ease-in-out;
 
       span {
