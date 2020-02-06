@@ -1,4 +1,5 @@
 import css from "@emotion/css"
+import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 
 const typeStyles = css`
@@ -24,8 +25,20 @@ const typeStyles = css`
 
   h3 {
     line-height: 1;
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: 900;
+  }
+
+  h4 {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 3em;
+    font-weight: 900;
+    letter-spacing: -2px;
+    background: ${colors.grey900};
+    color: ${colors.grey200};
+    padding-left: 1em;
+    border-radius: 7.5px;
+    box-shadow: 6px 6px ${colors.green500};
   }
 
   h5 {

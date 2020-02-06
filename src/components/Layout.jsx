@@ -5,13 +5,14 @@ import styled from "@emotion/styled"
 import { Global } from "@emotion/core"
 import globalStyles from "styles/global"
 import typeStyles from "styles/typography"
+import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Footer from "components/Footer"
 import Header from "components/Header"
 import "styles/fonts.scss"
 
 const LayoutContainer = styled.div`
-  background: #f9f9fa;
+  background: ${colors.grey100};
   max-width: ${dimensions.maxwidthDesktop}px;
   padding-left: ${dimensions.paddingHorizontalDesktop}em;
   padding-right: ${dimensions.paddingHorizontalDesktop}em;
@@ -23,8 +24,6 @@ const LayoutContainer = styled.div`
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding-left: 0;
-    padding-right: 0;
     padding-left: ${dimensions.paddingHorizontalMobile}em;
     padding-right: ${dimensions.paddingHorizontalMobile}em;
   }

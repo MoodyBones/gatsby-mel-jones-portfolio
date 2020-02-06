@@ -10,17 +10,18 @@ import Button from "components/_ui/Button"
 import About from "components/About"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import Image from "images/hero-mel-jones.png"
+import ImageHero from "images/hero-mel-jones.png"
 
 const Hero = styled("div")`
-  margin: 2em 0 6em 0;
+  padding-bottom: 10em;
+  margin: 3em 0 6em 0;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: auto auto 100px;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin: 0.8em 0 4em 0;
-    grid-template-rows: auto 80px auto 50px;
+    margin: 1em 0 4em 0;
+    grid-template-rows: 300px 150px 200px 100px;
   }
 
   div,
@@ -39,85 +40,42 @@ const Hero = styled("div")`
 
   img {
     grid-column: 10 / -1;
+    align-self: center;
+
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       grid-column: 6 / 12;
-      grid-row: 2 / -1;
+      grid-row: 2 / 4;
+      align-self: end;
     }
   }
 
   a {
-    grid-column: 9 / -1;
+    grid-column: 1 / -1;
     grid-row: 3 / -1;
+    justify-self: end;
+    align-self: end;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 2 / -1;
+      grid-column: 1 / -1;
       grid-row: 4 / 5;
+      justify-self: center;
+      align-self: end;
     }
   }
 `
 const HeroTitle = styled("div")`
-  padding: .6em 6em .9em 2em;
+  padding: 0.6em 6em 0.9em 2em;
   background: ${colors.grey900};
   border-radius: 7.5px;
-  // box-shadow: 9px 9px 0 .5px ${colors.purple500};
-  box-shadow: 6px 6px ${colors.blue600};
-  // box-shadow: 6px 6px ${colors.blue600};
-  // box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 1);
+  box-shadow: 6px 6px ${colors.green500};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1em 1.2em 2em 1.8em;
+    padding: 1em 0.6em 2em 1em;
   }
 
   h1 {
     margin-bottom: 1em;
-    color: ${colors.grey100};
-
-    a {
-      text-decoration: none;
-      transition: all 100ms ease-in-out;
-
-      &:nth-of-type(1) {
-        color: ${colors.orange500};
-      }
-      &:nth-of-type(2) {
-        color: ${colors.green500};
-      }
-      &:nth-of-type(3) {
-        color: ${colors.blue500};
-      }
-      &:nth-of-type(4) {
-        color: ${colors.purple500};
-      }
-      &:nth-of-type(5) {
-        color: ${colors.teal500};
-      }
-
-      &:hover {
-        cursor: pointer;
-        transition: all 100ms ease-in-out;
-
-        &:nth-of-type(1) {
-          color: ${colors.orange600};
-          background-color: ${colors.orange200};
-        }
-        &:nth-of-type(2) {
-          color: ${colors.green600};
-          background-color: ${colors.green200};
-        }
-        &:nth-of-type(3) {
-          color: ${colors.blue600};
-          background-color: ${colors.blue200};
-        }
-        &:nth-of-type(4) {
-          color: ${colors.purple600};
-          background-color: ${colors.purple200};
-        }
-        &:nth-of-type(5) {
-          color: ${colors.teal600};
-          background-color: ${colors.teal200};
-        }
-      }
-    }
+    color: ${colors.grey300};
   }
 `
 
@@ -125,16 +83,17 @@ const HeroImage = styled("img")`
   width: 100%;
   height: auto;
   margin-top: 2em;
-  border: 12px solid white;
   border-radius: 7.5px;
   box-shadow: 6px 6px ${colors.grey900};
   // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 `
 
 const SectionWork = styled("div")`
+  max-width: ${dimensions.maxwidthTablet}px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid ${colors.grey200};
+  margin: 0 auto;
+  border-bottom: 2px solid ${colors.grey300};
 
   &:last-of-type {
     margin-bottom: 0;
@@ -173,19 +132,38 @@ const WorkAction = styled(Link)`
 `
 
 const SectionAbout = styled("div")`
-  padding-top: 10em;
+  // padding-top: 10em;
   margin-bottom: 10em;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid ${colors.grey200};
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin-bottom: 4em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 500px auto;
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-template-rows: 300px auto;
   }
+`
 
-  &:last-of-type {
-    margin-bottom: 0;
+const AboutTitleContainer = styled("div")`
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  align-self: end;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    h4 {
+      margin-bottom: 0.5em;
+      font-size: 2.2em;
+    }
   }
+`
+
+const AboutImageContainer = styled("div")`
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+`
+
+const AboutTextContainer = styled("div")`
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
 `
 
 const RenderBody = ({ home, projects, meta }) => (
@@ -230,7 +208,7 @@ const RenderBody = ({ home, projects, meta }) => (
     />
     <Hero>
       <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
-      <HeroImage src={Image} width="500" height="750" />
+      <HeroImage src={ImageHero} width="500" height="750" />
       <a
         href={home.hero_button_link.url}
         target="_blank"
@@ -255,8 +233,13 @@ const RenderBody = ({ home, projects, meta }) => (
       </WorkAction>
     </SectionWork>
     <SectionAbout>
-      {RichText.render(home.about_title)}
-      <About bio={home.about_bio} socialLinks={home.about_links} />
+      <AboutImageContainer></AboutImageContainer>
+      <AboutTitleContainer>
+        {RichText.render(home.about_title)}
+      </AboutTitleContainer>
+      <AboutTextContainer>
+        <About bio={home.about_bio} socialLinks={home.about_links} />
+      </AboutTextContainer>
     </SectionAbout>
   </>
 )

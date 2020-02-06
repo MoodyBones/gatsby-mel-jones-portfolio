@@ -8,7 +8,7 @@ const dimensions = {
   //ems
   paddingHorizontalDesktop: 4,
   paddingHorizontalTablet: 2.5,
-  paddingHorizontalMobile: 1,
+  paddingHorizontalMobile: 1.5,
 }
 
 export default dimensions

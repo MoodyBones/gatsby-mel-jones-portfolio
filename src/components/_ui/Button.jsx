@@ -4,22 +4,23 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 
 const ButtonContainer = styled("button")`
-  margin-top: 3em;
-  padding: 1em 2em;
-  background: ${colors.blue600};
+  padding: 0.8em 1.8em;
+  background: ${colors.orange500};
   font-family: inherit;
   font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   color: ${colors.grey100};
   outline: none;
   border: 1px;
   font-size: 1rem;
-  border-radius: 7.5px;
+  border-radius: 30px;
   position: relative;
   transition: background 150ms ease-in-out;
-  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
+    3px 3px 5px rgba(0, 0, 0, 0.1);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin-top: 2em;
     padding: 0.8em 1.8em;
     font-size: 1em;
   }
@@ -52,9 +53,14 @@ const ButtonContainer = styled("button")`
   }
 
   &.Button--secondary {
-    padding: 0.95em 1.8em;
-    font-size: 0.95rem;
+    padding: 0.8em 1.8em;
     margin: 0;
+    font-size: 1rem;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      padding: 0.8em 1.8em;
+      font-size: 1em;
+    }
   }
 `
 

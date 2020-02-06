@@ -32,7 +32,7 @@ const ProjectCardContainer = styled(Link)`
     transition: all 150ms ease-in-out;
 
     .ProjectCardAction {
-      color: ${colors.blue600};
+      color: ${colors.orange500};
       transition: all 150ms ease-in-out;
 
       span {
@@ -82,7 +82,7 @@ const ProjectCardContent = styled("div")`
 `
 
 const ProjectCardCategory = styled("h6")`
-  color: ${colors.orange500};
+  color: ${colors.grey700};
 `
 
 const ProjectCardTitle = styled("h3")`

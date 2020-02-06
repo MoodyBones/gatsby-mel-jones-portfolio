@@ -8,6 +8,7 @@ import IconLinkedIn from "components/_ui/LinkedInIcon"
 import IconGitHub from "components/_ui/GitHubIcon"
 
 const SocialContainer = styled("div")`
+  margin-bottom: 3em;
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 2em;
