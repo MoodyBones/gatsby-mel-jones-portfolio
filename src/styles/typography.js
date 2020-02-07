@@ -20,19 +20,19 @@ const typeStyles = css`
 
   h2 {
     margin-bottom: 2rem;
-    font-size: 1.9em;
+    font-size: 2em;
   }
 
   h3 {
-    line-height: 1;
-    font-size: 1.8em;
+    line-height: 1.2;
+    font-size: 1.5em;
     font-weight: 900;
   }
 
   h4 {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 3em;
-    font-weight: 900;
+    font-size: 2.2em;
+    font-weight: 400;
     letter-spacing: -2px;
     background: ${colors.grey900};
     color: ${colors.grey200};

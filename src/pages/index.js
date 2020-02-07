@@ -8,6 +8,7 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Button from "components/_ui/Button"
 import About from "components/About"
+import Form from "components/ContactForm"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 import ImageHero from "images/hero-mel-jones.png"
@@ -67,7 +68,7 @@ const HeroTitle = styled("div")`
   padding: 0.6em 6em 0.9em 2em;
   background: ${colors.grey900};
   border-radius: 7.5px;
-  box-shadow: 6px 6px ${colors.green500};
+  box-shadow: 6px 6px ${colors.blue600};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 1em 0.6em 2em 1em;
@@ -84,7 +85,7 @@ const HeroImage = styled("img")`
   height: auto;
   margin-top: 2em;
   border-radius: 7.5px;
-  box-shadow: 6px 6px ${colors.grey900};
+  box-shadow: 6px 6px ${colors.green500};
   // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 `
 
@@ -93,7 +94,6 @@ const SectionWork = styled("div")`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  border-bottom: 2px solid ${colors.grey300};
 
   &:last-of-type {
     margin-bottom: 0;
@@ -120,7 +120,7 @@ const WorkAction = styled(Link)`
   }
 
   &:hover {
-    color: ${colors.blue500};
+    color: ${colors.orange500};
     transition: all 150ms ease-in-out;
 
     span {
@@ -156,7 +156,7 @@ const AboutTitleContainer = styled("div")`
   }
 `
 
-const AboutImageContainer = styled("div")`
+const AboutFormContainer = styled("div")`
   grid-column: 2 / -1;
   grid-row: 1 / -1;
 `
@@ -233,13 +233,15 @@ const RenderBody = ({ home, projects, meta }) => (
       </WorkAction>
     </SectionWork>
     <SectionAbout>
-      <AboutImageContainer></AboutImageContainer>
       <AboutTitleContainer>
         {RichText.render(home.about_title)}
       </AboutTitleContainer>
       <AboutTextContainer>
         <About bio={home.about_bio} socialLinks={home.about_links} />
       </AboutTextContainer>
+      <AboutFormContainer>
+        <Form />
+      </AboutFormContainer>
     </SectionAbout>
   </>
 )

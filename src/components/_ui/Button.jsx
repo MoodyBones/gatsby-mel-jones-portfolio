@@ -17,8 +17,7 @@ const ButtonContainer = styled("button")`
   border-radius: 30px;
   position: relative;
   transition: background 150ms ease-in-out;
-  box-shadow: -2px -2px 5px rgba(255, 255, 255, 1),
-    3px 3px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 0.8em 1.8em;
