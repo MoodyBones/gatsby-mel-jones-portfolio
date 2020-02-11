@@ -40,7 +40,7 @@ const HeaderLinks = styled("div")`
     color: currentColor;
     text-decoration: none;
     border-bottom: 3px solid transparent;
-    font-weight: 900;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.95em;
@@ -89,7 +89,7 @@ const Header = () => (
       </Link>
       <HeaderLinks>
         <Link activeClassName="Link--is-active" to="/work">
-          Work
+          Projects
         </Link>
         <Link activeClassName="Link--is-active" to="/blog">
           Blog
