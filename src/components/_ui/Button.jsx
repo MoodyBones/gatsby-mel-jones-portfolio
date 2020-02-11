@@ -5,21 +5,20 @@ import dimensions from "styles/dimensions"
 
 const ButtonContainer = styled("button")`
   padding: 0.8em 1.8em;
-  background: ${colors.blue600};
+  position: relative;
   font-family: inherit;
-  font-weight: 900;
+  font-weight: 600;
+  font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: ${colors.grey100};
-  outline: none;
-  border: 1px;
-  font-size: 1rem;
-  border-radius: 30px;
-  position: relative;
+  color: ${colors.blue600};
+  background: ${colors.grey200};
+  border: 2px solid ${colors.blue600};
+  border-radius: 3px;
   transition: background 150ms ease-in-out;
-  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
     padding: 0.8em 1.8em;
     font-size: 1em;
   }
@@ -31,16 +30,18 @@ const ButtonContainer = styled("button")`
   &:before {
     content: "";
     position: absolute;
-    border-radius: inherit;
-    left: 0;
-    top: 0;
+    left: -2px;
+    top: -2px;
     width: 100%;
     height: 100%;
+    border: 2px solid ${colors.grey200};
+    border-radius: 3px;
     background: linear-gradient(
       135deg,
-      ${colors.pink300} 0%,
-      ${colors.purple300} 100%
+      ${colors.purple500} 0%,
+      ${colors.orange500} 100%
     );
+    overflow: hidden;
     z-index: -1;
   }
 
@@ -48,7 +49,13 @@ const ButtonContainer = styled("button")`
     cursor: pointer;
     background: transparent;
     transition: background 150ms ease-in-out;
-    color: ${colors.purple900};
+    color: ${colors.grey100};
+    border: 2px solid ${colors.grey200};
+    border-radius: 3px;
+
+    &:before {
+      width: 100%;
+    }
   }
 
   &.Button--secondary {

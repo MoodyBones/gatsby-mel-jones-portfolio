@@ -17,7 +17,7 @@ const Hero = styled("div")`
   padding-bottom: 6em;
   margin: 1em 0 6em 0;
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 2em;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 150px auto 100px;
 
@@ -25,11 +25,11 @@ const Hero = styled("div")`
     margin: 1em 0 4em 0;
     grid-gap: 2em;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
   }
 
   div {
-    grid-column: 1 / 11;
+    grid-column: 1 / 9;
     grid-row: 1 / -1;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -41,12 +41,13 @@ const Hero = styled("div")`
   img {
     grid-column: 9 / -1;
     grid-row: 2 / 3;
-    justify-self: center;
+    justify-self: start;
     align-self: start;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / -4;
-      grid-row: 2 / -1;
+      grid-column: 2 / 12;
+      grid-row: 2 / 3;
+      justify-self: start;
       align-self: center;
     }
   }
@@ -54,20 +55,22 @@ const Hero = styled("div")`
   a {
     grid-column: 9 / -1;
     grid-row: 3 / -1;
-    justify-self: center;
+    justify-self: start;
     align-self: end;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: -4 / -1;
-      grid-row: 2 / -1;
+      grid-column: 1 / -1;
+      grid-row: 3 / -1;
       justify-self: center;
       align-self: center;
 
       button {
-        transform: rotate(-90deg);
+        // transform: rotate(-90deg);
         // writing-mode: vertical-rl;
-        text-orientation: mixed;
-        padding: 1.8em 0.8em;
+        // -webkit-writing-mode: vertical-rl;
+        // text-orientation: mixed;
+        // -webkit-text-orientation: mixed;
+        // padding: 1.8em 0.8em;
       }
     }
   }
@@ -93,11 +96,9 @@ const HeroTitle = styled("div")`
 const HeroImage = styled("img")`
   width: 100%;
   height: auto;
-  border-radius: 2em;
+  border-radius: 15px 30px 45px 7.5px;
   border: 2em solid white;
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
-
-  // padding-right: .5em;
 `
 
 const HeroZigZag = styled("div")`
@@ -303,7 +304,7 @@ const RenderBody = ({ home, projects, meta }) => (
 )
 
 export default ({ data }) => {
-  //Required check for no data being returned
+  // Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop()
   const projects = data.prismic.allProjects.edges
   const meta = data.site.siteMetadata
