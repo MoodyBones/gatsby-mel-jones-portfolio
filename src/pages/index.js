@@ -89,7 +89,7 @@ const HeroTitle = styled("div")`
 
   h1 {
     margin-bottom: 1em;
-    color: ${colors.grey300};
+    color: ${colors.blue300};
   }
 `
 
@@ -97,7 +97,8 @@ const HeroImage = styled("img")`
   width: 100%;
   height: auto;
   border-radius: 15px 30px 45px 7.5px;
-  border: 2em solid white;
+  border: 2em solid ${colors.blue100};
+
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 `
 
