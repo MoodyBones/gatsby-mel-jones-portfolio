@@ -8,6 +8,7 @@ import IconLinkedIn from "components/_ui/LinkedInIcon"
 import IconGitHub from "components/_ui/GitHubIcon"
 
 const SocialContainer = styled("div")`
+  margin-bottom: 3em;
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-gap: 2em;
@@ -17,17 +18,17 @@ const SocialContainer = styled("div")`
 
   a {
     text-decoration: none;
-    color: ${colors.grey800};
+    color: ${colors.grey900};
 
     svg {
-      margin-top: 2em;
+      margin 3em 0 2em;
       max-width: 50px;
       height: auto;
 
-      @media (max-width: ${dimensions.maxwidthMobile}px) {
-        max-width: 40px;
-        height: auto;
-      }
+      // @media (max-width: ${dimensions.maxwidthMobile}px) {
+      //   max-width: 40px;
+      //   height: auto;
+      // }
     }
 
     &:hover {

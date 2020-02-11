@@ -8,133 +8,145 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Button from "components/_ui/Button"
 import About from "components/About"
+import Form from "components/ContactForm"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import Image from "images/hero-mel-jones.png"
+import ImageHero from "images/hero-mel-jones.png"
 
 const Hero = styled("div")`
-  margin: 2em 0 6em 0;
+  padding-bottom: 6em;
+  margin: 1em 0 6em 0;
   display: grid;
+  grid-gap: 2em;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, auto);
+  grid-template-rows: 150px auto 100px;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin: 0.8em 0 4em 0;
-    grid-template-rows: auto 80px auto 50px;
-  }
-
-  div,
-  img {
-    grid-row: 1 / 3;
+    margin: 1em 0 4em 0;
+    grid-gap: 2em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto auto;
   }
 
   div {
-    grid-column: 1 / 11;
+    grid-column: 1 / 9;
+    grid-row: 1 / -1;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       grid-column: 1 / -1;
-      grid-row: 1 / 3;
+      grid-row: 1 / 2;
     }
   }
 
   img {
-    grid-column: 10 / -1;
+    grid-column: 9 / -1;
+    grid-row: 2 / 3;
+    justify-self: start;
+    align-self: start;
+
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 6 / 12;
-      grid-row: 2 / -1;
+      grid-column: 2 / 12;
+      grid-row: 2 / 3;
+      justify-self: start;
+      align-self: center;
     }
   }
 
   a {
     grid-column: 9 / -1;
     grid-row: 3 / -1;
+    justify-self: start;
+    align-self: end;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 2 / -1;
-      grid-row: 4 / 5;
+      grid-column: 1 / -1;
+      grid-row: 3 / -1;
+      justify-self: center;
+      align-self: center;
+
+      button {
+        // transform: rotate(-90deg);
+        // writing-mode: vertical-rl;
+        // -webkit-writing-mode: vertical-rl;
+        // text-orientation: mixed;
+        // -webkit-text-orientation: mixed;
+        // padding: 1.8em 0.8em;
+      }
     }
   }
 `
 const HeroTitle = styled("div")`
-  padding: .6em 6em .9em 2em;
+  padding: 10em 1em 0.9em 2em;
+  max-width: 640px;
   background: ${colors.grey900};
-  border-radius: 7.5px;
-  // box-shadow: 9px 9px 0 .5px ${colors.purple500};
-  box-shadow: 6px 6px ${colors.blue600};
-  // box-shadow: 6px 6px ${colors.blue600};
-  // box-shadow: 0 3px 30px 0 rgba(0, 0, 0, 1);
+  border-radius: 3px;
+  border-bottom: 1em solid ${colors.orange500};
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1em 1.2em 2em 1.8em;
+    padding: 8em 0.6em 2em 1em;
   }
 
   h1 {
     margin-bottom: 1em;
-    color: ${colors.grey100};
-
-    a {
-      text-decoration: none;
-      transition: all 100ms ease-in-out;
-
-      &:nth-of-type(1) {
-        color: ${colors.orange500};
-      }
-      &:nth-of-type(2) {
-        color: ${colors.green500};
-      }
-      &:nth-of-type(3) {
-        color: ${colors.blue500};
-      }
-      &:nth-of-type(4) {
-        color: ${colors.purple500};
-      }
-      &:nth-of-type(5) {
-        color: ${colors.teal500};
-      }
-
-      &:hover {
-        cursor: pointer;
-        transition: all 100ms ease-in-out;
-
-        &:nth-of-type(1) {
-          color: ${colors.orange600};
-          background-color: ${colors.orange200};
-        }
-        &:nth-of-type(2) {
-          color: ${colors.green600};
-          background-color: ${colors.green200};
-        }
-        &:nth-of-type(3) {
-          color: ${colors.blue600};
-          background-color: ${colors.blue200};
-        }
-        &:nth-of-type(4) {
-          color: ${colors.purple600};
-          background-color: ${colors.purple200};
-        }
-        &:nth-of-type(5) {
-          color: ${colors.teal600};
-          background-color: ${colors.teal200};
-        }
-      }
-    }
+    color: ${colors.grey300};
   }
 `
 
 const HeroImage = styled("img")`
   width: 100%;
   height: auto;
-  margin-top: 2em;
-  border: 12px solid white;
-  border-radius: 7.5px;
-  box-shadow: 6px 6px ${colors.grey900};
-  // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  border-radius: 15px 30px 45px 7.5px;
+  border: 2em solid white;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 `
 
+const HeroZigZag = styled("div")`
+  max-width: 640px;
+
+  .zigzag {
+    height: 5em;
+    background: linear-gradient(45deg, transparent 50%, ${colors.grey200} 50%),
+      linear-gradient(90deg, transparent 50%, ${colors.purple500} 50%),
+      linear-gradient(135deg, ${colors.grey200} 50%, ${colors.blue600} 50%),
+      0 50%;
+    background-repeat: repeat-x;
+    background-size: 5em 5em, 5em 5em;
+  }
+
+  .zigzag2 {
+    height: 5em;
+    background: linear-gradient(-45deg, transparent 74%, ${colors.blue600} 75%),
+      linear-gradient(45deg, transparent 74%, ${colors.purple500} 75%) 0 50%;
+    background-repeat: repeat-x;
+    background-size: 5em 5em, 5em 5em;
+  }
+`
+// #cbab00
+
 const SectionWork = styled("div")`
+  padding-top: 6em;
+
+  max-width: ${dimensions.maxwidthTablet}px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid ${colors.grey200};
+  margin: 0 auto;
+
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ee65de),
+    to(#26cbff)
+  );
+  background-image: linear-gradient(
+    to right,
+    ${colors.purple500},
+    ${colors.orange500}
+  );
+  background-size: 100% 2px;
+  background-position: center top;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -161,7 +173,7 @@ const WorkAction = styled(Link)`
   }
 
   &:hover {
-    color: ${colors.blue500};
+    color: ${colors.orange500};
     transition: all 150ms ease-in-out;
 
     span {
@@ -173,19 +185,38 @@ const WorkAction = styled(Link)`
 `
 
 const SectionAbout = styled("div")`
-  padding-top: 10em;
+  // padding-top: 10em;
   margin-bottom: 10em;
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid ${colors.grey200};
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin-bottom: 4em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 500px auto;
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-template-rows: 300px auto;
   }
+`
 
-  &:last-of-type {
-    margin-bottom: 0;
+const AboutTitleContainer = styled("div")`
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  align-self: end;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    h4 {
+      margin-bottom: 0.5em;
+      font-size: 2.2em;
+    }
   }
+`
+
+const AboutFormContainer = styled("div")`
+  grid-column: 2 / -1;
+  grid-row: 1 / -1;
+`
+
+const AboutTextContainer = styled("div")`
+  grid-column: 1 / -1;
+  grid-row: 2 / -1;
 `
 
 const RenderBody = ({ home, projects, meta }) => (
@@ -230,7 +261,7 @@ const RenderBody = ({ home, projects, meta }) => (
     />
     <Hero>
       <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
-      <HeroImage src={Image} width="500" height="750" />
+      <HeroImage src={ImageHero} width="500" height="750" />
       <a
         href={home.hero_button_link.url}
         target="_blank"
@@ -238,6 +269,10 @@ const RenderBody = ({ home, projects, meta }) => (
       >
         <Button>{RichText.render(home.hero_button_text)}</Button>
       </a>
+      <HeroZigZag>
+        <div className="zigzag"></div>
+        <div className="zigzag2"></div>
+      </HeroZigZag>
     </Hero>
     <SectionWork>
       {projects.map((project, i) => (
@@ -255,14 +290,21 @@ const RenderBody = ({ home, projects, meta }) => (
       </WorkAction>
     </SectionWork>
     <SectionAbout>
-      {RichText.render(home.about_title)}
-      <About bio={home.about_bio} socialLinks={home.about_links} />
+      <AboutTitleContainer>
+        {RichText.render(home.about_title)}
+      </AboutTitleContainer>
+      <AboutTextContainer>
+        <About bio={home.about_bio} socialLinks={home.about_links} />
+      </AboutTextContainer>
+      <AboutFormContainer>
+        <Form />
+      </AboutFormContainer>
     </SectionAbout>
   </>
 )
 
 export default ({ data }) => {
-  //Required check for no data being returned
+  // Required check for no data being returned
   const doc = data.prismic.allHomepages.edges.slice(0, 1).pop()
   const projects = data.prismic.allProjects.edges
   const meta = data.site.siteMetadata
