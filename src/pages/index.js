@@ -14,64 +14,74 @@ import ProjectCard from "components/ProjectCard"
 import ImageHero from "images/hero-mel-jones.png"
 
 const Hero = styled("div")`
-  padding-bottom: 10em;
-  margin: 3em 0 6em 0;
+  padding-bottom: 6em;
+  margin: 1em 0 6em 0;
   display: grid;
+  grid-gap: 1em;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto auto 100px;
+  grid-template-rows: 150px auto 100px;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     margin: 1em 0 4em 0;
-    grid-template-rows: 300px 150px 200px 100px;
-  }
-
-  div,
-  img {
-    grid-row: 1 / 3;
+    grid-gap: 2em;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto auto;
   }
 
   div {
     grid-column: 1 / 11;
+    grid-row: 1 / -1;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       grid-column: 1 / -1;
-      grid-row: 1 / 3;
+      grid-row: 1 / 2;
     }
   }
 
   img {
-    grid-column: 10 / -1;
-    align-self: center;
+    grid-column: 9 / -1;
+    grid-row: 2 / 3;
+    justify-self: center;
+    align-self: start;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 6 / 12;
-      grid-row: 2 / 4;
-      align-self: end;
+      grid-column: 1 / -4;
+      grid-row: 2 / -1;
+      align-self: center;
     }
   }
 
   a {
-    grid-column: 1 / -1;
+    grid-column: 9 / -1;
     grid-row: 3 / -1;
-    justify-self: end;
+    justify-self: center;
     align-self: end;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / -1;
-      grid-row: 4 / 5;
+      grid-column: -4 / -1;
+      grid-row: 2 / -1;
       justify-self: center;
-      align-self: end;
+      align-self: center;
+
+      button {
+        transform: rotate(-90deg);
+        // writing-mode: vertical-rl;
+        text-orientation: mixed;
+        padding: 1.8em 0.8em;
+      }
     }
   }
 `
 const HeroTitle = styled("div")`
-  padding: 0.6em 6em 0.9em 2em;
+  padding: 10em 1em 0.9em 2em;
+  max-width: 640px;
   background: ${colors.grey900};
-  border-radius: 7.5px;
-  box-shadow: 6px 6px ${colors.blue600};
+  border-radius: 3px;
+  border-bottom: 1em solid ${colors.orange500};
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1em 0.6em 2em 1em;
+    padding: 8em 0.6em 2em 1em;
   }
 
   h1 {
@@ -83,17 +93,59 @@ const HeroTitle = styled("div")`
 const HeroImage = styled("img")`
   width: 100%;
   height: auto;
-  margin-top: 2em;
-  border-radius: 7.5px;
-  box-shadow: 6px 6px ${colors.green500};
-  // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  border-radius: 2em;
+  border: 2em solid white;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
+
+  // padding-right: .5em;
 `
 
+const HeroZigZag = styled("div")`
+  max-width: 640px;
+
+  .zigzag {
+    height: 5em;
+    background: linear-gradient(45deg, transparent 50%, ${colors.grey200} 50%),
+      linear-gradient(90deg, transparent 50%, ${colors.purple500} 50%),
+      linear-gradient(135deg, ${colors.grey200} 50%, ${colors.blue600} 50%),
+      0 50%;
+    background-repeat: repeat-x;
+    background-size: 5em 5em, 5em 5em;
+  }
+
+  .zigzag2 {
+    height: 5em;
+    background: linear-gradient(-45deg, transparent 74%, ${colors.blue600} 75%),
+      linear-gradient(45deg, transparent 74%, ${colors.purple500} 75%) 0 50%;
+    background-repeat: repeat-x;
+    background-size: 5em 5em, 5em 5em;
+  }
+`
+// #cbab00
+
 const SectionWork = styled("div")`
+  padding-top: 6em;
+
   max-width: ${dimensions.maxwidthTablet}px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ee65de),
+    to(#26cbff)
+  );
+  background-image: linear-gradient(
+    to right,
+    ${colors.purple500},
+    ${colors.orange500}
+  );
+  background-size: 100% 2px;
+  background-position: center top;
 
   &:last-of-type {
     margin-bottom: 0;
@@ -216,6 +268,10 @@ const RenderBody = ({ home, projects, meta }) => (
       >
         <Button>{RichText.render(home.hero_button_text)}</Button>
       </a>
+      <HeroZigZag>
+        <div className="zigzag"></div>
+        <div className="zigzag2"></div>
+      </HeroZigZag>
     </Hero>
     <SectionWork>
       {projects.map((project, i) => (

@@ -7,13 +7,15 @@ import colors from "styles/colors"
 import PropTypes from "prop-types"
 
 const ProjectCardContainer = styled(Link)`
+  margin-bottom: 4em;
   display: grid;
   grid-template-columns: 4fr 7fr;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-  margin-bottom: 4em;
-  transition: all 150ms ease-in-out;
-  text-decoration: none;
   color: currentColor;
+  text-decoration: none;
+  border: 1px solid ${colors.grey400};
+  border-radius: 3px;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  transition: all 150ms ease-in-out;
 
   @media (max-width: 950px) {
     grid-template-columns: 4.5fr 7fr;

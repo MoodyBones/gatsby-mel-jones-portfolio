@@ -5,7 +5,7 @@ import dimensions from "styles/dimensions"
 const typeStyles = css`
   h1 {
     font-family: "IBM Plex Mono", monospace;
-    font-size: 2em;
+    font-size: 1.9em;
     font-weight: 400;
     letter-spacing: -2px;
 

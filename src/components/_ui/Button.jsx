@@ -5,7 +5,7 @@ import dimensions from "styles/dimensions"
 
 const ButtonContainer = styled("button")`
   padding: 0.8em 1.8em;
-  background: ${colors.orange500};
+  background: ${colors.blue600};
   font-family: inherit;
   font-weight: 900;
   text-transform: uppercase;
