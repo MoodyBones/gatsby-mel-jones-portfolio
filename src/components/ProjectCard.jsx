@@ -12,7 +12,7 @@ const ProjectCardContainer = styled(Link)`
   grid-template-columns: 4fr 7fr;
   color: currentColor;
   text-decoration: none;
-  border: 1px solid ${colors.grey400};
+  // border: 1px solid ${colors.grey400};
   border-radius: 3px;
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   transition: all 150ms ease-in-out;
@@ -68,7 +68,7 @@ const ProjectCardContent = styled("div")`
     height: 100%;
     left: 0;
     top: 0;
-    background: ${colors.grey500};
+    background: ${colors.blue500};
     mix-blend-mode: multiply;
     opacity: 0;
     transition: all 150ms ease-in-out;
@@ -117,7 +117,7 @@ const ProjectCardAction = styled("div")`
 `
 
 const ProjectCardImageContainer = styled("div")`
-  background: ${colors.grey300};
+  background: ${colors.orange200};
   display: flex;
   justify-content: center;
   align-items: flex-end;

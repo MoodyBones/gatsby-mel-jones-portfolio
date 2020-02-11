@@ -122,7 +122,10 @@ const HeroZigZag = styled("div")`
     background-size: 5em 5em, 5em 5em;
   }
 `
-// #cbab00
+const WorkTitleContainer = styled("div")`
+  text-align: center;
+  margin-bottom: 6em;
+`
 
 const SectionWork = styled("div")`
   padding-top: 6em;
@@ -275,6 +278,10 @@ const RenderBody = ({ home, projects, meta }) => (
       </HeroZigZag>
     </Hero>
     <SectionWork>
+      <WorkTitleContainer>
+        <h2>Featured Projects</h2>
+        <p>CSS • JavaScript • HTML</p>
+      </WorkTitleContainer>
       {projects.map((project, i) => (
         <ProjectCard
           key={i}

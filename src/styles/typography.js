@@ -20,7 +20,9 @@ const typeStyles = css`
 
   h2 {
     margin-bottom: 2rem;
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: 600;
+    letter-spacing: -2px;
   }
 
   h3 {
