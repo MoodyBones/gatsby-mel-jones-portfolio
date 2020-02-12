@@ -2,11 +2,59 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import Moment from "react-moment"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
+import dimensions from "styles/dimensions"
+import Button from "components/_ui/Button"
 import Layout from "components/Layout"
+
+const PostTitleContainer = styled("div")`
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  max-width: 550px;
+  text-align: center;
+
+  // @media (max-width: ${dimensions.maxwidthMobile}px);
+  //  {
+  //   width: 100%;
+  // }
+`
+
+const PostTitle = styled("div")`
+  max-width: 550px;
+
+  h2 {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+`
+
+const PostCategory = styled("div")`
+  color: ${colors.grey700};
+
+  h5 {
+    margin-top: 0;
+    margin-bottom: 3em;
+  }
+`
+
+const PostMetas = styled("div")`
+  margin-top: 3em;
+  margin-bottom: 3em;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  font-size: 0.85em;
+  color: ${colors.grey800};
+`
+
+const PostAuthor = styled("div")``
+
+const PostDate = styled("div")``
 
 const PostHeroContainer = styled("div")`
   max-height: 500px;
@@ -36,29 +84,6 @@ const PostHeroAnnotation = styled("div")`
   }
 `
 
-const PostCategory = styled("div")`
-  max-width: 550px;
-  margin: 0 auto;
-  text-align: center;
-  font-weight: 600;
-  color: ${colors.grey600};
-
-  h5 {
-    margin-top: 0;
-    margin-bottom: 1em;
-  }
-`
-
-const PostTitle = styled("div")`
-  max-width: 550px;
-  margin: 0 auto;
-  text-align: center;
-
-  h2 {
-    margin-top: 0;
-  }
-`
-
 const PostBody = styled("div")`
   max-width: 550px;
   margin: 0 auto;
@@ -73,23 +98,10 @@ const PostBody = styled("div")`
   }
 `
 
-const PostMetas = styled("div")`
-  max-width: 550px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  margin-bottom: 2em;
-  justify-content: space-between;
-  font-size: 0.85em;
-  color: ${colors.grey600};
-`
-
-const PostAuthor = styled("div")`
-  margin: 0;
-`
-
-const PostDate = styled("div")`
-  margin: 0;
+const BlogLink = styled(Link)`
+  margin-top: 3em;
+  display: block;
+  text-align: center;
 `
 
 const Post = ({ post, meta }) => {
@@ -134,14 +146,16 @@ const Post = ({ post, meta }) => {
         ].concat(meta)}
       />
       <Layout>
-        <PostCategory>{RichText.render(post.post_category)}</PostCategory>
-        <PostTitle>{RichText.render(post.post_title)}</PostTitle>
-        <PostMetas>
-          <PostAuthor>{post.post_author}</PostAuthor>
-          <PostDate>
-            <Moment format="MMMM D, YYYY">{post.post_date}</Moment>
-          </PostDate>
-        </PostMetas>
+        <PostTitleContainer>
+          <PostTitle>{RichText.render(post.post_title)}</PostTitle>
+          <PostCategory>{RichText.render(post.post_category)}</PostCategory>
+          <PostMetas>
+            <PostAuthor>{post.post_author}</PostAuthor>
+            <PostDate>
+              <Moment format="MMMM D, YYYY">{post.post_date}</Moment>
+            </PostDate>
+          </PostMetas>
+        </PostTitleContainer>
         {post.post_hero_image && (
           <PostHeroContainer>
             <img src={post.post_hero_image.url} alt="bees" />
@@ -150,7 +164,12 @@ const Post = ({ post, meta }) => {
             </PostHeroAnnotation>
           </PostHeroContainer>
         )}
-        <PostBody>{RichText.render(post.post_body)}</PostBody>
+        <PostBody>
+          {RichText.render(post.post_body)}
+          <BlogLink to={"/blog"}>
+            <Button className="Button--secondary">Back to Blog</Button>
+          </BlogLink>
+        </PostBody>
       </Layout>
     </>
   )
