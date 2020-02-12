@@ -3,12 +3,22 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
+import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
 import PostCard from "components/PostCard"
 
-const BlogTitle = styled("h2")`
-  margin-bottom: 1em;
+const BlogTitle = styled("div")`
+  margin-bottom: 4em;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    color: ${colors.grey800};
+  }
 `
 
 const BlogGrid = styled("div")`
@@ -68,7 +78,10 @@ const Blog = ({ posts, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <BlogTitle>Blog</BlogTitle>
+      <BlogTitle>
+        <h2>Blog</h2>
+        <p>CSS • JavaScript • HTML</p>
+      </BlogTitle>
       <BlogGrid>
         {posts.map((post, i) => (
           <PostCard

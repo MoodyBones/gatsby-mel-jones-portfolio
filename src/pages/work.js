@@ -3,11 +3,21 @@ import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
+import colors from "styles/colors"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
-const WorkTitle = styled("h2")`
-  margin-bottom: 1em;
+const WorkTitle = styled("div")`
+  margin-bottom: 4em;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  p {
+    color: ${colors.grey800};
+  }
 `
 
 const Work = ({ projects, meta }) => (
@@ -51,7 +61,10 @@ const Work = ({ projects, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <WorkTitle>Work</WorkTitle>
+      <WorkTitle>
+        <h2>Work</h2>
+        <p>CSS • JavaScript • HTML</p>
+      </WorkTitle>
       <>
         {projects.map((project, i) => (
           <ProjectCard
