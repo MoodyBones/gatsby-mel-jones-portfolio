@@ -9,7 +9,6 @@ import Button from "components/_ui/Button"
 import Layout from "components/Layout"
 
 const ProjectHeroContainer = styled("div")`
-  background: ${colors.grey200};
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -20,6 +19,8 @@ const ProjectHeroContainer = styled("div")`
 
   img {
     max-width: 600px;
+    border-radius: 3px;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   }
 `
 
@@ -29,13 +30,31 @@ const ProjectTitle = styled("div")`
   text-align: center;
 
   h2 {
-    margin-top: 0;
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    background-repeat: no-repeat;
+    background-image: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#ee65de),
+      to(#26cbff)
+    );
+    background-image: linear-gradient(
+      to right,
+      ${colors.purple500},
+      ${colors.orange500}
+    );
+    background-size: 30px 2px;
+    background-position: center bottom;
   }
 `
 
 const ProjectBody = styled("div")`
   max-width: 550px;
   margin: 0 auto;
+  padding-top: 1em;
 
   .block-img {
     margin-top: 3.5em;

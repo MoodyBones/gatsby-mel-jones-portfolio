@@ -12,10 +12,12 @@ const WorkTitle = styled("div")`
   text-align: center;
 
   h2 {
-    margin-bottom: 0;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
   }
 
   p {
+    margin: 0;
     color: ${colors.grey800};
   }
 `
