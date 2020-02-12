@@ -27,8 +27,8 @@ const typeStyles = css`
 
   h3 {
     line-height: 1.2;
-    font-size: 1.5em;
-    font-weight: 900;
+    font-size: 2em;
+    font-weight: 600;
   }
 
   h4 {
@@ -37,10 +37,12 @@ const typeStyles = css`
     font-weight: 400;
     letter-spacing: -2px;
     background: ${colors.grey900};
-    color: ${colors.grey200};
+    color: ${colors.blue300};
     padding-left: 1em;
-    border-radius: 7.5px;
-    box-shadow: 6px 6px ${colors.green500};
+    border-radius: 3px;
+    border-bottom: .5em solid ${colors.orange500}; 
+    // box-shadow: 6px 6px ${colors.orange500};
+
   }
 
   h5 {
