@@ -23,6 +23,7 @@ const typeStyles = css`
     font-size: 3em;
     font-weight: 600;
     letter-spacing: -2px;
+    text-align: center;
   }
 
   h3 {

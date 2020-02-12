@@ -280,7 +280,7 @@ const RenderBody = ({ home, projects, meta }) => (
     </Hero>
     <SectionWork>
       <WorkTitleContainer>
-        <h2>Featured Projects</h2>
+        <h2>Featured Work</h2>
         <p>CSS • JavaScript • HTML</p>
       </WorkTitleContainer>
       {projects.map((project, i) => (
