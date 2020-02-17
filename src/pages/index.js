@@ -1,19 +1,19 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { RichText } from "prismic-reactjs"
 import { graphql, Link } from "gatsby"
+import { RichText } from "prismic-reactjs"
+import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import Button from "components/_ui/Button"
 import About from "components/About"
+import Button from "components/_ui/Button"
 import Form from "components/ContactForm"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 import ImageHero from "images/hero-mel-jones.png"
 
-const Hero = styled("div")`
+const HeroSection = styled("section")`
   padding-bottom: 6em;
   margin: 1em 0 6em 0;
   display: grid;
@@ -97,7 +97,7 @@ const HeroImage = styled("img")`
   width: 100%;
   height: auto;
   border-radius: 15px 30px 45px 7.5px;
-  border: 2em solid ${colors.grey100};
+  border: 2em solid white;
 
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 `
@@ -123,12 +123,8 @@ const HeroZigZag = styled("div")`
     background-size: 5em 5em, 5em 5em;
   }
 `
-const WorkTitleContainer = styled("div")`
-  text-align: center;
-  margin-bottom: 6em;
-`
 
-const SectionWork = styled("div")`
+const WorkSection = styled("section")`
   padding-top: 6em;
 
   max-width: ${dimensions.maxwidthTablet}px;
@@ -155,6 +151,10 @@ const SectionWork = styled("div")`
   &:last-of-type {
     margin-bottom: 0;
   }
+`
+const WorkTitleContainer = styled("div")`
+  text-align: center;
+  margin-bottom: 6em;
 `
 
 const WorkAction = styled(Link)`
@@ -188,7 +188,7 @@ const WorkAction = styled(Link)`
   }
 `
 
-const SectionAbout = styled("div")`
+const AboutSection = styled("section")`
   // padding-top: 10em;
   margin-bottom: 10em;
   display: grid;
@@ -263,7 +263,7 @@ const RenderBody = ({ home, projects, meta }) => (
         },
       ].concat(meta)}
     />
-    <Hero>
+    <HeroSection>
       <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
       <HeroImage src={ImageHero} width="500" height="750" />
       <a
@@ -277,8 +277,8 @@ const RenderBody = ({ home, projects, meta }) => (
         <div className="zigzag"></div>
         <div className="zigzag2"></div>
       </HeroZigZag>
-    </Hero>
-    <SectionWork>
+    </HeroSection>
+    <WorkSection>
       <WorkTitleContainer>
         <h2>Featured Work</h2>
         <p>CSS • JavaScript • HTML</p>
@@ -296,8 +296,8 @@ const RenderBody = ({ home, projects, meta }) => (
       <WorkAction to={"/work"}>
         See more work <span>&#8594;</span>
       </WorkAction>
-    </SectionWork>
-    <SectionAbout>
+    </WorkSection>
+    <AboutSection>
       <AboutTitleContainer>
         {RichText.render(home.about_title)}
       </AboutTitleContainer>
@@ -307,7 +307,7 @@ const RenderBody = ({ home, projects, meta }) => (
       <AboutFormContainer>
         <Form />
       </AboutFormContainer>
-    </SectionAbout>
+    </AboutSection>
   </>
 )
 
