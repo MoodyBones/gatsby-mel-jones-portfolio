@@ -40,7 +40,7 @@ const AboutActions = styled("div")`
 const About = ({ bio, socialLinks }) => (
   <AboutContainer>
     <AboutBio>{RichText.render(bio)}</AboutBio>
-    <AboutActions>
+    {/* <AboutActions>
       <a
         href="mailto:jones.mel@gmail.com"
         target="_blank"
@@ -48,7 +48,7 @@ const About = ({ bio, socialLinks }) => (
       >
         <Button className="Button--secondary">Email me</Button>
       </a>
-    </AboutActions>
+    </AboutActions> */}
   </AboutContainer>
 )
 

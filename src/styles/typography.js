@@ -35,15 +35,15 @@ const typeStyles = css`
   }
 
   h4 {
-    font-family: "IBM Plex Mono", monospace;
+    // font-family: "IBM Plex Mono", monospace;
     font-size: 2.2em;
     font-weight: 400;
     letter-spacing: -2px;
-    background: ${colors.grey900};
-    color: ${colors.blue300};
-    padding-left: 1em;
-    border-radius: 3px;
-    border-bottom: .5em solid ${colors.orange500}; 
+    // background: ${colors.grey900};
+    // color: ${colors.blue300};
+    // padding-left: 1em;
+    // border-radius: 3px;
+    // border-bottom: .5em solid ${colors.orange500}; 
     // box-shadow: 6px 6px ${colors.orange500};
 
   }

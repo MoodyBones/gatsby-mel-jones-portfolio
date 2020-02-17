@@ -8,7 +8,7 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import About from "components/About"
 import Button from "components/_ui/Button"
-import Form from "components/ContactForm"
+import Form from "components/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 import ImageHero from "images/hero-mel-jones.png"
@@ -84,12 +84,12 @@ const HeroTitle = styled("div")`
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 8em 0.6em 2em 1em;
+    padding: 8em 0.8em 1em 1.2em;
   }
 
   h1 {
     margin-bottom: 1em;
-    color: ${colors.blue300};
+    color: ${colors.grey300};
   }
 `
 
@@ -193,7 +193,7 @@ const AboutSection = styled("section")`
   margin-bottom: 10em;
   display: grid;
   grid-template-columns: 2fr 2fr 2fr;
-  grid-template-rows: 500px auto;
+  grid-template-rows: auto auto;
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-template-rows: 300px auto;
   }
@@ -214,8 +214,9 @@ const AboutTitleContainer = styled("div")`
 `
 
 const AboutFormContainer = styled("div")`
-  grid-column: 2 / -1;
-  grid-row: 1 / -1;
+  grid-column: 3 / -1;
+  grid-row: 2 / -1;
+  align-self: end;
 `
 
 const AboutTextContainer = styled("div")`
