@@ -16,7 +16,7 @@ const ContactFormContainer = styled("div")`
   h3 {
     position: absolute;
     justify-self: center;
-    background: ${colors.grey200};
+    background: ${colors.grey100};
     top: -55px;
   }
 
@@ -30,7 +30,7 @@ const ContactFormContainer = styled("div")`
     margin-top: 0.5em;
     margin-bottom: 0.75em;
     padding: 0.75em;
-    min-width: 250px;
+    width: 100%;
     color: ${colors.blue600};
     font-family: inherit;
     font-size: 1.4em;
@@ -40,6 +40,11 @@ const ContactFormContainer = styled("div")`
       border: 2px solid ${colors.blue600};
 
     border-radius: 3px;
+
+    &:focus {
+      outline: 1px solid #fff;
+      outline-offset: -4px;
+    }
   }
 
   textarea {
@@ -75,7 +80,7 @@ const ContactForm = () => (
       </label>
       <div className="ButtonFormContainer">
         <Button
-          className="Button--form"
+          className="Button--secondary"
           type="submit"
           name="Contact Mel"
           value="Contact Mel"
