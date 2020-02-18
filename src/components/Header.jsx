@@ -5,7 +5,7 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
-const HeaderContainer = styled("div")`
+const HeaderContainer = styled("header")`
   padding-top: 3.75em;
   padding-bottom: 3em;
   border-bottom: 2px solid ${colors.grey300};
@@ -16,8 +16,16 @@ const HeaderContainer = styled("div")`
 `
 
 const HeaderContent = styled("div")`
+  grid-column: 2 / -2;
+
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    svg {
+      height: 100px;
+    }
+  }
 `
 
 const HeaderLinks = styled("div")`
@@ -82,7 +90,7 @@ const HeaderLinks = styled("div")`
 `
 
 const Header = () => (
-  <HeaderContainer>
+  <HeaderContainer className="main-grid">
     <HeaderContent>
       <Link to="/">
         <Logo />

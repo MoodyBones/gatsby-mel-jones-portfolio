@@ -7,6 +7,12 @@ import colors from "styles/colors"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
+const WorkWrapper = styled("section")``
+
+const WorkContainer = styled("div")`
+  grid-column: 2 / -2;
+`
+
 const WorkTitle = styled("div")`
   margin-bottom: 4em;
   text-align: center;
@@ -63,22 +69,26 @@ const Work = ({ projects, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <WorkTitle>
-        <h2>Work</h2>
-        <p>CSS • JavaScript • HTML</p>
-      </WorkTitle>
-      <>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={i}
-            category={project.node.project_category}
-            title={project.node.project_title}
-            description={project.node.project_preview_description}
-            thumbnail={project.node.project_preview_thumbnail}
-            uid={project.node._meta.uid}
-          />
-        ))}
-      </>
+      <WorkWrapper className="main-grid">
+        <WorkContainer>
+          <WorkTitle>
+            <h2>Work</h2>
+            <p>CSS • JavaScript • HTML</p>
+          </WorkTitle>
+          <>
+            {projects.map((project, i) => (
+              <ProjectCard
+                key={i}
+                category={project.node.project_category}
+                title={project.node.project_title}
+                description={project.node.project_preview_description}
+                thumbnail={project.node.project_preview_thumbnail}
+                uid={project.node._meta.uid}
+              />
+            ))}
+          </>
+        </WorkContainer>
+      </WorkWrapper>
     </Layout>
   </>
 )

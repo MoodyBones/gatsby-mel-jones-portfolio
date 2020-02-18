@@ -8,6 +8,12 @@ import { RichText } from "prismic-reactjs"
 import Button from "components/_ui/Button"
 import Layout from "components/Layout"
 
+const ProjectWrapper = styled("section")``
+
+const ProjectContainer = styled("div")`
+  grid-column: 2 / -2;
+`
+
 const ProjectHeroContainer = styled("div")`
   display: flex;
   justify-content: center;
@@ -114,18 +120,24 @@ const Project = ({ project, meta }) => {
         ].concat(meta)}
       />
       <Layout>
-        <ProjectTitle>{RichText.render(project.project_title)}</ProjectTitle>
-        {project.project_hero_image && (
-          <ProjectHeroContainer>
-            <img src={project.project_hero_image.url} alt="bees" />
-          </ProjectHeroContainer>
-        )}
-        <ProjectBody>
-          {RichText.render(project.project_description)}
-          <WorkLink to={"/work"}>
-            <Button className="Button--secondary">See other work</Button>
-          </WorkLink>
-        </ProjectBody>
+        <ProjectWrapper className="main-grid">
+          <ProjectContainer>
+            <ProjectTitle>
+              {RichText.render(project.project_title)}
+            </ProjectTitle>
+            {project.project_hero_image && (
+              <ProjectHeroContainer>
+                <img src={project.project_hero_image.url} alt="bees" />
+              </ProjectHeroContainer>
+            )}
+            <ProjectBody>
+              {RichText.render(project.project_description)}
+              <WorkLink to={"/work"}>
+                <Button className="Button--secondary">See other work</Button>
+              </WorkLink>
+            </ProjectBody>
+          </ProjectContainer>
+        </ProjectWrapper>
       </Layout>
     </>
   )

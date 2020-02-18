@@ -7,7 +7,7 @@ import Logo from "components/_ui/Logo"
 import Icon from "images/hero-mel-jones.png"
 import SocialIcons from "components/SocialIcons"
 
-const FooterContainer = styled("div")`
+const FooterContainer = styled("footer")`
   padding-top: 3em;
   padding-bottom: 3em;
   background-repeat: no-repeat;
@@ -32,9 +32,19 @@ const FooterContainer = styled("div")`
 `
 
 const FooterWrapper = styled("div")`
+  grid-column: 2 / -2;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .LinkLogo {
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      svg {
+        height: 100px;
+      }
+    }
+  }
 `
 
 const FooterAuthor = styled("a")`
@@ -75,19 +85,19 @@ const FooterIcon = styled("img")`
 `
 
 const Footer = () => (
-  <FooterContainer>
+  <FooterContainer className="main-grid">
     <FooterWrapper>
       <SocialIcons />
-      <Link to="/">
+      <Link className="LinkLogo" to="/">
         <Logo />
       </Link>
+      <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
+        Love saves the day!
+        <span className="FooterIcon">💝</span>
+        <FooterIcon className="FooterIcon" src={Icon} />
+        ©️ 2020 Mel Jones | Gatsby Starter by Marguerite Roth
+      </FooterAuthor>
     </FooterWrapper>
-    <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
-      Love saves the day!
-      <span className="FooterIcon">💝</span>
-      <FooterIcon className="FooterIcon" src={Icon} />
-      ©️ 2020 Mel Jones | Gatsby Starter by Marguerite Roth
-    </FooterAuthor>
   </FooterContainer>
 )
 

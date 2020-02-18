@@ -8,7 +8,6 @@ const ContactFormContainer = styled("div")`
   padding: 3em;
   position: relative;
   display: grid;
-  max-width: 400px;
   color: ${colors.blue600};
   border: 2px solid ${colors.blue600};
   border-radius: 3px;
@@ -31,6 +30,7 @@ const ContactFormContainer = styled("div")`
     margin-top: 0.5em;
     margin-bottom: 0.75em;
     padding: 0.75em;
+    min-width: 250px;
     color: ${colors.blue600};
     font-family: inherit;
     font-size: 1.4em;
@@ -46,12 +46,10 @@ const ContactFormContainer = styled("div")`
     resize: none;
   }
 
-  form {
-    display: grid;
-
-    button {
-     justify-self: end;
-    }
+  .ButtonFormContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 
@@ -75,14 +73,16 @@ const ContactForm = () => (
         Message
         <textarea id="message" name="message" rows="4" />
       </label>
-      <Button
-        className="Button--form"
-        type="submit"
-        name="Contact Mel"
-        value="Contact Mel"
-      >
-        Contact Mel
-      </Button>
+      <div className="ButtonFormContainer">
+        <Button
+          className="Button--form"
+          type="submit"
+          name="Contact Mel"
+          value="Contact Mel"
+        >
+          Contact Mel
+        </Button>
+      </div>
     </form>
   </ContactFormContainer>
 )

@@ -12,8 +12,13 @@ import Form from "components/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 import ImageHero from "images/hero-mel-jones.png"
+import ImageAbout from "images/eva-test-only.png"
+
+const LayoutGridWrapper = styled("div")``
 
 const HeroSection = styled("section")`
+  grid-column: 2 / -2;
+
   padding-bottom: 6em;
   margin: 1em 0 6em 0;
   display: grid;
@@ -125,6 +130,8 @@ const HeroZigZag = styled("div")`
 `
 
 const WorkSection = styled("section")`
+  grid-column: 2 / -2;
+
   padding-top: 6em;
 
   max-width: ${dimensions.maxwidthTablet}px;
@@ -165,6 +172,26 @@ const WorkAction = styled(Link)`
   margin-left: auto;
   padding-bottom: 4em;
 
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ee65de),
+    to(#26cbff)
+  );
+  background-image: linear-gradient(
+    to right,
+    ${colors.purple500},
+    ${colors.orange500}
+  );
+  background-size: 100% 2px;
+  background-position: center bottom;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin: 0 auto;
   }
@@ -189,39 +216,82 @@ const WorkAction = styled(Link)`
 `
 
 const AboutSection = styled("section")`
-  // padding-top: 10em;
+  grid-column: 2 / -2;
+
+  padding-top: 10em;
   margin-bottom: 10em;
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
+  grid-gap: 2em;
+  grid-template-columns: 2fr 2fr 300px;
   grid-template-rows: auto auto;
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-template-rows: 300px auto;
+    grid-template-rows: auto auto auto auto;
   }
 `
 
 const AboutTitleContainer = styled("div")`
   grid-column: 1 / -1;
   grid-row: 1 / 2;
-  align-self: end;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / -1;
+    grid-row: 1 / 2;
     h4 {
       margin-bottom: 0.5em;
       font-size: 2.2em;
     }
   }
 `
+const AboutTextContainer = styled("div")`
+  grid-column: 1 / 3;
+  grid-row: 2 / -1;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 3 / 4;
+  }
+`
+
+const AboutImageContainer = styled("div")`
+  grid-column: 3 / -1;
+  grid-row: 1 / 2;
+
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ee65de),
+    to(#26cbff)
+  );
+  background-image: linear-gradient(
+    to right,
+    ${colors.purple500},
+    ${colors.orange500}
+  );
+  background-size: 100% 2px;
+  background-position: center top;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
+  }
+`
+
+const AboutImage = styled("img")`
+  margin-top: 3em;
+  width: 100%;
+  height: auto;
+`
 
 const AboutFormContainer = styled("div")`
   grid-column: 3 / -1;
   grid-row: 2 / -1;
   align-self: end;
-`
 
-const AboutTextContainer = styled("div")`
-  grid-column: 1 / -1;
-  grid-row: 2 / -1;
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 4 / -1;
+  }
 `
 
 const RenderBody = ({ home, projects, meta }) => (
@@ -264,51 +334,56 @@ const RenderBody = ({ home, projects, meta }) => (
         },
       ].concat(meta)}
     />
-    <HeroSection>
-      <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
-      <HeroImage src={ImageHero} width="500" height="750" />
-      <a
-        href={home.hero_button_link.url}
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button>{RichText.render(home.hero_button_text)}</Button>
-      </a>
-      <HeroZigZag>
-        <div className="zigzag"></div>
-        <div className="zigzag2"></div>
-      </HeroZigZag>
-    </HeroSection>
-    <WorkSection>
-      <WorkTitleContainer>
-        <h2>Featured Work</h2>
-        <p>CSS • JavaScript • HTML</p>
-      </WorkTitleContainer>
-      {projects.map((project, i) => (
-        <ProjectCard
-          key={i}
-          category={project.node.project_category}
-          title={project.node.project_title}
-          description={project.node.project_preview_description}
-          thumbnail={project.node.project_preview_thumbnail}
-          uid={project.node._meta.uid}
-        />
-      ))}
-      <WorkAction to={"/work"}>
-        See more work <span>&#8594;</span>
-      </WorkAction>
-    </WorkSection>
-    <AboutSection>
-      <AboutTitleContainer>
-        {RichText.render(home.about_title)}
-      </AboutTitleContainer>
-      <AboutTextContainer>
-        <About bio={home.about_bio} socialLinks={home.about_links} />
-      </AboutTextContainer>
-      <AboutFormContainer>
-        <Form />
-      </AboutFormContainer>
-    </AboutSection>
+    <LayoutGridWrapper className="main-grid">
+      <HeroSection>
+        <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
+        <HeroImage src={ImageHero} width="500" height="750" />
+        <a
+          href={home.hero_button_link.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button>{RichText.render(home.hero_button_text)}</Button>
+        </a>
+        <HeroZigZag>
+          <div className="zigzag"></div>
+          <div className="zigzag2"></div>
+        </HeroZigZag>
+      </HeroSection>
+      <WorkSection>
+        <WorkTitleContainer>
+          <h2>Featured Work</h2>
+          <p>CSS • JavaScript • HTML</p>
+        </WorkTitleContainer>
+        {projects.map((project, i) => (
+          <ProjectCard
+            key={i}
+            category={project.node.project_category}
+            title={project.node.project_title}
+            description={project.node.project_preview_description}
+            thumbnail={project.node.project_preview_thumbnail}
+            uid={project.node._meta.uid}
+          />
+        ))}
+        <WorkAction to={"/work"}>
+          See more work <span>&#8594;</span>
+        </WorkAction>
+      </WorkSection>
+      <AboutSection>
+        <AboutTitleContainer>
+          {RichText.render(home.about_title)}
+        </AboutTitleContainer>
+        <AboutTextContainer>
+          <About bio={home.about_bio} socialLinks={home.about_links} />
+        </AboutTextContainer>
+        <AboutImageContainer>
+          <AboutImage src={ImageAbout} width="598" height="599" />
+        </AboutImageContainer>
+        <AboutFormContainer>
+          <Form />
+        </AboutFormContainer>
+      </AboutSection>
+    </LayoutGridWrapper>
   </>
 )
 

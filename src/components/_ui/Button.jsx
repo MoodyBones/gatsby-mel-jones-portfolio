@@ -73,6 +73,8 @@ const ButtonContainer = styled("button")`
     position: relative;
     background: ${colors.blue600};
     color: ${colors.grey200};
+    border: none;
+    border-radius: 3px;
 
     padding: 0.8em 1.8em;
     font-size: 1rem;
@@ -88,7 +90,6 @@ const ButtonContainer = styled("button")`
       top: -2px;
       width: 100%;
       height: 100%;
-      border: 2px solid ${colors.grey200};
       border-radius: 3px;
       background: linear-gradient(
         135deg,
@@ -104,7 +105,6 @@ const ButtonContainer = styled("button")`
       background: transparent;
       transition: background 150ms ease-in-out;
       color: ${colors.grey100};
-      border: 2px solid ${colors.grey200};
       border-radius: 3px;
 
       &:before {
