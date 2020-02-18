@@ -7,7 +7,9 @@ import colors from "styles/colors"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
-const WorkWrapper = styled("section")``
+const WorkWrapper = styled("section")`
+  padding-bottom: 10em;
+`
 
 const WorkContainer = styled("div")`
   grid-column: 2 / -2;

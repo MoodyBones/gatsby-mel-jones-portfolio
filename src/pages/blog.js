@@ -8,7 +8,9 @@ import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
 import PostCard from "components/PostCard"
 
-const BlogWrapper = styled("section")``
+const BlogWrapper = styled("section")`
+  padding-bottom: 10em;
+`
 
 const BlogContainer = styled("div")`
   grid-column: 2 / -2;

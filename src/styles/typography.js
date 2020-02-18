@@ -4,10 +4,11 @@ import dimensions from "styles/dimensions"
 
 const typeStyles = css`
   h1 {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 1.9em;
+    // font-family: "IBM Plex Mono", monospace;
+    font-family: Inconsolata, monospace;
+    font-size: 1.7em;
     font-weight: 400;
-    letter-spacing: -2px;
+    letter-spacing: -0.5px;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 1.75em;
@@ -23,7 +24,6 @@ const typeStyles = css`
     font-weight: 600;
     letter-spacing: -3px;
     line-height: 1.2;
-
   }
 
   h3 {
@@ -31,7 +31,6 @@ const typeStyles = css`
     font-size: 2em;
     font-weight: 600;
     letter-spacing: -1px;
-
   }
 
   h4 {
@@ -39,13 +38,6 @@ const typeStyles = css`
     font-size: 2.2em;
     font-weight: 400;
     letter-spacing: -2px;
-    // background: ${colors.grey900};
-    // color: ${colors.blue300};
-    // padding-left: 1em;
-    // border-radius: 3px;
-    // border-bottom: .5em solid ${colors.orange500}; 
-    // box-shadow: 6px 6px ${colors.orange500};
-
   }
 
   h5 {

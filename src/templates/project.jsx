@@ -54,7 +54,7 @@ const ProjectTitle = styled("div")`
       ${colors.purple500},
       ${colors.orange500}
     );
-    background-size: 6s0px 2px;
+    background-size: 100px 2px;
     background-position: center bottom;
   }
 `

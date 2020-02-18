@@ -23,10 +23,6 @@ const FooterContainer = styled("footer")`
   );
   background-size: 100% 2px;
   background-position: center top;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding-top: 2em;
-  }
 `
 
 const FooterBg = styled("div")`
