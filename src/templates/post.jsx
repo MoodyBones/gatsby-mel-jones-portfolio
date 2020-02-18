@@ -10,6 +10,14 @@ import dimensions from "styles/dimensions"
 import Button from "components/_ui/Button"
 import Layout from "components/Layout"
 
+const PostWrapper = styled("section")`
+  padding-bottom: 10em;
+`
+
+const PostContainer = styled("div")`
+  grid-column: 2 / -2;
+`
+
 const PostTitleContainer = styled("div")`
   margin: 0 auto;
   display: flex;
@@ -146,30 +154,34 @@ const Post = ({ post, meta }) => {
         ].concat(meta)}
       />
       <Layout>
-        <PostTitleContainer>
-          <PostTitle>{RichText.render(post.post_title)}</PostTitle>
-          <PostCategory>{RichText.render(post.post_category)}</PostCategory>
-          <PostMetas>
-            <PostAuthor>{post.post_author}</PostAuthor>
-            <PostDate>
-              <Moment format="MMMM D, YYYY">{post.post_date}</Moment>
-            </PostDate>
-          </PostMetas>
-        </PostTitleContainer>
-        {post.post_hero_image && (
-          <PostHeroContainer>
-            <img src={post.post_hero_image.url} alt="bees" />
-            <PostHeroAnnotation>
-              {RichText.render(post.post_hero_annotation)}
-            </PostHeroAnnotation>
-          </PostHeroContainer>
-        )}
-        <PostBody>
-          {RichText.render(post.post_body)}
-          <BlogLink to={"/blog"}>
-            <Button className="Button--secondary">Back to Blog</Button>
-          </BlogLink>
-        </PostBody>
+        <PostWrapper className="main-grid">
+          <PostContainer>
+            <PostTitleContainer>
+              <PostTitle>{RichText.render(post.post_title)}</PostTitle>
+              <PostCategory>{RichText.render(post.post_category)}</PostCategory>
+              <PostMetas>
+                <PostAuthor>{post.post_author}</PostAuthor>
+                <PostDate>
+                  <Moment format="MMMM D, YYYY">{post.post_date}</Moment>
+                </PostDate>
+              </PostMetas>
+            </PostTitleContainer>
+            {post.post_hero_image && (
+              <PostHeroContainer>
+                <img src={post.post_hero_image.url} alt="bees" />
+                <PostHeroAnnotation>
+                  {RichText.render(post.post_hero_annotation)}
+                </PostHeroAnnotation>
+              </PostHeroContainer>
+            )}
+            <PostBody>
+              {RichText.render(post.post_body)}
+              <BlogLink to={"/blog"}>
+                <Button>Back to Blog</Button>
+              </BlogLink>
+            </PostBody>
+          </PostContainer>
+        </PostWrapper>
       </Layout>
     </>
   )

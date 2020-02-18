@@ -8,6 +8,14 @@ import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
 import PostCard from "components/PostCard"
 
+const BlogWrapper = styled("section")`
+  padding-bottom: 10em;
+`
+
+const BlogContainer = styled("div")`
+  grid-column: 2 / -2;
+`
+
 const BlogTitle = styled("div")`
   margin-bottom: 4em;
   text-align: center;
@@ -80,23 +88,27 @@ const Blog = ({ posts, meta }) => (
       ].concat(meta)}
     />
     <Layout>
-      <BlogTitle>
-        <h2>Blog</h2>
-        <p>CSS • JavaScript • HTML</p>
-      </BlogTitle>
-      <BlogGrid>
-        {posts.map((post, i) => (
-          <PostCard
-            key={i}
-            author={post.node.post_author}
-            category={post.node.post_category}
-            title={post.node.post_title}
-            date={post.node.post_date}
-            description={post.node.post_preview_description}
-            uid={post.node._meta.uid}
-          />
-        ))}
-      </BlogGrid>
+      <BlogWrapper className="main-grid">
+        <BlogContainer>
+          <BlogTitle>
+            <h2>Blog</h2>
+            <p>CSS • JavaScript • HTML</p>
+          </BlogTitle>
+          <BlogGrid>
+            {posts.map((post, i) => (
+              <PostCard
+                key={i}
+                author={post.node.post_author}
+                category={post.node.post_category}
+                title={post.node.post_title}
+                date={post.node.post_date}
+                description={post.node.post_preview_description}
+                uid={post.node._meta.uid}
+              />
+            ))}
+          </BlogGrid>
+        </BlogContainer>
+      </BlogWrapper>
     </Layout>
   </>
 )

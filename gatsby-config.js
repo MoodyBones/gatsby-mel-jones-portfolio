@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mel Jones | Portfolio`,
     description: `A portfolio & blog site for Web Developer Mel Jones, powered by Gatsby and Prismic.`,
-    author: `Mel Jones`,
+    author: `@_moodybones`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

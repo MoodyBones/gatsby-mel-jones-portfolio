@@ -3,7 +3,7 @@
   "private": true,
   "description": "A portfolio & blog site for Web Developer Mel Jones, powered by Gatsby and Prismic.",
   "version": "0.1.0",
-  "author": "Mel Jones",
+  "author": "Mel Jones <jones.mel@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.12",

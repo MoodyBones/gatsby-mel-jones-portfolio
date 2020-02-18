@@ -14,7 +14,7 @@ const globalStyles = css`
 
   body {
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     font-size: 16px;
     line-height: 1.6;
     color: ${colors.grey900};
@@ -32,6 +32,25 @@ const globalStyles = css`
         background: ${colors.orange500};
         color: white;
       }
+    }
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: minmax(1em, 1fr) repeat(3, minmax(150px, 320px)) minmax(
+        1em,
+        1fr
+      );
+    grid-column-gap: 2em;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    .main-grid {
+      grid-template-columns: minmax(1em, 1fr) minmax(0px, 500px) minmax(
+          1em,
+          1fr
+        );
+      grid-column-gap: 0;
     }
   }
 

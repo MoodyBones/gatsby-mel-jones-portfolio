@@ -18,7 +18,7 @@ const SocialContainer = styled("div")`
 
   a {
     text-decoration: none;
-    color: ${colors.grey900};
+    color: ${colors.grey600};
 
     svg {
       margin 3em 0 2em;
