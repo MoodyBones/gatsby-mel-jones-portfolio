@@ -34,9 +34,8 @@ const typeStyles = css`
   }
 
   h4 {
-    // font-family: "IBM Plex Mono", monospace;
     font-size: 2.2em;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: -2px;
   }
 

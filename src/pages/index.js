@@ -87,11 +87,11 @@ const HeroTitle = styled("div")`
   }
 
   z-index: -999;
-  padding: 10em 1em 8em 2em;
+  padding: 10em 1em 6em 2em;
   max-width: 640px;
   background: ${colors.grey900};
   border-radius: 3px;
-  border-bottom: 1em solid ${colors.orange200};
+  border-bottom: 1em solid ${colors.orange500};
   // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 
@@ -101,7 +101,7 @@ const HeroTitle = styled("div")`
 
   h1 {
     margin-bottom: 1em;
-    color: ${colors.grey500};
+    color: ${colors.grey400};
   }
 `
 
@@ -221,6 +221,7 @@ const AboutWrapper = styled("div")`
   grid-template-rows: 200px auto 200px;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding-top: 6em;
     grid-column-gap: 0;
     grid-row-gap: 4em;
     grid-template-columns: 1fr;
@@ -238,7 +239,7 @@ const AboutTitleContainer = styled("div")`
 
     h4 {
       margin-bottom: 0.5em;
-      font-size: 2.2em;
+      // font-size: 2.2em;
     }
   }
 
@@ -345,7 +346,7 @@ const RenderBody = ({ home, projects, meta }) => (
         </HeroZigZag>
         <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
         <HeroSocial>
-          <span>SOCIAL LINKS</span>
+          <span>SOCIAL LINKs GO HERE!!!</span>
         </HeroSocial>
         <HeroImage src={ImageHero} width="500" height="750" />
         <a
