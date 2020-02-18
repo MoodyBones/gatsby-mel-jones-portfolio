@@ -8,7 +8,9 @@ import { RichText } from "prismic-reactjs"
 import Button from "components/_ui/Button"
 import Layout from "components/Layout"
 
-const ProjectWrapper = styled("section")``
+const ProjectWrapper = styled("section")`
+  padding-bottom: 10em;
+`
 
 const ProjectContainer = styled("div")`
   grid-column: 2 / -2;
@@ -52,7 +54,7 @@ const ProjectTitle = styled("div")`
       ${colors.purple500},
       ${colors.orange500}
     );
-    background-size: 30px 2px;
+    background-size: 6s0px 2px;
     background-position: center bottom;
   }
 `
@@ -133,7 +135,7 @@ const Project = ({ project, meta }) => {
             <ProjectBody>
               {RichText.render(project.project_description)}
               <WorkLink to={"/work"}>
-                <Button className="Button--secondary">See other work</Button>
+                <Button>See other work</Button>
               </WorkLink>
             </ProjectBody>
           </ProjectContainer>

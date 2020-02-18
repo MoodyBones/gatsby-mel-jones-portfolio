@@ -42,7 +42,6 @@ const globalStyles = css`
         1fr
       );
     grid-column-gap: 2em;
-    padding-bottom: 10em;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {

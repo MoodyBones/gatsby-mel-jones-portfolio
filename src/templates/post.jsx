@@ -10,7 +10,9 @@ import dimensions from "styles/dimensions"
 import Button from "components/_ui/Button"
 import Layout from "components/Layout"
 
-const PostWrapper = styled("section")``
+const PostWrapper = styled("section")`
+  padding-bottom: 10em;
+`
 
 const PostContainer = styled("div")`
   grid-column: 2 / -2;
@@ -175,7 +177,7 @@ const Post = ({ post, meta }) => {
             <PostBody>
               {RichText.render(post.post_body)}
               <BlogLink to={"/blog"}>
-                <Button className="Button--secondary">Back to Blog</Button>
+                <Button>Back to Blog</Button>
               </BlogLink>
             </PostBody>
           </PostContainer>
