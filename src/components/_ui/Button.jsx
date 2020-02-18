@@ -6,6 +6,7 @@ import dimensions from "styles/dimensions"
 const ButtonContainer = styled("button")`
   padding: 0.8em 1.8em;
   position: relative;
+  display: inline-block;
   font-family: inherit;
   font-weight: 600;
   font-size: 1rem;
@@ -15,8 +16,9 @@ const ButtonContainer = styled("button")`
   background: ${colors.grey200};
   border: 2px solid ${colors.blue600};
   border-radius: 3px;
-  transition: background 150ms ease-in-out;
-  // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  transition: background 250ms ease-in-out, transform 150ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     padding: 0.8em 1.8em;
@@ -45,11 +47,12 @@ const ButtonContainer = styled("button")`
     z-index: -1;
   }
 
-  &:hover {
+  &:hover,
+  :focus {
     cursor: pointer;
+    color: white;
     background: transparent;
-    transition: background 150ms ease-in-out;
-    color: ${colors.grey100};
+    // transition: background 150ms ease-in-out;
     border: 2px solid ${colors.grey200};
     border-radius: 3px;
 
@@ -58,58 +61,54 @@ const ButtonContainer = styled("button")`
     }
   }
 
-  &.Button--secondary {
-    padding: 0.8em 1.8em;
-    margin: 0;
-    font-size: 1rem;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      padding: 0.8em 1.8em;
-      font-size: 1em;
-    }
+  &:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
   }
 
-  &.Button--form {
-    position: relative;
-    background: ${colors.blue600};
+  &:active {
+    transform: scale(0.99);
+  }
+
+  &.Button--secondary {
+    padding: 0.8em 1.8em;
+    display: inline-block;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
     color: ${colors.grey200};
+    background: ${colors.blue600};
     border: none;
     border-radius: 3px;
-
-    padding: 0.8em 1.8em;
-    font-size: 1rem;
+    transition: background 250ms ease-in-out, transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       padding: 0.8em 1.8em;
       font-size: 1em;
     }
-    &:before {
-      content: "";
-      position: absolute;
-      left: -2px;
-      top: -2px;
-      width: 100%;
-      height: 100%;
-      border-radius: 3px;
+    &:hover,
+    :focus {
+      color: white;
       background: linear-gradient(
         135deg,
         ${colors.purple500} 0%,
         ${colors.orange500} 100%
       );
-      overflow: hidden;
-      z-index: -1;
     }
 
-    &:hover {
-      cursor: pointer;
-      background: transparent;
-      transition: background 150ms ease-in-out;
-      color: ${colors.grey100};
-      border-radius: 3px;
+    &:focus {
+      outline: 1px solid #fff;
+      outline-offset: -4px;
+    }
 
-      &:before {
-        width: 100%;
-      }
+    &:active {
+      transform: scale(0.99);
     }
   }
 `
