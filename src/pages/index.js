@@ -214,8 +214,8 @@ const AboutWrapper = styled("div")`
   padding-top: 10em;
   padding-bottom: 10em;
   display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(3, minmax(150px, 320px));
+  grid-gap: 2em;
+  grid-template-columns: repeat(6, minmax(150px, 320px));
   grid-template-rows: repeat(6, 200px);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -246,9 +246,8 @@ const AboutTitleContainer = styled("div")`
 
 const AboutImageContainer = styled("div")`
   grid-column: 2 / -1;
-  grid-row: 1 / 3;
+  grid-row: 1 / 4;
   justify-self: end;
-  align-self: start;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / span 1;
@@ -264,7 +263,7 @@ const AboutImage = styled("img")`
 `
 
 const AboutTextContainer = styled("div")`
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 2 / -1;
   z-index: 999;
 
@@ -275,7 +274,7 @@ const AboutTextContainer = styled("div")`
 `
 
 const AboutFormContainer = styled("div")`
-  grid-column: 3 / -1;
+  grid-column: 4 / -1;
   grid-row: 4 / -1;
   align-self: end;
 
