@@ -5,7 +5,7 @@ import dimensions from "styles/dimensions"
 import Button from "components/_ui/Button"
 
 const ContactFormContainer = styled("div")`
-  padding: 3em;
+  padding: 3em 2.5em 2.5em;
   position: relative;
   display: grid;
   color: ${colors.blue600};
@@ -35,7 +35,8 @@ const ContactFormContainer = styled("div")`
     font-family: inherit;
     font-size: 1.4em;
     font-weight: 600;
-    background: inherit;
+    background: rgba(255, 255, 255, 0.95); //white
+;
     // border: 1px solid ${colors.grey500};
       border: 2px solid ${colors.blue600};
 

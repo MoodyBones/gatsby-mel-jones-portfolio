@@ -19,25 +19,25 @@ const LayoutGridWrapper = styled("div")``
 const HeroSection = styled("section")`
   grid-column: 2 / -2;
 
+  margin: 6em 0 6em 0;
   padding-bottom: 6em;
-  margin: 1em 0 6em 0;
   display: grid;
-  grid-gap: 4em;
-  grid-template-columns: repeat(3, minmax(150px, 320px)) 
-  grid-template-rows: 150px auto 100px;
+  grid-column-gap: 5em;
+  grid-row-gap: 2em;
+  grid-template-columns: repeat(6, minmax(100px, 320px));
+  grid-template-rows: repeat(6, 100px);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin: 1em 0 4em 0;
+    margin: 1em 0 4em;
     grid-column-gap: 0;
     grid-row-gap: 4em;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto;
   }
 
-  a {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-    justify-self: end;
+  .hero-button {
+    grid-column: -3 / -1;
+    grid-row: -2 / -1;
     align-self: end;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -46,82 +46,68 @@ const HeroSection = styled("section")`
       justify-self: center;
       align-self: center;
     }
+
+    button {
+      width: 100%;
+    }
   }
 `
-
-const HeroZigZag = styled("div")`
-  grid-column: 1 / 3;
-  grid-row: 1 / 4;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / span 1;
-    grid-row: 1 / 2;
-  }
-
-  .zigzag {
-    height: 5em;
-    background: linear-gradient(45deg, transparent 50%, ${colors.grey200} 50%),
-      linear-gradient(90deg, transparent 50%, ${colors.purple500} 50%),
-      linear-gradient(135deg, ${colors.grey200} 50%, ${colors.blue600} 50%),
-      0 50%;
-    background-repeat: repeat-x;
-    background-size: 5em 5em, 5em 5em;
-  }
-
-  .zigzag2 {
-    height: 5em;
-    background: linear-gradient(-45deg, transparent 74%, ${colors.blue600} 75%),
-      linear-gradient(45deg, transparent 74%, ${colors.purple500} 75%) 0 50%;
-    background-repeat: repeat-x;
-    background-size: 5em 5em, 5em 5em;
-  }
+const HeroBgLinear = styled("div")`
+  grid-column: 2 / 6;
+  grid-row: 1 / 6;
+  border-radius: 3px 3px 3px 300px;
+  background: linear-gradient(135deg, white 0%, ${colors.grey200} 100%);
 `
 
 const HeroTitle = styled("div")`
-  grid-column: 1 / 3;
-  grid-row: 1 / 4;
+  padding: 2em 0 0 0;
+  grid-column: 1 / 6;
+  grid-row: 1 / 5;
+  align-self: start;
+  z-index: 999;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 3em 0;
     grid-column: 1 / span 1;
     grid-row: 1 / 2;
-  }
-
-  z-index: -999;
-  padding: 10em 1em 6em 2em;
-  max-width: 640px;
-  background: ${colors.grey900};
-  border-radius: 3px;
-  border-bottom: 1em solid ${colors.orange500};
-  // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 8em 0.8em 1em 1.2em;
   }
 
   h1 {
-    margin-bottom: 1em;
-    color: ${colors.grey400};
+    padding: 0 2em;
+    line-height: 2;
+    color: ${colors.grey900};
   }
 `
 
-const HeroSocial = styled("div")`
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
-  justify-self: end;
-  align-self: end;
+const HeroBanner = styled("div")`
+  grid-column: 1 / -1;
+  grid-row: 3 / -1;
+  justify-self: center;
+  align-self: center;
+  z-index: 1;
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / span 1;
-    grid-row: 1 / 2;
+  h4 {
+    margin: 0;
+    text-transform: uppercase;
+    font-size: 10em;
+    font-weight: 900;
+    color: rgba(244, 107, 63, 0.5); // oranges500
+    // color: rgba(72, 52, 212, 0.5); // blue600
+    // color: rgba(255, 255, 255, 0.7); // white
+    // color: rgba(17, 16, 16, 0.2); // black
+    // color: rgba(253, 225, 217, 0.9); // orange200
   }
 `
 
 const HeroImage = styled("img")`
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-  justify-self: start;
-  align-self: start;
+  grid-column: -3 / -1;
+  grid-row: 1 / 5;
+  align-self: end;
+
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / span 1;
@@ -129,25 +115,16 @@ const HeroImage = styled("img")`
     justify-self: start;
     align-self: center;
   }
-
-  width: 100%;
-  height: auto;
-  border-radius: 7.5px;
-  border: 2em solid white;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-
-  // box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.05);
 `
 
 const WorkSection = styled("section")`
   grid-column: 2 / -2;
 
+  margin: 0 auto;
   padding-top: 6em;
-
   max-width: ${dimensions.maxwidthTablet}px;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
 
   background-repeat: no-repeat;
   background-image: -webkit-gradient(
@@ -170,13 +147,13 @@ const WorkSection = styled("section")`
   }
 `
 const WorkTitleContainer = styled("div")`
-  text-align: center;
   margin-bottom: 6em;
+  text-align: center;
 `
 
 const WorkAction = styled(Link)`
-  padding: 8em 0 6em;
   margin-left: auto;
+  padding: 8em 0 6em;
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
@@ -208,7 +185,28 @@ const WorkAction = styled(Link)`
 const AboutSection = styled("section")`
   grid-column: 1 / -1;
   background: ${colors.grey100};
-  border-top: 2px solid ${colors.grey300};
+`
+
+const AboutZigZag = styled("div")`
+  grid-column: 1 / -1;
+
+  .zigzag {
+    height: 5em;
+    background: linear-gradient(45deg, transparent 50%, ${colors.grey200} 50%),
+      linear-gradient(90deg, transparent 50%, ${colors.purple500} 50%),
+      linear-gradient(135deg, ${colors.grey200} 50%, ${colors.blue600} 50%),
+      0 50%;
+    background-repeat: repeat-x;
+    background-size: 5em 5em, 5em 5em;
+  }
+
+  .zigzag2 {
+    height: 5em;
+    background: linear-gradient(-45deg, transparent 74%, ${colors.blue600} 75%),
+      linear-gradient(45deg, transparent 74%, ${colors.purple500} 75%) 0 50%;
+    background-repeat: repeat-x;
+    background-size: 5em 5em, 5em 5em;
+  }
 `
 const AboutWrapper = styled("div")`
   grid-column: 2 / -2;
@@ -216,9 +214,9 @@ const AboutWrapper = styled("div")`
   padding-top: 10em;
   padding-bottom: 10em;
   display: grid;
-  grid-gap: 6em;
-  grid-template-columns: repeat(3, minmax(150px, 320px)) 
-  grid-template-rows: 200px auto 200px;
+  grid-gap: 1em;
+  grid-template-columns: repeat(3, minmax(150px, 320px));
+  grid-template-rows: repeat(6, 200px);
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding-top: 6em;
@@ -230,39 +228,27 @@ const AboutWrapper = styled("div")`
 `
 
 const AboutTitleContainer = styled("div")`
-  grid-column: 1 / 3;
+  grid-column: 1 / -1;
   grid-row: 1 / 2;
+  justify-self: center;
+  align-self: center;
+  z-index: 999;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / span 1;
     grid-row: 1 / 2;
-
-    h4 {
-      margin-bottom: 0.5em;
-      // font-size: 2.2em;
-    }
   }
 
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ee65de),
-    to(#26cbff)
-  );
-  background-image: linear-gradient(
-    to right,
-    ${colors.purple500},
-    ${colors.orange500}
-  );
-  background-size: 100% 2px;
-  background-position: center bottom;
+  h4 {
+    font-size: 9em;
+  }
 `
 
 const AboutImageContainer = styled("div")`
-  grid-column: 3 / 4;
+  grid-column: 2 / -1;
   grid-row: 1 / 3;
+  justify-self: end;
+  align-self: start;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / span 1;
@@ -273,12 +259,14 @@ const AboutImageContainer = styled("div")`
 const AboutImage = styled("img")`
   width: 100%;
   height: auto;
+  border-radius: 3px;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 `
 
 const AboutTextContainer = styled("div")`
   grid-column: 1 / 3;
-  grid-row: 2 / 4;
-  align-self: end;
+  grid-row: 2 / -1;
+  z-index: 999;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / span 1;
@@ -287,8 +275,8 @@ const AboutTextContainer = styled("div")`
 `
 
 const AboutFormContainer = styled("div")`
-  grid-column: 3 / 4;
-  grid-row: 3 / 4;
+  grid-column: 3 / -1;
+  grid-row: 4 / -1;
   align-self: end;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -340,16 +328,16 @@ const RenderBody = ({ home, projects, meta }) => (
     />
     <LayoutGridWrapper className="main-grid">
       <HeroSection>
-        <HeroZigZag>
-          <div className="zigzag"></div>
-          <div className="zigzag2"></div>
-        </HeroZigZag>
+        <HeroBgLinear>
+          <div className="oval"></div>
+        </HeroBgLinear>
         <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
-        <HeroSocial>
-          <span>SOCIAL LINKs GO HERE!!!</span>
-        </HeroSocial>
+        <HeroBanner>
+          <h4>WEB DEV</h4>
+        </HeroBanner>
         <HeroImage src={ImageHero} width="500" height="750" />
         <a
+          className="hero-button"
           href={home.hero_button_link.url}
           target="_blank"
           rel="noopener noreferrer"
@@ -377,6 +365,10 @@ const RenderBody = ({ home, projects, meta }) => (
         </WorkAction>
       </WorkSection>
       <AboutSection className="main-grid">
+        <AboutZigZag>
+          <div className="zigzag"></div>
+          <div className="zigzag2"></div>
+        </AboutZigZag>
         <AboutWrapper>
           <AboutTitleContainer>
             {RichText.render(home.about_title)}

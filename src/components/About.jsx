@@ -22,7 +22,7 @@ const AboutContainer = styled("div")`
 const AboutBio = styled("div")`
   padding: 0.6em 0.8em 1em 1.2em;
   max-width: 600px;
-  background: white;
+  background: rgba(255, 255, 255, 0.95); //white
   border-radius: 7.5px;
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
@@ -40,15 +40,6 @@ const AboutActions = styled("div")`
 const About = ({ bio, socialLinks }) => (
   <AboutContainer>
     <AboutBio>{RichText.render(bio)}</AboutBio>
-    {/* <AboutActions>
-      <a
-        href="mailto:jones.mel@gmail.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Button className="Button--secondary">Email me</Button>
-      </a>
-    </AboutActions> */}
   </AboutContainer>
 )
 

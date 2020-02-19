@@ -4,8 +4,6 @@ import dimensions from "styles/dimensions"
 
 const typeStyles = css`
   h1 {
-    // font-family: "IBM Plex Mono", monospace;
-    font-family: Inconsolata, monospace;
     font-size: 1.7em;
     font-weight: 400;
     letter-spacing: -0.5px;
@@ -34,9 +32,13 @@ const typeStyles = css`
   }
 
   h4 {
-    font-size: 2.2em;
-    font-weight: 600;
+    margin: 0;
     letter-spacing: -2px;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 10em;
+    font-weight: 900;
+    color: rgba(244, 107, 63, 0.5); // oranges500
   }
 
   h5 {

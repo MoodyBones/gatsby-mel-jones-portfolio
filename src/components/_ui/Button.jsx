@@ -13,7 +13,7 @@ const ButtonContainer = styled("button")`
   text-transform: uppercase;
   letter-spacing: 1px;
   color: ${colors.blue600};
-  background: ${colors.grey200};
+  background: rgba(255, 255, 255, 0.95); //white
   border: 2px solid ${colors.blue600};
   border-radius: 3px;
   transition: background 250ms ease-in-out, transform 150ms ease;
