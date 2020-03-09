@@ -4,9 +4,10 @@ import dimensions from "styles/dimensions"
 
 const typeStyles = css`
   h1 {
-    font-size: 1.7em;
-    font-weight: 400;
+    font-size: 3em;
+    font-weight: 600;
     letter-spacing: -0.5px;
+    line-height: 1.5;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 1.75em;

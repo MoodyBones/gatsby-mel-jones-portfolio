@@ -11,7 +11,8 @@ import Button from "components/_ui/Button"
 import Form from "components/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import ImageHero from "images/hero-mel-jones.png"
+import HeroArt from "components/HeroArt"
+// import ImageHero from "images/hero-mel-jones.png"
 import ImageAbout from "images/eva-test-only.png"
 
 const LayoutGridWrapper = styled("div")``
@@ -22,8 +23,7 @@ const HeroSection = styled("section")`
   margin: 6em 0 6em 0;
   padding-bottom: 6em;
   display: grid;
-  grid-column-gap: 5em;
-  grid-row-gap: 2em;
+  grid-gap: 1em;
   grid-template-columns: repeat(6, minmax(100px, 320px));
   grid-template-rows: repeat(6, 100px);
 
@@ -52,16 +52,10 @@ const HeroSection = styled("section")`
     }
   }
 `
-const HeroBgLinear = styled("div")`
-  grid-column: 2 / 6;
-  grid-row: 1 / 6;
-  border-radius: 3px 3px 3px 300px;
-  background: linear-gradient(135deg, white 0%, ${colors.grey200} 100%);
-`
 
 const HeroTitle = styled("div")`
   padding: 2em 0 0 0;
-  grid-column: 1 / 6;
+  grid-column: 1 / 5;
   grid-row: 1 / 5;
   align-self: start;
   z-index: 999;
@@ -69,13 +63,24 @@ const HeroTitle = styled("div")`
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 3em 0;
     grid-column: 1 / span 1;
-    grid-row: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .welcome-text {
+    font-size: 2.5em;
+    font-weight: 600;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 1.9em;
+    }
   }
 
-  h1 {
-    padding: 0 2em;
-    line-height: 2;
-    color: ${colors.grey900};
+  p {
+    font-weight: 600;
+    font-size: 1em;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 0.9em;
+    }
   }
 `
 
@@ -99,23 +104,23 @@ const HeroBanner = styled("div")`
   }
 `
 
-const HeroImage = styled("img")`
-  grid-column: -3 / -1;
-  grid-row: 1 / 5;
-  align-self: end;
+// const HeroImage = styled("img")`
+//   grid-column: -3 / -1;
+//   grid-row: 1 / 5;
+//   align-self: end;
 
-  width: 100%;
-  height: auto;
-  border-radius: 3px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+//   width: 100%;
+//   height: auto;
+//   border-radius: 3px;
+//   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / span 1;
-    grid-row: 2 / 3;
-    justify-self: start;
-    align-self: center;
-  }
-`
+//   @media (max-width: ${dimensions.maxwidthMobile}px) {
+//     grid-column: 1 / span 1;
+//     grid-row: 1 / 2;
+//     justify-self: start;
+//     align-self: center;
+//   }
+// `
 
 const WorkSection = styled("section")`
   grid-column: 2 / -2;
@@ -327,14 +332,35 @@ const RenderBody = ({ home, projects, meta }) => (
     />
     <LayoutGridWrapper className="main-grid">
       <HeroSection>
-        <HeroBgLinear>
-          <div className="oval"></div>
-        </HeroBgLinear>
-        <HeroTitle>{RichText.render(home.hero_title)}</HeroTitle>
-        <HeroBanner>
-          <h4>WEB DEV</h4>
-        </HeroBanner>
-        <HeroImage src={ImageHero} width="500" height="750" />
+        <HeroTitle>
+          {RichText.render(home.hero_title)}
+          <div>
+            {/* <p>A driven self-taught Developer</p>
+            <p>Based in Berlin</p>
+            <p>Lover of </p>
+            <p>Welcome to my Portfolio Site!</p> */}
+            {/* <h1>
+              Hey, how's it going? I'm Mel Jones. An <i>Australian</i>
+              self-taught <b>Web Dev</b> based in Berlin. I'm looking for a
+              mentored role to bridge the gap between the learning environment
+              and real world engineering team.
+            </h1> */}
+            <h1 className="welcome-text">
+              Heya, how's it going? I'm Mel Jones! An <i>Australian</i> born,
+              <i> Berlin</i> based, self-taught <b>WEB DEV.</b>
+            </h1>
+            <p>
+              All of my progress is public on <i> GitHub</i>, where you can
+              follow along, offer guidance or <b>hire me!</b>
+              <span> 👩‍💻</span>
+              <span> 💖</span>
+              <span> 👋</span>
+            </p>
+          </div>
+        </HeroTitle>
+        <HeroBanner>{/* <h4>WEB DEV</h4> */}</HeroBanner>
+        <HeroArt />
+        {/* <HeroImage src={ImageHero} width="500" height="750" /> */}
         <a
           className="hero-button"
           href={home.hero_button_link.url}

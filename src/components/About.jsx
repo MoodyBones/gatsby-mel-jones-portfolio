@@ -11,9 +11,9 @@ const AboutContainer = styled("div")``
 const AboutBio = styled("div")`
   padding: 0.6em 0.8em 1em 1.2em;
   max-width: 550px;
-  background: rgba(255, 255, 255, 0.95); //white
-  border-radius: 7.5px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  // background: rgba(255, 255, 255, 0.95); //white
+  // border-radius: 7.5px;
+  // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
   p {
     line-height: 2.5;
