@@ -75,7 +75,7 @@ const ButtonContainer = styled("button")`
     display: inline-block;
     // width: 100%;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
     text-align: center;
     text-transform: uppercase;

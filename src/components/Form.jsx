@@ -105,7 +105,7 @@ const ContactForm = () => (
             <FontAwesomeIcon
               icon="paper-plane"
               css={css`
-                font-size: 2.6em;
+                font-size: 3em;
               `}
             />
             Email Mel
