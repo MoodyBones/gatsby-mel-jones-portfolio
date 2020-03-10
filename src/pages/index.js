@@ -12,7 +12,7 @@ import Button from "components/_ui/Button"
 import Form from "components/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import HeroArt from "components/HeroArt"
+import Art from "components/HeroArt"
 import ImageAbout from "images/eva-test-only.png"
 
 const LayoutGridWrapper = styled("div")``
@@ -31,7 +31,7 @@ const HeroSection = styled("section")`
     margin: 1em 0 4em;
     grid-column-gap: 0;
     grid-row-gap: 4em;
-    grid-template-columns: 1fr;
+    grid-template-columns: 350px;
     grid-template-rows: auto auto auto auto;
   }
 
@@ -84,43 +84,23 @@ const HeroTitle = styled("div")`
   }
 `
 
-const HeroBanner = styled("div")`
-  grid-column: 1 / -1;
-  grid-row: 3 / -1;
-  justify-self: center;
-  align-self: center;
-  z-index: 1;
+const HeroArt = styled("div")`
+  grid-column: -3 / -1;
+  grid-row: 1 / 5;
+  align-self: end;
 
-  h4 {
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 10em;
-    font-weight: 900;
-    color: rgba(244, 107, 63, 0.5); // oranges500
-    // color: rgba(72, 52, 212, 0.5); // blue600
-    // color: rgba(255, 255, 255, 0.7); // white
-    // color: rgba(17, 16, 16, 0.2); // black
-    // color: rgba(253, 225, 217, 0.9); // orange200
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / span 1;
+    grid-row: 1 / 2;
+    justify-self: start;
+    align-self: center;
   }
 `
-
-// const HeroImage = styled("img")`
-//   grid-column: -3 / -1;
-//   grid-row: 1 / 5;
-//   align-self: end;
-
-//   width: 100%;
-//   height: auto;
-//   border-radius: 3px;
-//   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-
-//   @media (max-width: ${dimensions.maxwidthMobile}px) {
-//     grid-column: 1 / span 1;
-//     grid-row: 1 / 2;
-//     justify-self: start;
-//     align-self: center;
-//   }
-// `
 
 const WorkSection = styled("section")`
   grid-column: 2 / -2;
@@ -358,8 +338,9 @@ const RenderBody = ({ home, projects, meta }) => (
             </p>
           </div>
         </HeroTitle>
-        <HeroBanner>{/* <h4>WEB DEV</h4> */}</HeroBanner>
-        <HeroArt />
+        <HeroArt>
+          <Art />
+        </HeroArt>
         {/* <HeroImage src={ImageHero} width="500" height="750" /> */}
         <a
           className="hero-button"
