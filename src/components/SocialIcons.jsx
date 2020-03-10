@@ -1,11 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import IconTwitter from "components/_ui/TwitterIcon"
-import IconInstagram from "components/_ui/InstagramIcon"
-import IconLinkedIn from "components/_ui/LinkedInIcon"
-import IconGitHub from "components/_ui/GitHubIcon"
 
 const SocialContainer = styled("div")`
   margin-bottom: 3em;
@@ -58,28 +55,45 @@ const Social = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      <IconTwitter />
+      <span>
+        <FontAwesomeIcon icon={["fab", "twitter"]} />
+      </span>
     </a>
     <a
       href="https://www.instagram.com/moody.bones/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <IconInstagram />
+      <span>
+        <FontAwesomeIcon icon={["fab", "instagram"]} />
+      </span>
     </a>
     <a
       href="https://www.linkedin.com/in/mel-jones-4a5835182/"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <IconLinkedIn />
+      <span>
+        <FontAwesomeIcon icon={["fab", "linkedin"]} />
+      </span>
+    </a>
+    <a
+      href="https://codepen.io/MoodyBones"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span>
+        <FontAwesomeIcon icon={["fab", "codepen"]} />
+      </span>
     </a>
     <a
       href="https://github.com/MoodyBones"
       target="_blank"
       rel="noopener noreferrer"
     >
-      <IconGitHub />
+      <span>
+        <FontAwesomeIcon icon={["fab", "github"]} />
+      </span>
     </a>
   </SocialContainer>
 )
