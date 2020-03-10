@@ -1,5 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
@@ -8,9 +10,6 @@ import Logo from "components/_ui/Logo"
 const HeaderContainer = styled("header")`
   padding-top: 3.75em;
   padding-bottom: 3em;
-  // background: ${colors.grey100};
-
-  // border-bottom: 2px solid ${colors.grey300};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 2em 0 1em 0;
@@ -99,11 +98,19 @@ const Header = () => (
       </Link>
       <HeaderLinks>
         <Link activeClassName="Link--is-active" to="/work">
-          Work
+          <span>Work</span>
         </Link>
         <Link activeClassName="Link--is-active" to="/blog">
-          Blog
+          <span>Blog</span>
         </Link>
+        <AnchorLink to="/#anchor-about-section" title="About Mel">
+          <span>About</span>
+        </AnchorLink>
+        <AnchorLink to="/#anchor-contact-form" title="Contact Mel">
+          <span>
+            <FontAwesomeIcon icon="paper-plane" />
+          </span>
+        </AnchorLink>
       </HeaderLinks>
     </HeaderContent>
   </HeaderContainer>

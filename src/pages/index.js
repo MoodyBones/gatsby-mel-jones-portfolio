@@ -389,7 +389,7 @@ const RenderBody = ({ home, projects, meta }) => (
           See more work <span>&#8594;</span>
         </WorkAction>
       </WorkSection>
-      <AboutSection className="main-grid">
+      <AboutSection className="main-grid" id="anchor-about-section">
         <AboutZigZag>
           <div className="zigzag"></div>
           <div className="zigzag2"></div>
@@ -404,7 +404,7 @@ const RenderBody = ({ home, projects, meta }) => (
           <AboutImageContainer>
             <AboutImage src={ImageAbout} width="598" height="599" />
           </AboutImageContainer>
-          <AboutFormContainer>
+          <AboutFormContainer id="anchor-contact-form">
             <Form />
           </AboutFormContainer>
         </AboutWrapper>
