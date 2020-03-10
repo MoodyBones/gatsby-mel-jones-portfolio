@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
+import dimensions from "styles/dimensions"
 
 const HeroArtWrapper = styled("div")`
   width: 600px;
@@ -13,12 +14,26 @@ const HeroArtWrapper = styled("div")`
   font-weight: 600;
   text-transform: uppercase;
 
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    width: 250px;
+    display: grid;
+    background: #111010;
+    padding: 2em;
+    grid-template-columns: repeat(6, 80px);
+    grid-template-rows: repeat(3, 80px);
+    grid-auto-flow: column;
+  }
+
   .box {
     background-color: #4834d4;
     color: #fff;
-    padding: 20px;
     font-size: 4.5em;
+    padding: 20px;
     display: grid;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 2em;
+    }
 
     span {
       margin: auto;
