@@ -73,7 +73,7 @@ const ButtonContainer = styled("button")`
   &.Button--secondary {
     padding: 0.8em 1.8em;
     display: inline-block;
-    width: 100%;
+    // width: 100%;
     font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
@@ -84,6 +84,7 @@ const ButtonContainer = styled("button")`
     background: ${colors.blue600};
     border: none;
     border-radius: 3px;
+    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
     transition: background 250ms ease-in-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -97,8 +98,8 @@ const ButtonContainer = styled("button")`
       color: white;
       background: linear-gradient(
         135deg,
-        ${colors.purple500} 0%,
-        ${colors.orange500} 100%
+        ${colors.orange500} 0%,
+        ${colors.blue600} 100%
       );
     }
 

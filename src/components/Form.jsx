@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 import colors from "styles/colors"
-import dimensions from "styles/dimensions"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Button from "components/_ui/Button"
 
 const ContactFormContainer = styled("div")`
-  padding: 3em 2.5em 2.5em;
+  padding: 4em 2.5em 1.5em 2.5em;
   position: relative;
   display: grid;
   color: ${colors.blue600};
@@ -14,15 +15,19 @@ const ContactFormContainer = styled("div")`
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
   h3 {
+    padding-right: 0.5em;
+    padding-left: 0.5em;
     position: absolute;
     justify-self: center;
     background: ${colors.grey100};
-    top: -55px;
+    top: -50px;
+    font-weight: 600;
   }
 
   label {
     margin-bottom: 1em;
-    font-size: 0.8em;
+    font-size: 1em;
+    font-weight: 600;
   }
 
   input,
@@ -35,15 +40,12 @@ const ContactFormContainer = styled("div")`
     font-family: inherit;
     font-size: 1.4em;
     font-weight: 600;
-    background: rgba(255, 255, 255, 0.95); //white
-;
-    // border: 1px solid ${colors.grey500};
-      border: 2px solid ${colors.blue600};
-
+    background: inherit;
+    border: 2px solid ${colors.blue600};
     border-radius: 3px;
 
     &:focus {
-      outline: 1px solid #fff;
+      outline: 2px solid #fff;
       outline-offset: -4px;
     }
   }
@@ -53,15 +55,28 @@ const ContactFormContainer = styled("div")`
   }
 
   .ButtonFormContainer {
+    display: grid;
+  }
+
+  button {
+    justify-self: end;
+  }
+  span {
+    margin: 0.2em;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+  }
+
+  svg {
+    padding-bottom: 0.4em;
   }
 `
 
 const ContactForm = () => (
   <ContactFormContainer>
-    <h3>Get in touch</h3>
+    <h3>Get in touch!</h3>
     <form method="post" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field" />
 
@@ -77,7 +92,7 @@ const ContactForm = () => (
 
       <label id="message">
         Message
-        <textarea id="message" name="message" rows="4" />
+        <textarea id="message" name="message" rows="6" />
       </label>
       <div className="ButtonFormContainer">
         <Button
@@ -86,7 +101,15 @@ const ContactForm = () => (
           name="Contact Mel"
           value="Contact Mel"
         >
-          Contact Mel
+          <span>
+            <FontAwesomeIcon
+              icon="paper-plane"
+              css={css`
+                font-size: 2.6em;
+              `}
+            />
+            Email Mel
+          </span>
         </Button>
       </div>
     </form>
