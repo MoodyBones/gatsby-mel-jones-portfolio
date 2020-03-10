@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Mel Jones | Portfolio`,
     description: `A portfolio & blog site for Web Developer Mel Jones, powered by Gatsby and Prismic.`,
-    author: `@_moodybones`,
+    author: `Mel Jones @_moodybones <jones.mel@gmail.com>`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -14,6 +14,12 @@ module.exports = {
     `gatsby-plugin-resolve-src`,
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-emotion`,
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

@@ -1,6 +1,6 @@
 import React from "react"
 import Moment from "react-moment"
-import { Link } from "gatsby"
+import Link from "components/Link"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
@@ -12,10 +12,10 @@ const PostCardContainer = styled(Link)`
   flex-direction: column;
   text-decoration: none;
   color: currentColor;
-  background: white;
-  border: 1px solid white;
-  border-radius: 7.5px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  background: inherit;
+  // border: 2px solid ${colors.grey900};
+  border-radius: 3px;
+  // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   transition: all 150ms ease-in-out;
 
   &:hover {

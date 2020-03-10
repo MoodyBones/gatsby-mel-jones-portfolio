@@ -5,10 +5,14 @@ import styled from "@emotion/styled"
 import { Global } from "@emotion/core"
 import globalStyles from "styles/global"
 import typeStyles from "styles/typography"
-import dimensions from "styles/dimensions"
 import Footer from "components/Footer"
 import Header from "components/Header"
 import "styles/fonts.scss"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons"
+
+library.add(fab, faPaperPlane)
 
 const LayoutContainer = styled.div`
   margin: 0 auto;

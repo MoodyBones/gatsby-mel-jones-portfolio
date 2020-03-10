@@ -1,5 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from "components/Link"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
@@ -8,16 +10,13 @@ import Logo from "components/_ui/Logo"
 const HeaderContainer = styled("header")`
   padding-top: 3.75em;
   padding-bottom: 3em;
-  background: ${colors.grey100};
-
-  border-bottom: 2px solid ${colors.grey300};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 2em 0 1em 0;
   }
 `
 
-const HeaderContent = styled("div")`
+const HeaderContent = styled("nav")`
   grid-column: 2 / -2;
 
   display: flex;
@@ -31,19 +30,16 @@ const HeaderContent = styled("div")`
 `
 
 const HeaderLinks = styled("div")`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 7em;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-gap: 2em;
+  .icon-social {
+    font-size: 1.3em;
   }
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-gap: 1em;
+  a:not(:last-child) {
+    margin-right: 2em;
   }
 
   a {
@@ -51,9 +47,9 @@ const HeaderLinks = styled("div")`
     text-decoration: none;
     border-bottom: 3px solid transparent;
     font-weight: 600;
-    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.95em;
+    letter-spacing: 0.5px;
     height: 100%;
     padding-bottom: 1.25em;
     padding-top: 0.25em;
@@ -65,7 +61,7 @@ const HeaderLinks = styled("div")`
       display: block;
       position: absolute;
       width: 97%;
-      height: 2px;
+      height: 1px;
       bottom: 80px;
       // margin-right: -9px;
       background: ${colors.grey900};
@@ -98,11 +94,32 @@ const Header = () => (
         <Logo />
       </Link>
       <HeaderLinks>
+        <AnchorLink to="/#anchor-about-section" title="About Mel">
+          <span>About</span>
+        </AnchorLink>
         <Link activeClassName="Link--is-active" to="/work">
-          Work
+          <span>Work</span>
         </Link>
         <Link activeClassName="Link--is-active" to="/blog">
-          Blog
+          <span>Blog</span>
+        </Link>
+        <AnchorLink to="/#anchor-contact-form" title="Email">
+          <span>
+            <FontAwesomeIcon icon="paper-plane" />
+          </span>
+        </AnchorLink>
+        <Link href="https://twitter.com/_moodybones">
+          <span>
+            <FontAwesomeIcon
+              className="icon-social"
+              icon={["fab", "twitter"]}
+            />
+          </span>
+        </Link>
+        <Link href="https://github.com/MoodyBones">
+          <span>
+            <FontAwesomeIcon className="icon-social" icon={["fab", "github"]} />
+          </span>
         </Link>
       </HeaderLinks>
     </HeaderContent>
