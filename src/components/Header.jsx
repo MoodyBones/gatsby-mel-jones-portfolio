@@ -50,7 +50,6 @@ const HeaderLinks = styled("div")`
     text-decoration: none;
     border-bottom: 3px solid transparent;
     font-weight: 600;
-    letter-spacing: 1px;
     text-transform: uppercase;
     font-size: 0.95em;
     height: 100%;
@@ -106,7 +105,20 @@ const Header = () => (
         <AnchorLink to="/#anchor-about-section" title="About Mel">
           <span>About</span>
         </AnchorLink>
-        <AnchorLink to="/#anchor-contact-form" title="Contact Mel">
+        <Link href="https://github.com/MoodyBones">
+          <span>
+            <FontAwesomeIcon className="icon-social" icon={["fab", "github"]} />
+          </span>
+        </Link>
+        <Link href="https://twitter.com/_moodybones">
+          <span>
+            <FontAwesomeIcon
+              className="icon-social"
+              icon={["fab", "twitter"]}
+            />
+          </span>
+        </Link>
+        <AnchorLink to="/#anchor-contact-form" title="Email">
           <span>
             <FontAwesomeIcon icon="paper-plane" />
           </span>

@@ -3,8 +3,7 @@ import Link from "components/Link"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import Logo from "components/_ui/Logo"
-import Icon from "images/hero-mel-jones.png"
+import Logo from "images/logo-mel-jones.svg"
 import SocialIcons from "components/SocialIcons"
 
 const FooterContainer = styled("footer")`
@@ -34,36 +33,49 @@ const FooterBg = styled("div")`
 const FooterWrapper = styled("div")`
   grid-column: 2 / -2;
 
-  padding-top: 3em;
-  padding-bottom: 3em;
-
+  padding: 3em;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 
-  .LinkLogo {
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      svg {
-        height: 100px;
-      }
+  div {
+    font-size: 0.8em;
+    line-height: 2.5;
+  }
+
+  .heart-wrapped-emoji {
+    margin-right: 0.5em;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    flex-direction: column;
+
+    nav {
+      order: -1;
+    }
+
+    a {
+      padding: 2em 0;
+    }
+
+    div {
+      order: 99;
+      text-align: center;
     }
   }
 `
 
 const FooterAuthor = styled("a")`
-  margin-top: 3em;
-  font-size: 0.75em;
-  color: ${colors.grey700};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-decoration: none;
-  line-height: 3em;
+
+  .footer-logo {
+    max-width: 120px;
+    height: auto;
+  }
 
   &:hover {
-    color: ${colors.blue900};
-
-    .FooterIcon {
+    .footer-logo {
       animation-name: rotate;
       animation-duration: 1.5s;
       animation-iteration-count: infinite;
@@ -81,25 +93,22 @@ const FooterAuthor = styled("a")`
   }
 `
 
-const FooterIcon = styled("img")`
-  padding: 2em 0;
-  max-width: 33px;
-  height: auto;
-`
-
 const Footer = () => (
   <FooterContainer className="main-grid">
     <FooterBg>
       <FooterWrapper>
+        <div>
+          <span>Love saves the day!</span>
+          <br />
+          <span>©️ 2020 Mel Jones</span>
+          <br />
+          <span>Gatsby Starter by Marguerite Roth</span>
+          <br />
+          <span className="heart-wrapped-emoji">💝</span>
+        </div>
         <SocialIcons />
-        <Link className="LinkLogo" to="/">
-          <Logo />
-        </Link>
         <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
-          Love saves the day!
-          <span className="FooterIcon">💝</span>
-          <FooterIcon className="FooterIcon" src={Icon} />
-          ©️ 2020 Mel Jones | Gatsby Starter by Marguerite Roth
+          <img className="footer-logo" src={Logo} />
         </FooterAuthor>
       </FooterWrapper>
     </FooterBg>

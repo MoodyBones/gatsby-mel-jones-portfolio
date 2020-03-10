@@ -1,94 +1,73 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Link from "components/Link"
 import colors from "styles/colors"
-import dimensions from "styles/dimensions"
 
-const SocialContainer = styled("div")`
-  margin-bottom: 3em;
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 2em;
-  justify-content: space-evenly;
-  width: 100%;
-  max-width: 200px;
+const SocialContainer = styled("nav")`
+  .icon-social {
+    font-size: 2em;
+  }
 
   a {
     text-decoration: none;
-    color: ${colors.grey600};
+    color: ${colors.grey900};
 
-    &span {
-    }
-    svg {
-    }
-
-    &:hover {
+    &:hover,
+    :focus {
       cursor: pointer;
       transition: all 150ms ease-in-out;
 
       &:nth-of-type(1) {
-        color: ${colors.orange600};
+        color: ${colors.orange500};
       }
       &:nth-of-type(2) {
-        color: ${colors.green600};
+        color: ${colors.green500};
       }
       &:nth-of-type(3) {
-        color: ${colors.blue600};
+        color: ${colors.purple500};
       }
       &:nth-of-type(4) {
-        color: ${colors.teal600};
+        color: ${colors.teal500};
+      }
+      &:nth-of-type(5) {
+        color: ${colors.blue600};
       }
     }
+  }
+
+  a:not(:last-child) {
+    margin-right: 1.5em;
   }
 `
 
 const Social = () => (
   <SocialContainer>
-    <a
-      href="https://twitter.com/_moodybones"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <Link href="https://twitter.com/_moodybones">
       <span>
-        <FontAwesomeIcon icon={["fab", "twitter"]} />
+        <FontAwesomeIcon className="icon-social" icon={["fab", "twitter"]} />
       </span>
-    </a>
-    <a
-      href="https://www.instagram.com/moody.bones/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    </Link>
+    <Link href="https://www.instagram.com/moody.bones/">
       <span>
-        <FontAwesomeIcon icon={["fab", "instagram"]} />
+        <FontAwesomeIcon className="icon-social" icon={["fab", "instagram"]} />
       </span>
-    </a>
-    <a
-      href="https://www.linkedin.com/in/mel-jones-4a5835182/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    </Link>
+    <Link href="https://www.linkedin.com/in/mel-jones-4a5835182/">
       <span>
-        <FontAwesomeIcon icon={["fab", "linkedin"]} />
+        <FontAwesomeIcon className="icon-social" icon={["fab", "linkedin"]} />
       </span>
-    </a>
-    <a
-      href="https://codepen.io/MoodyBones"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    </Link>
+    <Link href="https://codepen.io/MoodyBones">
       <span>
-        <FontAwesomeIcon icon={["fab", "codepen"]} />
+        <FontAwesomeIcon className="icon-social" icon={["fab", "codepen"]} />
       </span>
-    </a>
-    <a
-      href="https://github.com/MoodyBones"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    </Link>
+    <Link href="https://github.com/MoodyBones">
       <span>
-        <FontAwesomeIcon icon={["fab", "github"]} />
+        <FontAwesomeIcon className="icon-social" icon={["fab", "github"]} />
       </span>
-    </a>
+    </Link>
   </SocialContainer>
 )
 
