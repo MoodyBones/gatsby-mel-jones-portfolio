@@ -17,7 +17,7 @@ const HeroArtWrapper = styled("div")`
     background-color: #4834d4;
     color: #fff;
     padding: 20px;
-    font-size: 3.5em;
+    font-size: 4.5em;
     display: grid;
 
     span {

@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import Link from "components/Link"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"

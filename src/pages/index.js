@@ -1,6 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
+import Link from "components/Link"
 import { RichText } from "prismic-reactjs"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
@@ -12,7 +13,6 @@ import Form from "components/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 import HeroArt from "components/HeroArt"
-// import ImageHero from "images/hero-mel-jones.png"
 import ImageAbout from "images/eva-test-only.png"
 
 const LayoutGridWrapper = styled("div")``

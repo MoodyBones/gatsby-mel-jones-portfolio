@@ -17,15 +17,9 @@ const SocialContainer = styled("div")`
     text-decoration: none;
     color: ${colors.grey600};
 
+    &span {
+    }
     svg {
-      margin 3em 0 2em;
-      max-width: 50px;
-      height: auto;
-
-      // @media (max-width: ${dimensions.maxwidthMobile}px) {
-      //   max-width: 40px;
-      //   height: auto;
-      // }
     }
 
     &:hover {
