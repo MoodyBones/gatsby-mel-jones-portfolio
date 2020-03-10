@@ -16,7 +16,7 @@ const HeaderContainer = styled("header")`
   }
 `
 
-const HeaderContent = styled("div")`
+const HeaderContent = styled("nav")`
   grid-column: 2 / -2;
 
   display: flex;
@@ -30,19 +30,16 @@ const HeaderContent = styled("div")`
 `
 
 const HeaderLinks = styled("div")`
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-gap: 7em;
-  justify-content: flex-end;
-  width: 100%;
-  max-width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-gap: 2em;
+  .icon-social {
+    font-size: 1.3em;
   }
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-gap: 1em;
+  a:not(:last-child) {
+    margin-right: 2em;
   }
 
   a {
@@ -52,6 +49,7 @@ const HeaderLinks = styled("div")`
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.95em;
+    letter-spacing: 0.5px;
     height: 100%;
     padding-bottom: 1.25em;
     padding-top: 0.25em;
@@ -63,7 +61,7 @@ const HeaderLinks = styled("div")`
       display: block;
       position: absolute;
       width: 97%;
-      height: 2px;
+      height: 1px;
       bottom: 80px;
       // margin-right: -9px;
       background: ${colors.grey900};
@@ -96,20 +94,20 @@ const Header = () => (
         <Logo />
       </Link>
       <HeaderLinks>
+        <AnchorLink to="/#anchor-about-section" title="About Mel">
+          <span>About</span>
+        </AnchorLink>
         <Link activeClassName="Link--is-active" to="/work">
           <span>Work</span>
         </Link>
         <Link activeClassName="Link--is-active" to="/blog">
           <span>Blog</span>
         </Link>
-        <AnchorLink to="/#anchor-about-section" title="About Mel">
-          <span>About</span>
-        </AnchorLink>
-        <Link href="https://github.com/MoodyBones">
+        <AnchorLink to="/#anchor-contact-form" title="Email">
           <span>
-            <FontAwesomeIcon className="icon-social" icon={["fab", "github"]} />
+            <FontAwesomeIcon icon="paper-plane" />
           </span>
-        </Link>
+        </AnchorLink>
         <Link href="https://twitter.com/_moodybones">
           <span>
             <FontAwesomeIcon
@@ -118,11 +116,11 @@ const Header = () => (
             />
           </span>
         </Link>
-        <AnchorLink to="/#anchor-contact-form" title="Email">
+        <Link href="https://github.com/MoodyBones">
           <span>
-            <FontAwesomeIcon icon="paper-plane" />
+            <FontAwesomeIcon className="icon-social" icon={["fab", "github"]} />
           </span>
-        </AnchorLink>
+        </Link>
       </HeaderLinks>
     </HeaderContent>
   </HeaderContainer>
