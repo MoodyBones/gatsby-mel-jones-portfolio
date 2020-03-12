@@ -7,38 +7,45 @@ import colors from "styles/colors"
 const SocialContainer = styled("nav")`
   .icon-social {
     font-size: 2em;
+        transition: 0.25s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
   }
 
   a {
     text-decoration: none;
     color: ${colors.grey900};
-
-    &:hover,
-    :focus {
-      cursor: pointer;
-      transition: all 150ms ease-in-out;
-
-      &:nth-of-type(1) {
-        color: ${colors.orange500};
-      }
-      &:nth-of-type(2) {
-        color: ${colors.green500};
-      }
-      &:nth-of-type(3) {
-        color: ${colors.purple500};
-      }
-      &:nth-of-type(4) {
-        color: ${colors.teal500};
-      }
-      &:nth-of-type(5) {
-        color: ${colors.blue600};
-      }
-    }
   }
+
 
   a:not(:last-child) {
     margin-right: 1.5em;
   }
+
+  //   &:hover,
+  //   :focus {
+  //     cursor: pointer;
+  //     transition: all 150ms ease-in-out;
+
+  //     &:nth-of-type(1) {
+  //       color: ${colors.orange500};
+  //     }
+  //     &:nth-of-type(2) {
+  //       color: ${colors.green500};
+  //     }
+  //     &:nth-of-type(3) {
+  //       color: ${colors.purple500};
+  //     }
+  //     &:nth-of-type(4) {
+  //       color: ${colors.teal500};
+  //     }
+  //     &:nth-of-type(5) {
+  //       color: ${colors.blue600};
+  //     }
+  //   }
+  // }
 `
 
 const Social = () => (
