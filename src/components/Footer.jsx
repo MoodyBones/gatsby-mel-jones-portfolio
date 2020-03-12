@@ -33,7 +33,7 @@ const FooterBg = styled("div")`
 const FooterWrapper = styled("div")`
   grid-column: 2 / -2;
 
-  padding: 3em;
+  padding: 3em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -95,7 +95,7 @@ const FooterAuthor = styled("a")`
 
 const Footer = () => (
   <FooterContainer className="main-grid">
-    <FooterBg>
+    <FooterBg className="main-grid">
       <FooterWrapper>
         <div>
           <span>Love saves the day!</span>
