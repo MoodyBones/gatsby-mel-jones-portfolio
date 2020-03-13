@@ -7,99 +7,71 @@ import colors from "styles/colors"
 import PropTypes from "prop-types"
 
 const PostCardContainer = styled(Link)`
-  padding: 3em 2.5em 2.25em 2.5em;
+  padding: 1em 1.6em 1em 2em;
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: currentColor;
-  background: inherit;
-  // border: 2px solid ${colors.grey900};
-  border-radius: 3px;
-  // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  color: ${colors.grey300};
+  background: ${colors.grey900};
+  border-radius: 7.5px;
   transition: all 150ms ease-in-out;
 
-  &:hover {
-    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1);
+  &:hover,
+  :focus {
     transition: all 150ms ease-in-out;
     cursor: pointer;
 
-    .PostCardAction {
+    h3 {
       color: ${colors.orange500};
       transition: all 150ms ease-in-out;
-
-      span {
-        transform: translateX(0px);
-        opacity: 1;
-        transition: transform 150ms ease-in-out;
-      }
     }
   }
 `
 
-const PostCategory = styled("h6")`
-  font-weight: 600;
-  color: ${colors.grey600};
-`
-
-const PostTitle = styled("h3")`
-  margin: 0;
-  margin-top: 0.5em;
-`
-
 const PostMetas = styled("div")`
-  display: flex;
-  align-items: center;
-  margin-top: 1.5em;
-  justify-content: space-between;
+  align-self: flex-end;
+
+  // display: flex;
+  // justify-content: space-between;
   font-size: 0.85em;
   color: ${colors.grey600};
-`
-
-const PostAuthor = styled("div")`
-  margin: 0;
 `
 
 const PostDate = styled("div")`
   margin: 0;
 `
 
+const PostTitle = styled("h3")`
+  margin: 0.5em 0;
+  font-weight: 700;
+`
+
 const PostDescription = styled("div")`
-  margin-top: 2em;
-  margin-bottom: 4em;
+  flex-grow: 2;
 
   p:last-of-type {
     margin: 0;
   }
 `
 
-const PostCardAction = styled("div")`
-  font-weight: 600;
-  text-decoration: none;
-  color: currentColor;
-  transition: all 150ms ease-in-out;
-
-  span {
-    margin-left: 1em;
-    transform: translateX(-8px);
-    display: inline-block;
-    transition: transform 400ms ease-in-out;
-  }
+const PostCategory = styled("h6")`
+  margin-top: 1em;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: ${colors.grey600};
+  align-self: flex-end;
 `
 
 const PostCard = ({ author, category, date, title, description, uid }) => (
   <PostCardContainer className="BlogPostCard" to={`/blog/${uid}`}>
-    <PostCategory>{category[0].text}</PostCategory>
-    <PostTitle>{title[0].text}</PostTitle>
-    <PostDescription>{RichText.render(description)}</PostDescription>
-    <PostCardAction className="PostCardAction">
-      Read more <span>&#8594;</span>
-    </PostCardAction>
     <PostMetas>
-      <PostAuthor>{author}</PostAuthor>
       <PostDate>
         <Moment format="MMMM D, YYYY">{date}</Moment>
       </PostDate>
     </PostMetas>
+    <PostTitle>{title[0].text}</PostTitle>
+    <PostDescription>{RichText.render(description)}</PostDescription>
+    <PostCategory>{category[0].text}</PostCategory>
   </PostCardContainer>
 )
 
