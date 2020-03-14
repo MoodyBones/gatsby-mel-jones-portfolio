@@ -7,13 +7,14 @@ import colors from "styles/colors"
 import PropTypes from "prop-types"
 
 const ProjectCardContainer = styled(Link)`
-  margin-bottom: 4em;
+  margin-bottom: 10em;
   display: grid;
   grid-template-columns: 4fr 7fr;
   color: currentColor;
   text-decoration: none;
   // border: 1px solid ${colors.grey400};
-  border-radius: 3px;
+  border-radius: 30px;
+  background: ${colors.orange200};
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
   transition: all 150ms ease-in-out;
 
@@ -29,9 +30,26 @@ const ProjectCardContainer = styled(Link)`
     margin-bottom: 2em;
   }
 
+  // &:before {
+  //   position: absolute;
+  //   content: "";
+  //   width: 100%;
+  //   height: 100%;
+  //   left: 0;
+  //   top: 0;
+  //   background: ${colors.grey500};
+  //   mix-blend-mode: multiply;
+  //   opacity: 0;
+  //   transition: all 150ms ease-in-out;
+  // }
+
   &:hover {
-    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1);
-    transition: all 150ms ease-in-out;
+    // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.1);
+
+    // &:before {
+    //   opacity: 0.2;
+    //   transition: all 150ms ease-in-out;
+    // }
 
     .ProjectCardAction {
       color: ${colors.orange500};
@@ -50,15 +68,17 @@ const ProjectCardContainer = styled(Link)`
     }
 
     .ProjectCardImageContainer::before {
-      opacity: 0.2;
+      // opacity: 0.2;
+      filter: brightness(50%);
       transition: all 150ms ease-in-out;
     }
   }
 `
 
 const ProjectCardContent = styled("div")`
-  background: white;
-  padding: 4em 3em 2.25em 3em;
+  background: ${colors.grey200};
+  border-radius: 30px;
+  padding: 2em 3em;
   position: relative;
 
   &:before {
@@ -69,13 +89,14 @@ const ProjectCardContent = styled("div")`
     left: 0;
     top: 0;
     background: ${colors.blue500};
+    border-radius: 30px;
     mix-blend-mode: multiply;
     opacity: 0;
     transition: all 150ms ease-in-out;
   }
 
   @media (max-width: 950px) {
-    padding: 3.25em 2.5em 2em 2.5em;
+    padding: 2em 2.5em;
   }
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
@@ -84,18 +105,21 @@ const ProjectCardContent = styled("div")`
 `
 
 const ProjectCardCategory = styled("h6")`
-  color: ${colors.grey700};
+  color: currentColor;
+  letter-spacing: 1px;
 `
 
 const ProjectCardTitle = styled("h3")`
-  margin-bottom: 0.2em;
-  margin-top: 0.5em;
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+  color: ${colors.blue600};
 `
 
-const ProjectCardBlurb = styled("div")`
+const ProjectCardBlurb = styled("span")`
   margin-bottom: 0.5em;
   margin-top: 0;
   margin-bottom: 5em;
+  font-size: 1.25em;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin-bottom: 2.5em;
@@ -103,7 +127,7 @@ const ProjectCardBlurb = styled("div")`
 `
 
 const ProjectCardAction = styled("div")`
-  font-weight: 600;
+  font-size: 0.95em;
   text-decoration: none;
   color: currentColor;
   transition: all 150ms ease-in-out;
@@ -118,16 +142,17 @@ const ProjectCardAction = styled("div")`
 
 const ProjectCardImageContainer = styled("div")`
   background: ${colors.orange200};
+  border-radius: 30px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   overflow: hidden;
   position: relative;
   padding-left: 2em;
   padding-right: 2em;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    padding-top: 3em;
+    padding-top: 2em;
     max-height: 200px;
     flex-direction: column;
     align-items: center;
@@ -150,7 +175,7 @@ const ProjectCardImageContainer = styled("div")`
   img {
     max-width: 400px;
     width: 100%;
-    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       max-width: 300px;
