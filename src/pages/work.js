@@ -8,7 +8,7 @@ import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
 const WorkWrapper = styled("section")`
-  padding-bottom: 10em;
+  padding-bottom: 15em;
 `
 
 const WorkContainer = styled("div")`
