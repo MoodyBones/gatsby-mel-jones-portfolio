@@ -30,6 +30,13 @@ const WorkTitle = styled("div")`
   }
 `
 
+const ProjectGrid = styled("div")`
+  display: grid;
+  grid-gap: 10em;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 800px;
+`
+
 const Work = ({ projects, meta }) => (
   <>
     <Helmet
@@ -77,7 +84,7 @@ const Work = ({ projects, meta }) => (
             <h2>Work</h2>
             <p>CSS • JavaScript • HTML</p>
           </WorkTitle>
-          <>
+          <ProjectGrid>
             {projects.map((project, i) => (
               <ProjectCard
                 key={i}
@@ -88,7 +95,7 @@ const Work = ({ projects, meta }) => (
                 uid={project.node._meta.uid}
               />
             ))}
-          </>
+          </ProjectGrid>
         </WorkContainer>
       </WorkWrapper>
     </Layout>

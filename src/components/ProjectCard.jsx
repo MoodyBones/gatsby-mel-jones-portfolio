@@ -7,14 +7,14 @@ import colors from "styles/colors"
 import PropTypes from "prop-types"
 
 const ProjectCardContainer = styled(Link)`
-  margin-bottom: 10em;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: currentColor;
   text-decoration: none;
-  margin-bottom: 2em;
-  }
 
-  &:hover, :active {
+  &:hover,
+  :active {
     transition: all 150ms ease-in-out;
     cursor: pointer;
 
@@ -24,9 +24,6 @@ const ProjectCardContainer = styled(Link)`
     }
 
     .ProjectCardAction {
-      color: ${colors.grey500};
-      transition: all 150ms ease-in-out;
-
       span {
         transform: translateX(0px);
         opacity: 1;
@@ -34,28 +31,18 @@ const ProjectCardContainer = styled(Link)`
       }
     }
 
-    .ProjectCardImageContainer {
-      img {
-        filter: brightness 90%);
-        transition: all 150ms ease-in-out;
-      }
+    img {
+      opacity: 0.8;
+      // contrast: 0;
     }
   }
 `
 
 const ProjectCardContent = styled("div")`
   background: ${colors.blue600};
-  padding: 2em 3em;
+  padding: 1.5em 1em;
   position: relative;
   text-align: center;
-
-  @media (max-width: 950px) {
-    padding: 2em 2.5em;
-  }
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-row: 2;
-  }
 `
 
 const ProjectCardCategory = styled("h6")`
@@ -67,7 +54,7 @@ const ProjectCardCategory = styled("h6")`
 const ProjectCardTitle = styled("h3")`
   margin-top: 0.7em;
   margin-bottom: 0.7em;
-  // font-family: "Merriweather", serif;
+  font-family: "Merriweather", serif;
   font-weight: 900;
   color: ${colors.grey100};
   transition: all 150ms ease-in-out;
@@ -101,23 +88,40 @@ const ProjectCardAction = styled("div")`
 `
 
 const ProjectCardImageContainer = styled("div")`
-  border-radius: inherit;
-  display: flex;
   position: relative;
+  display: flex;
 
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  // height: 300px;
+  // width: auto;
+  // overflow: hidden;
   }
 
   img {
+    align-self: flex-end;
     max-width: 100%;
-    height: auto;
+    height: 300px;
+    object-fit: cover;
+
+    opacity: 1;   
+    transition: opacity 0.5s;
+    
+    // filter: contrast(1);
+    // transition: contrast 0.5s;
+
+
+    // max-height: 100%;
+    // width: auto;
+    // overflow: hidden;
+    // transform: scale(1.05);
+    // object-fit: contain;
   }
 `
 
 const ProjectCard = ({ category, title, description, thumbnail, uid }) => (
   <ProjectCardContainer to={`/work/${uid}`}>
+    <ProjectCardImageContainer className="ProjectCardImageContainer">
+      <img src={thumbnail.url} alt={title[0].text} width="500" height="750" />
+    </ProjectCardImageContainer>
     <ProjectCardContent className="ProjectCardContent">
       <ProjectCardCategory>{category[0].text}</ProjectCardCategory>
       <ProjectCardTitle>{title[0].text}</ProjectCardTitle>
@@ -126,9 +130,6 @@ const ProjectCard = ({ category, title, description, thumbnail, uid }) => (
         Details <span>&#8594;</span>
       </ProjectCardAction>
     </ProjectCardContent>
-    <ProjectCardImageContainer className="ProjectCardImageContainer">
-      <img src={thumbnail.url} alt={title[0].text} width="500" height="750" />
-    </ProjectCardImageContainer>
   </ProjectCardContainer>
 )
 
