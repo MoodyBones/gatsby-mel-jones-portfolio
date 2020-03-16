@@ -9,6 +9,8 @@ import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("header")`
   padding-top: 3em;
+  padding-bottom: 1em;
+  background: ${colors.grey100};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 1.5em 0 1em 0;
@@ -41,7 +43,7 @@ const HeaderContent = styled("div")`
 
 const HeaderNav = styled("nav")`
   // position: sticky;
-  // background: ${colors.grey200};
+  // background: ${colors.grey100};
   // top: 2em;
   // right: 2em;
   // // bottom: 0;
