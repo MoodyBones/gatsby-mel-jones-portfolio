@@ -19,15 +19,16 @@ const typeStyles = css`
   }
 
   h2 {
-    font-size: 3.2em;
-    font-weight: 600;
+    // font-family: "Merriweather", serif;
+    font-size: 3.5em;
+    font-weight: 900;
     letter-spacing: -3px;
     line-height: 1.2;
   }
 
   h3 {
-    line-height: 1.2;
-    font-size: 2em;
+    line-height: 1;
+    font-size: 3em;
     font-weight: 600;
     letter-spacing: -1px;
   }

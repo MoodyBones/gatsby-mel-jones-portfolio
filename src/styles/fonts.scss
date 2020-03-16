@@ -1,17 +1,9 @@
-// @import url("https://rsms.me/inter/inter.css");
-// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Inconsolata:wght@400;700&display=swap");
-
 html {
   font-family: "Inconsolata", sans-serif;
-  // font-family: "Montserrat", sans-serif;
-  // font-family: "IBM Plex Mono", monospace;
 }
 
 @supports (font-variation-settings: normal) {
   html {
     font-family: "Inconsolata", sans-serif;
-    // font-family: "Montserrat", sans-serif;
-    // font-family: "IBM Plex Mono", monospace;
   }
 }

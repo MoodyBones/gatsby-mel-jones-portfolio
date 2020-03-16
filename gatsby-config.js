@@ -15,6 +15,21 @@ module.exports = {
     `gatsby-plugin-remove-trailing-slashes`,
     `gatsby-plugin-emotion`,
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Inconsolata`,
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Merriweather`,
+            variants: [`400`, `900`],
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-anchor-links",
       options: {
         offset: -100,
