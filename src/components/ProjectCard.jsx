@@ -20,13 +20,13 @@ const ProjectCardContainer = styled(Link)`
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     border-bottom: 2px solid transparent;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     border-bottom: 2px solid transparent;
   }
 

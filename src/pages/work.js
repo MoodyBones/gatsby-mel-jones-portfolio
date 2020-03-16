@@ -44,7 +44,7 @@ const ProjectGrid = styled("div")`
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 700px;
-    grid-gap: 4em;
+    grid-gap: 6em;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
