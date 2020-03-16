@@ -4,6 +4,7 @@ import Helmet from "react-helmet"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
+import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
@@ -16,25 +17,100 @@ const WorkContainer = styled("div")`
 `
 
 const WorkTitle = styled("div")`
-  margin-bottom: 4em;
+  margin: auto;
+  padding: 1.5em 0;
   text-align: center;
+  color: currentColor;
 
   h2 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin: 0.5em 0;
   }
 
   p {
+    color: ${colors.grey700};
+    font-family: "Merriweather", serif;
+    // border-top: 2px solid ${colors.grey400};
+    font-size: 1.25em;
     margin: 0;
-    color: ${colors.grey800};
   }
 `
 
 const ProjectGrid = styled("div")`
+  margin-top: 7em;
   display: grid;
-  grid-gap: 10em;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-auto-rows: 800px;
+  grid-gap: 6em;
+  grid-auto-rows: 500px;
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 700px;
+    grid-gap: 4em;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-auto-rows: 700px;
+    grid-gap: 4em;
+  }
+
+  a:nth-child(1) {
+    &:hover,
+    :active {
+      h3 {
+        color: ${colors.blue600};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(2) {
+    &:hover,
+    :active {
+      h3 {
+        color: ${colors.orange500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(3) {
+    &:hover,
+    :active {
+      h3 {
+        color: ${colors.purple500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(4) {
+    &:hover,
+    :active {
+      h3 {
+        color: ${colors.blue600};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(5) {
+    &:hover,
+    :active {
+      h3 {
+        color: ${colors.orange500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(6) {
+    &:hover,
+    :active {
+      h3 {
+        color: ${colors.purple500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+
+  .ProjectCardImageContainer:nth-child(2) {
+    order: 99;
+  }
 `
 
 const Work = ({ projects, meta }) => (

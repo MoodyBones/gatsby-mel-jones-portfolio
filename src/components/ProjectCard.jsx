@@ -8,10 +8,27 @@ import PropTypes from "prop-types"
 
 const ProjectCardContainer = styled(Link)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   color: currentColor;
   text-decoration: none;
+  padding-bottom: 20em;
+
+  &:not(:last-child) {
+    border-bottom: 2px solid ${colors.grey400};
+  }
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px solid transparent;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 2px solid transparent;
+  }
 
   &:hover,
   :active {
@@ -19,7 +36,7 @@ const ProjectCardContainer = styled(Link)`
     cursor: pointer;
 
     h3 {
-      color: ${colors.grey500};
+      color: ${colors.orange500};
       transition: all 150ms ease-in-out;
     }
 
@@ -39,14 +56,26 @@ const ProjectCardContainer = styled(Link)`
 `
 
 const ProjectCardContent = styled("div")`
-  background: ${colors.blue600};
-  padding: 1.5em 1em;
+  padding: 1.5em 3em;
   position: relative;
-  text-align: center;
+  text-align: left;
+  width: 600px;
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    padding: 1.5em 1em;
+    text-align: center;
+    width: auto;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 1.5em 1em;
+    text-align: center;
+    width: auto;
+  }
 `
 
 const ProjectCardCategory = styled("h6")`
-  color: ${colors.grey300};
+  color: ${colors.grey700};
   font-weight: 700;
   letter-spacing: 1.5px;
 `
@@ -56,7 +85,7 @@ const ProjectCardTitle = styled("h3")`
   margin-bottom: 0.7em;
   font-family: "Merriweather", serif;
   font-weight: 900;
-  color: ${colors.grey100};
+  color: ${colors.grey900};
   transition: all 150ms ease-in-out;
 `
 
@@ -64,10 +93,12 @@ const ProjectCardBlurb = styled("div")`
   margin-bottom: 0.5em;
   margin-top: 0;
   margin-bottom: 3em;
+  // border-bottom: 2px solid ${colors.grey400};
+
   p {
     font-size: 1.3em;
     line-height: 1.2;
-    color: ${colors.grey300};
+    color: ${colors.grey700};
   }
 `
 
@@ -76,7 +107,7 @@ const ProjectCardAction = styled("div")`
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: ${colors.grey300};
+  color: ${colors.grey700};
   transition: all 150ms ease-in-out;
 
   span {
@@ -90,30 +121,37 @@ const ProjectCardAction = styled("div")`
 const ProjectCardImageContainer = styled("div")`
   position: relative;
   display: flex;
-
-  // height: 300px;
-  // width: auto;
-  // overflow: hidden;
-  }
+  max-width: 600px;
 
   img {
     align-self: flex-end;
     max-width: 100%;
-    height: 300px;
+    height: 400px;
     object-fit: cover;
 
-    opacity: 1;   
+    opacity: 1;
     transition: opacity 0.5s;
-    
+
     // filter: contrast(1);
     // transition: contrast 0.5s;
+  }
 
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    img {
+      align-self: flex-end;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+  }
 
-    // max-height: 100%;
-    // width: auto;
-    // overflow: hidden;
-    // transform: scale(1.05);
-    // object-fit: contain;
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    img {
+      align-self: flex-end;
+      max-width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
   }
 `
 

@@ -20,9 +20,10 @@ const typeStyles = css`
 
   h2 {
     // font-family: "Merriweather", serif;
-    font-size: 3.5em;
+    text-transform: uppercase;
+    font-size: 5em;
     font-weight: 900;
-    letter-spacing: -3px;
+    letter-spacing: 1px;
     line-height: 1.2;
   }
 
