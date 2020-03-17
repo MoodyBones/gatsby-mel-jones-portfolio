@@ -75,9 +75,9 @@ const NavLinks = styled("div")`
       display: block;
       position: absolute;
       width: 96%;
-      height: 1px;
+      height: 2px;
       top: 2em;
-      background: ${colors.grey900};
+      background: ${colors.grey700};
       visibility: hidden;
       transform-origin: left;
       transform: scale(0);
@@ -109,7 +109,7 @@ const IconLinks = styled("div")`
     transition: 0.25s ease-in-out;
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.3);
     }
   }
 
