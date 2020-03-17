@@ -9,7 +9,7 @@ import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
 
 const WorkWrapper = styled("section")`
-  padding-bottom: 15em;
+  padding-bottom: 10em;
 `
 
 const WorkContainer = styled("div")`
@@ -28,28 +28,29 @@ const WorkTitle = styled("div")`
 
   p {
     color: ${colors.grey700};
-    // font-family: "Merriweather", serif;
-    // border-top: 2px solid ${colors.grey400};
     font-size: 1.25em;
     margin: 0;
   }
 `
 
 const WorkGrid = styled("div")`
-  margin-top: 7em;
+  margin-top: 4em;
   display: grid;
   grid-gap: 6em;
-  grid-auto-rows: 500px;
+  // grid-auto-rows: 500px;
+  grid-auto-rows: 1fr;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 700px;
-    grid-gap: 6em;
+    // grid-auto-rows: 700px;
+    grid-auto-rows: 1fr;
+    grid-gap: 4em;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 700px;
+    // grid-auto-rows: 700px;
+    grid-auto-rows: 1fr;
     grid-gap: 4em;
   }
 

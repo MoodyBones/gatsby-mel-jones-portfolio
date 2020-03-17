@@ -17,33 +17,109 @@ const BlogContainer = styled("div")`
 `
 
 const BlogTitle = styled("div")`
-  margin-bottom: 4em;
+  margin: auto;
+  padding: 1.5em 0;
   text-align: center;
+  color: currentColor;
 
   h2 {
-    margin-top: 1.5em;
-    margin-bottom: 0.5em;
+    margin: 0.5em 0;
   }
 
   p {
+    color: ${colors.grey700};
+    font-size: 1.25em;
     margin: 0;
-    color: ${colors.grey800};
   }
 `
 
 const BlogGrid = styled("div")`
+  margin-top: 4em;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 1fr;
   grid-gap: 2.5em;
 
-  @media (max-width: 1050px) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1.5em;
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    margin-left: 2em;
+    margin-right: 2em;
+    grid-gap: 4em;
   }
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-template-columns: 1fr;
-    grid-gap: 2.5em;
+  a:nth-child(1) {
+    &:hover,
+    :focus {
+      border: 0.3em solid ${colors.blue600};
+      transition: all 150ms ease-in-out;
+
+      h3 {
+        color: ${colors.blue600};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(2) {
+    &:hover,
+    :focus {
+      border: 0.3em solid ${colors.orange500};
+      transition: all 150ms ease-in-out;
+
+      h3 {
+        color: ${colors.orange500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+
+  a:nth-child(3) {
+    &:hover,
+    :focus {
+      border: 0.3em solid ${colors.purple500};
+      transition: all 150ms ease-in-out;
+
+      h3 {
+        color: ${colors.purple500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+
+  a:nth-child(4) {
+    &:hover,
+    :focus {
+      border: 0.3em solid ${colors.blue600};
+      transition: all 150ms ease-in-out;
+
+      h3 {
+        color: ${colors.blue600};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(5) {
+    &:hover,
+    :focus {
+      border: 0.3em solid ${colors.orange500};
+      transition: all 150ms ease-in-out;
+
+      h3 {
+        color: ${colors.orange500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+
+  a:nth-child(6) {
+    &:hover,
+    :focus {
+      border: 0.3em solid ${colors.purple500};
+      transition: all 150ms ease-in-out;
+
+      h3 {
+        color: ${colors.purple500};
+        transition: all 150ms ease-in-out;
+      }
+    }
   }
 `
 

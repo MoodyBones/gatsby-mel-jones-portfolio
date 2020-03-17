@@ -12,7 +12,7 @@ const ProjectCardContainer = styled(Link)`
   align-items: flex-start;
   color: currentColor;
   text-decoration: none;
-  padding-bottom: 20em;
+  padding-bottom: 5em;
 
   &:not(:last-child) {
     border-bottom: 2px solid ${colors.grey400};
@@ -28,6 +28,7 @@ const ProjectCardContainer = styled(Link)`
     flex-direction: column;
     align-items: center;
     border-bottom: 2px solid transparent;
+    padding-bottom: 1em;
   }
 
   &:hover,

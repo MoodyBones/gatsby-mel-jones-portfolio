@@ -13,7 +13,6 @@ const PostCardContainer = styled(Link)`
   text-decoration: none;
   color: ${colors.grey300};
   background: ${colors.grey900};
-  // border-radius: 7.5px;
   border: 0.3em solid ${colors.grey200};
   transition: all 150ms ease-in-out;
 
@@ -21,7 +20,6 @@ const PostCardContainer = styled(Link)`
   :focus {
     border: 0.3em solid ${colors.orange500};
     transition: all 150ms ease-in-out;
-    cursor: pointer;
 
     h3 {
       color: ${colors.orange500};
