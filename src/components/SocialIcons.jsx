@@ -7,16 +7,18 @@ import colors from "styles/colors"
 const SocialContainer = styled("nav")`
   .icon-social {
     font-size: 2em;
-        transition: 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
 
-    &:hover {
-      transform: scale(1.2);
+    &:hover,:active {
+      transform: scale(1.3);
+      transition: all 0.25s ease-in-out;
+
     }
   }
 
   a {
     text-decoration: none;
-    color: ${colors.grey900};
+    color: ${colors.grey900};  
   }
 
 

@@ -32,10 +32,12 @@ const ProjectCardContainer = styled(Link)`
 
   &:hover,
   :active {
+    // filter: brightness(0.9);
     transition: all 150ms ease-in-out;
     cursor: pointer;
 
-    h3 {
+    h3,
+    span {
       color: ${colors.orange500};
       transition: all 150ms ease-in-out;
     }
@@ -49,17 +51,20 @@ const ProjectCardContainer = styled(Link)`
     }
 
     img {
-      opacity: 0.8;
-      // contrast: 0;
+      filter: brightness(0.9);
+      transition: all 150ms ease-in-out;
     }
   }
 `
 
 const ProjectCardContent = styled("div")`
-  padding: 1.5em 3em;
+  padding: 0 0 0 3em;
   position: relative;
   text-align: left;
   width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     padding: 1.5em 1em;
@@ -93,7 +98,6 @@ const ProjectCardBlurb = styled("div")`
   margin-bottom: 0.5em;
   margin-top: 0;
   margin-bottom: 3em;
-  // border-bottom: 2px solid ${colors.grey400};
 
   p {
     font-size: 1.3em;
@@ -102,7 +106,7 @@ const ProjectCardBlurb = styled("div")`
   }
 `
 
-const ProjectCardAction = styled("div")`
+const ProjectCardAction = styled("span")`
   font-size: 0.9em;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -128,12 +132,7 @@ const ProjectCardImageContainer = styled("div")`
     max-width: 100%;
     height: 400px;
     object-fit: cover;
-
-    opacity: 1;
-    transition: opacity 0.5s;
-
-    // filter: contrast(1);
-    // transition: contrast 0.5s;
+    transition: all 150ms ease-in-out;
   }
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {

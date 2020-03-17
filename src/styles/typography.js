@@ -68,6 +68,30 @@ const typeStyles = css`
       cursor: pointer;
     }
   }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:active,
+  a:focus {
+    outline: none;
+  }
+
+  p,
+  ul {
+    a {
+      color: currentColor;
+      text-decoration: none;
+      border-bottom: 2px solid ${colors.purple500};
+      padding-bottom: 1px;
+    }
+
+    a:hover,
+    a:active {
+      border-bottom: 2px solid ${colors.orange500};
+    }
+  }
 `
 
 export default typeStyles

@@ -367,7 +367,9 @@ const RenderBody = ({ home, projects, meta }) => (
           />
         ))}
         <WorkAction to={"/work"}>
-          See more work <span>&#8594;</span>
+          <span>
+            See more work <span>&#8594;</span>
+          </span>
         </WorkAction>
       </WorkSection>
       <AboutSection className="main-grid" id="anchor-about-section">

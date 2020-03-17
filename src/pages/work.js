@@ -28,14 +28,14 @@ const WorkTitle = styled("div")`
 
   p {
     color: ${colors.grey700};
-    font-family: "Merriweather", serif;
+    // font-family: "Merriweather", serif;
     // border-top: 2px solid ${colors.grey400};
     font-size: 1.25em;
     margin: 0;
   }
 `
 
-const ProjectGrid = styled("div")`
+const WorkGrid = styled("div")`
   margin-top: 7em;
   display: grid;
   grid-gap: 6em;
@@ -56,7 +56,8 @@ const ProjectGrid = styled("div")`
   a:nth-child(1) {
     &:hover,
     :active {
-      h3 {
+      h3,
+      span {
         color: ${colors.blue600};
         transition: all 150ms ease-in-out;
       }
@@ -65,7 +66,8 @@ const ProjectGrid = styled("div")`
   a:nth-child(2) {
     &:hover,
     :active {
-      h3 {
+      h3,
+      span {
         color: ${colors.orange500};
         transition: all 150ms ease-in-out;
       }
@@ -74,7 +76,8 @@ const ProjectGrid = styled("div")`
   a:nth-child(3) {
     &:hover,
     :active {
-      h3 {
+      h3,
+      span {
         color: ${colors.purple500};
         transition: all 150ms ease-in-out;
       }
@@ -83,7 +86,8 @@ const ProjectGrid = styled("div")`
   a:nth-child(4) {
     &:hover,
     :active {
-      h3 {
+      h3,
+      span {
         color: ${colors.blue600};
         transition: all 150ms ease-in-out;
       }
@@ -92,7 +96,8 @@ const ProjectGrid = styled("div")`
   a:nth-child(5) {
     &:hover,
     :active {
-      h3 {
+      h3,
+      span {
         color: ${colors.orange500};
         transition: all 150ms ease-in-out;
       }
@@ -101,15 +106,12 @@ const ProjectGrid = styled("div")`
   a:nth-child(6) {
     &:hover,
     :active {
-      h3 {
+      h3,
+      span {
         color: ${colors.purple500};
         transition: all 150ms ease-in-out;
       }
     }
-  }
-
-  .ProjectCardImageContainer:nth-child(2) {
-    order: 99;
   }
 `
 
@@ -160,7 +162,7 @@ const Work = ({ projects, meta }) => (
             <h2>Work</h2>
             <p>CSS • JavaScript • HTML</p>
           </WorkTitle>
-          <ProjectGrid>
+          <WorkGrid>
             {projects.map((project, i) => (
               <ProjectCard
                 key={i}
@@ -171,7 +173,7 @@ const Work = ({ projects, meta }) => (
                 uid={project.node._meta.uid}
               />
             ))}
-          </ProjectGrid>
+          </WorkGrid>
         </WorkContainer>
       </WorkWrapper>
     </Layout>
