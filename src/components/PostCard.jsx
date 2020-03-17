@@ -35,6 +35,7 @@ const PostMetas = styled("div")`
   // justify-content: space-between;
   font-size: 0.85em;
   color: ${colors.grey600};
+  font-weight: 700;
 `
 
 const PostDate = styled("div")`
