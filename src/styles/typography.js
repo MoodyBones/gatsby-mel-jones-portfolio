@@ -3,6 +3,17 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 
 const typeStyles = css`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  p {
+    margin: 0;
+  }
+
   h1 {
     font-size: 3em;
     font-weight: 600;
@@ -35,7 +46,6 @@ const typeStyles = css`
   }
 
   h4 {
-    margin: 0;
     letter-spacing: -2px;
     line-height: 1;
     text-transform: uppercase;
@@ -52,7 +62,6 @@ const typeStyles = css`
   }
 
   h6 {
-    margin: 0;
     font-size: 0.9em;
     font-weight: 600;
     text-transform: uppercase;

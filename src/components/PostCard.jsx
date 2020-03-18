@@ -49,10 +49,6 @@ const PostTitle = styled("h3")`
 
 const PostDescription = styled("div")`
   flex-grow: 2;
-
-  p:last-of-type {
-    margin: 0;
-  }
 `
 
 const PostCategory = styled("h6")`

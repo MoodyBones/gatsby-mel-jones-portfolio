@@ -29,7 +29,6 @@ const WorkTitle = styled("div")`
   p {
     color: ${colors.grey700};
     font-size: 1.25em;
-    margin: 0;
   }
 `
 
