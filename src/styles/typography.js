@@ -19,15 +19,17 @@ const typeStyles = css`
   }
 
   h2 {
-    font-size: 3.2em;
-    font-weight: 600;
-    letter-spacing: -3px;
+    // font-family: "Merriweather", serif;
+    text-transform: uppercase;
+    font-size: 5em;
+    font-weight: 900;
+    letter-spacing: 1px;
     line-height: 1.2;
   }
 
   h3 {
-    line-height: 1.2;
-    font-size: 2em;
+    line-height: 1;
+    font-size: 3em;
     font-weight: 600;
     letter-spacing: -1px;
   }
@@ -64,6 +66,30 @@ const typeStyles = css`
   a {
     &:hover {
       cursor: pointer;
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:active,
+  a:focus {
+    outline: none;
+  }
+
+  p,
+  ul {
+    a {
+      color: currentColor;
+      text-decoration: none;
+      border-bottom: 2px solid ${colors.purple500};
+      padding-bottom: 1px;
+    }
+
+    a:hover,
+    a:active {
+      border-bottom: 2px solid ${colors.orange500};
     }
   }
 `

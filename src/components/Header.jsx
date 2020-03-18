@@ -8,15 +8,16 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("header")`
-  padding-top: 3.75em;
-  padding-bottom: 3em;
+  padding-top: 3em;
+  padding-bottom: 1em;
+  background: ${colors.grey100};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 2em 0 1em 0;
+    padding: 1.5em 0 1em 0;
   }
 `
 
-const HeaderContent = styled("nav")`
+const HeaderContent = styled("div")`
   grid-column: 2 / -2;
 
   display: flex;
@@ -27,32 +28,45 @@ const HeaderContent = styled("nav")`
       height: 100px;
     }
   }
-`
-
-const HeaderLinks = styled("div")`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  .icon-social {
-    font-size: 1.3em;
-  }
-
-  a:not(:last-child) {
-    margin-right: 2em;
-  }
 
   a {
     color: currentColor;
     text-decoration: none;
-    border-bottom: 3px solid transparent;
+    margin-left: 2em;
+  }
+
+  .logo-link {
+    flex-grow: 2;
+    margin: 0;
+  }
+`
+
+const HeaderNav = styled("nav")`
+  // position: sticky;
+  // background: ${colors.grey100};
+  // top: 2em;
+  // right: 2em;
+  // // bottom: 0;
+  // // left: 0;
+
+  display: flex;
+  flex-direction: row;
+
+  // a:not(:last-child) {
+  //   margin-right: 2em;
+  // }
+`
+
+const NavLinks = styled("div")`
+  display: flex;
+  flex-direction: row;
+
+  a {
+    font-size: 0.95em;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
+    letter-spacing: 1.5px;
     height: 100%;
-    padding-bottom: 1.25em;
-    padding-top: 0.25em;
     display: block;
     position: relative;
 
@@ -60,11 +74,10 @@ const HeaderLinks = styled("div")`
       content: "";
       display: block;
       position: absolute;
-      width: 97%;
-      height: 1px;
-      bottom: 80px;
-      // margin-right: -9px;
-      background: ${colors.grey900};
+      width: 96%;
+      height: 2px;
+      top: 2em;
+      background: ${colors.grey700};
       visibility: hidden;
       transform-origin: left;
       transform: scale(0);
@@ -87,41 +100,66 @@ const HeaderLinks = styled("div")`
   }
 `
 
+const IconLinks = styled("div")`
+  display: flex;
+  flex-direction: row;
+
+  .icon-social {
+    font-size: 1.3em;
+    transition: 0.25s ease-in-out;
+
+    &:hover {
+      transform: scale(1.3);
+    }
+  }
+
+  // a:not(:last-child) {
+  //   margin-right: 2em;
+  // }
+`
+
 const Header = () => (
   <HeaderContainer className="main-grid">
     <HeaderContent>
-      <Link to="/">
+      <Link to="/" className="logo-link">
         <Logo />
       </Link>
-      <HeaderLinks>
-        <AnchorLink to="/#anchor-about-section" title="About Mel">
-          <span>About</span>
-        </AnchorLink>
-        <Link activeClassName="Link--is-active" to="/work">
-          <span>Work</span>
-        </Link>
-        <Link activeClassName="Link--is-active" to="/blog">
-          <span>Blog</span>
-        </Link>
-        <AnchorLink to="/#anchor-contact-form" title="Email">
-          <span>
-            <FontAwesomeIcon icon="paper-plane" />
-          </span>
-        </AnchorLink>
-        <Link href="https://twitter.com/_moodybones">
-          <span>
-            <FontAwesomeIcon
-              className="icon-social"
-              icon={["fab", "twitter"]}
-            />
-          </span>
-        </Link>
-        <Link href="https://github.com/MoodyBones">
-          <span>
-            <FontAwesomeIcon className="icon-social" icon={["fab", "github"]} />
-          </span>
-        </Link>
-      </HeaderLinks>
+      <HeaderNav>
+        <NavLinks>
+          <AnchorLink to="/#anchor-about-section" title="About Mel">
+            <span>About</span>
+          </AnchorLink>
+          <Link activeClassName="Link--is-active" to="/work">
+            <span>Work</span>
+          </Link>
+          <Link activeClassName="Link--is-active" to="/blog">
+            <span>Blog</span>
+          </Link>
+        </NavLinks>
+        <IconLinks>
+          <Link href="https://github.com/MoodyBones">
+            <span>
+              <FontAwesomeIcon
+                className="icon-social"
+                icon={["fab", "github"]}
+              />
+            </span>
+          </Link>
+          <Link href="https://twitter.com/_moodybones">
+            <span>
+              <FontAwesomeIcon
+                className="icon-social"
+                icon={["fab", "twitter"]}
+              />
+            </span>
+          </Link>
+          <AnchorLink to="/#anchor-contact-form" title="Email">
+            <span>
+              <FontAwesomeIcon className="icon-social" icon="paper-plane" />
+            </span>
+          </AnchorLink>
+        </IconLinks>
+      </HeaderNav>
     </HeaderContent>
   </HeaderContainer>
 )

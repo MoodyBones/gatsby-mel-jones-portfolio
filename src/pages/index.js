@@ -1,11 +1,11 @@
 import React from "react"
-import Helmet from "react-helmet"
 import { graphql } from "gatsby"
-import Link from "components/Link"
-import { RichText } from "prismic-reactjs"
-import PropTypes from "prop-types"
+import Helmet from "react-helmet"
 import styled from "@emotion/styled"
+import PropTypes from "prop-types"
+import { RichText } from "prismic-reactjs"
 import colors from "styles/colors"
+import Link from "components/Link"
 import dimensions from "styles/dimensions"
 import About from "components/About"
 import Button from "components/_ui/Button"
@@ -367,7 +367,9 @@ const RenderBody = ({ home, projects, meta }) => (
           />
         ))}
         <WorkAction to={"/work"}>
-          See more work <span>&#8594;</span>
+          <span>
+            See more work <span>&#8594;</span>
+          </span>
         </WorkAction>
       </WorkSection>
       <AboutSection className="main-grid" id="anchor-about-section">

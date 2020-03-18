@@ -45,8 +45,8 @@ const ContactFormContainer = styled("div")`
     border-radius: 3px;
 
     &:focus {
-      outline: 2px solid #fff;
-      outline-offset: -4px;
+      outline: 4px dotted ${colors.grey500};
+      outline-offset: 6px;
     }
   }
 
