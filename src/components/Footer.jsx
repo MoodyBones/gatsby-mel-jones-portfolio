@@ -17,10 +17,10 @@ const FooterContainer = styled("footer")`
   );
   background-image: linear-gradient(
     to right,
-    ${colors.purple500},
-    ${colors.orange500}
+    ${colors.orange500},
+    ${colors.purple500}
   );
-  background-size: 90% 2px;
+  background-size: 100% 1px;
   background-position: center top;
 `
 
@@ -31,9 +31,9 @@ const FooterBg = styled("div")`
 `
 
 const FooterWrapper = styled("div")`
-  grid-column: 2 / -2;
+  grid-column: 1 / -1;
 
-  padding: 3em 0;
+  padding: 1em;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,13 +98,18 @@ const Footer = () => (
     <FooterBg className="main-grid">
       <FooterWrapper>
         <div>
+          <span
+            role="img"
+            aria-label="Emoji - heart wrapped"
+            className="heart-wrapped-emoji"
+          >
+            💝
+          </span>
           <span>Love saves the day!</span>
           <br />
           <span>©️ 2020 Mel Jones</span>
           <br />
-          <span>Gatsby Starter by Marguerite Roth</span>
-          <br />
-          <span className="heart-wrapped-emoji">💝</span>
+          <span>Gatsby Starter by Marguerite Roth </span>
         </div>
         <SocialIcons />
         <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
