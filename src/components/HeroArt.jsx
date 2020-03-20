@@ -4,10 +4,9 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 
 const HeroArtWrapper = styled("div")`
-  width: 600px;
   display: grid;
   background: #111010;
-  padding: 2em;
+  padding: 3em;
   grid-template-columns: repeat(6, 150px);
   grid-template-rows: repeat(3, 150px);
   grid-auto-flow: column;
@@ -15,7 +14,6 @@ const HeroArtWrapper = styled("div")`
   text-transform: uppercase;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    width: 250px;
     display: grid;
     background: #111010;
     padding: 2em;
@@ -27,8 +25,8 @@ const HeroArtWrapper = styled("div")`
   .box {
     background-color: #4834d4;
     color: #fff;
-    font-size: 4.5em;
-    padding: 20px;
+    font-size: 7em;
+    // padding: 20px;
     display: grid;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {

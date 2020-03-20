@@ -7,100 +7,15 @@ import { RichText } from "prismic-reactjs"
 import colors from "styles/colors"
 import Link from "components/Link"
 import dimensions from "styles/dimensions"
+import Hero from "components/Hero"
 import About from "components/About"
 import Button from "components/_ui/Button"
 import Form from "components/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import Art from "components/HeroArt"
 import ImageAbout from "images/eva-test-only.png"
 
 const LayoutGridWrapper = styled("div")``
-
-const HeroSection = styled("section")`
-  grid-column: 2 / -2;
-
-  margin: 6em 0 6em 0;
-  padding-bottom: 6em;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(6, minmax(100px, 320px));
-  grid-template-rows: repeat(6, 100px);
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin: 1em 0 4em;
-    grid-column-gap: 0;
-    grid-row-gap: 4em;
-    grid-template-columns: 350px;
-    grid-template-rows: auto auto auto auto;
-  }
-
-  .hero-button {
-    grid-column: -3 / -1;
-    grid-row: -2 / -1;
-    align-self: end;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / span 1;
-      grid-row: 3 / -1;
-      justify-self: center;
-      align-self: center;
-    }
-
-    button {
-      width: 100%;
-    }
-  }
-`
-
-const HeroTitle = styled("div")`
-  padding: 2em 0 0 0;
-  grid-column: 1 / 5;
-  grid-row: 1 / 5;
-  align-self: start;
-  z-index: 999;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 3em 0;
-    grid-column: 1 / span 1;
-    grid-row: 2 / 3;
-  }
-  .welcome-text {
-    font-size: 2.5em;
-    font-weight: 600;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 1.9em;
-    }
-  }
-
-  p {
-    font-weight: 600;
-    font-size: 1em;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 0.9em;
-    }
-  }
-`
-
-const HeroArt = styled("div")`
-  grid-column: -3 / -1;
-  grid-row: 1 / 5;
-  align-self: end;
-
-  width: 100%;
-  height: auto;
-  border-radius: 3px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / span 1;
-    grid-row: 1 / 2;
-    justify-self: start;
-    align-self: center;
-  }
-`
 
 const WorkSection = styled("section")`
   grid-column: 2 / -2;
@@ -311,46 +226,11 @@ const RenderBody = ({ home, projects, meta }) => (
       ].concat(meta)}
     />
     <LayoutGridWrapper className="main-grid">
-      <HeroSection>
-        <HeroTitle>
-          {RichText.render(home.hero_title)}
-          <div>
-            {/* <p>A driven self-taught Developer</p>
-            <p>Based in Berlin</p>
-            <p>Lover of </p>
-            <p>Welcome to my Portfolio Site!</p> */}
-            {/* <h1>
-              Hey, how's it going? I'm Mel Jones. An <i>Australian</i>
-              self-taught <b>Web Dev</b> based in Berlin. I'm looking for a
-              mentored role to bridge the gap between the learning environment
-              and real world engineering team.
-            </h1> */}
-            <h1 className="welcome-text">
-              Heya, how's it going? I'm Mel Jones! An <i>Australian</i> born,
-              <i> Berlin</i> based, self-taught <b>WEB DEV.</b>
-            </h1>
-            <p>
-              All of my progress is public on <i> GitHub</i>, where you can
-              follow along, offer guidance or <b>hire me!</b>
-              <span> 👩‍💻</span>
-              <span> 💖</span>
-              <span> 👋</span>
-            </p>
-          </div>
-        </HeroTitle>
-        <HeroArt>
-          <Art />
-        </HeroArt>
-        {/* <HeroImage src={ImageHero} width="500" height="750" /> */}
-        <a
-          className="hero-button"
-          href={home.hero_button_link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button>{RichText.render(home.hero_button_text)}</Button>
-        </a>
-      </HeroSection>
+      <Hero
+        title={home.hero_title}
+        buttonLink={home.hero_button_link.url}
+        buttonText={home.hero_button_text}
+      />
       <WorkSection>
         <WorkTitleContainer>
           <h2>Featured Work</h2>
