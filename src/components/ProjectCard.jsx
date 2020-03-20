@@ -33,27 +33,33 @@ const ProjectCardContainer = styled(Link)`
 
   &:hover,
   :active {
-    // filter: brightness(0.9);
-    transition: all 150ms ease-in-out;
+    transition: all 0.5s ease;
+
+    // transition: all 150ms ease-in-out;
     cursor: pointer;
 
     h3,
     span {
       color: ${colors.orange500};
-      transition: all 150ms ease-in-out;
+      transition: all 0.5s ease;
+
+      // transition: all 150ms ease-in-out;
     }
 
     .ProjectCardAction {
       span {
         transform: translateX(0px);
         opacity: 1;
-        transition: transform 150ms ease-in-out;
+        transition: all 0.5s ease;
+
+        // transition: transform 150ms ease-in-out;
       }
     }
 
     img {
       filter: brightness(0.9);
-      transition: all 150ms ease-in-out;
+      transform: scale(1);
+      transition: all 0.5s ease;
     }
   }
 `
@@ -89,8 +95,6 @@ const ProjectCardCategory = styled("h6")`
 const ProjectCardTitle = styled("h3")`
   margin-top: 0.7em;
   margin-bottom: 0.7em;
-  font-family: "Merriweather", serif;
-  font-weight: 900;
   color: ${colors.grey900};
   transition: all 150ms ease-in-out;
 `
@@ -127,11 +131,13 @@ const ProjectCardImageContainer = styled("div")`
   position: relative;
   display: flex;
   max-width: 600px;
+  overflow: hidden;
 
   img {
-    align-self: flex-end;
+    // align-self: flex-end;
     max-width: 100%;
     height: 400px;
+    transform: scale(0.95);
     object-fit: cover;
     transition: all 150ms ease-in-out;
   }

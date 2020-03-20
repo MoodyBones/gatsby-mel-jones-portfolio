@@ -30,7 +30,7 @@ const typeStyles = css`
   }
 
   h2 {
-    // font-family: "Merriweather", serif;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-size: 5em;
     font-weight: 900;
@@ -39,9 +39,10 @@ const typeStyles = css`
   }
 
   h3 {
+    font-family: "Montserrat", sans-serif;
     line-height: 1;
-    font-size: 3em;
-    font-weight: 600;
+    font-size: 2.5em;
+    font-weight: 900;
     letter-spacing: -1px;
   }
 

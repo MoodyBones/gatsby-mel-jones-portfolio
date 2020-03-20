@@ -40,6 +40,7 @@ const WorkGrid = styled("div")`
   grid-auto-rows: 1fr;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
+    margin-top: 2em;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     // grid-auto-rows: 700px;
     grid-auto-rows: 1fr;
@@ -47,6 +48,7 @@ const WorkGrid = styled("div")`
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    margin-top: 2em;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     // grid-auto-rows: 700px;
     grid-auto-rows: 1fr;
