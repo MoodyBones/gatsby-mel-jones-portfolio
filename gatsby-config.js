@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Mel Jones | Portfolio`,
@@ -48,7 +52,8 @@ module.exports = {
       resolve: "gatsby-source-prismic-graphql",
       options: {
         repositoryName: "mel-jones-portfolio-prist", // (REQUIRED, replace with your own)
-        linkResolver: () => post => `/${post.uid}`,
+        accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
       },
     },
     {
