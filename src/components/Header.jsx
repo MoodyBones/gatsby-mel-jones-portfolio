@@ -8,7 +8,7 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("header")`
-  padding: 1em 1em 0.5em;
+  padding: 1em 4em 0.5em;
   position: sticky;
   top: 0;
   background: ${colors.grey100};
@@ -38,7 +38,7 @@ const HeaderContent = styled("div")`
   a {
     color: currentColor;
     text-decoration: none;
-    margin-left: 2em;
+    margin-left: 2.5em;
   }
 
   .logo-link {
@@ -60,8 +60,8 @@ const NavLinks = styled("div")`
   display: flex;
 
   a {
-    font-family: "Montserrat", sans-serif;
-    font-size: 0.85em;
+    // font-family: "Montserrat", sans-serif;
+    font-size: 0.95em;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -80,7 +80,7 @@ const NavLinks = styled("div")`
       visibility: hidden;
       transform-origin: left;
       transform: scale(0);
-      transition: 0.25s ease-out;
+      transition: 0.5s ease;
     }
 
     &:hover {
@@ -105,10 +105,10 @@ const IconLinks = styled("div")`
 
   .icon-social {
     font-size: 1.3em;
-    transition: 0.25s ease-in-out;
+    transition: 0.5s ease;
 
     &:hover {
-      transform: scale(1.3);
+      transform: scale(1.5);
     }
   }
 

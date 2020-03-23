@@ -7,23 +7,23 @@ import colors from "styles/colors"
 const SocialContainer = styled("nav")`
   .icon-social {
     font-size: 2em;
-    transition: all 0.25s ease-in-out;
+    transition: all 0.5s ease;
 
     &:hover,:active {
-      transform: scale(1.3);
-      transition: all 0.25s ease-in-out;
+      transform: scale(1.4);
+      transition: all 0.5s ease;
 
     }
   }
 
   a {
     text-decoration: none;
-    color: ${colors.grey900};  
+    color: ${colors.grey800};  
   }
 
 
   a:not(:last-child) {
-    margin-right: 1.5em;
+    margin-right: 2.5em;
   }
 
   //   &:hover,
