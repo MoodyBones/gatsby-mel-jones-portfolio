@@ -22,33 +22,22 @@ const WorkSection = styled("section")`
 
   margin: 0 auto;
   padding-top: 6em;
-  max-width: ${dimensions.maxwidthTablet}px;
   display: flex;
   flex-direction: column;
-
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ee65de),
-    to(#26cbff)
-  );
-  background-image: linear-gradient(
-    to right,
-    ${colors.purple500},
-    ${colors.orange500}
-  );
-  background-size: 100% 2px;
-  background-position: center top;
+  align-items: center;
 
   &:last-of-type {
     margin-bottom: 0;
   }
 `
 const WorkTitleContainer = styled("div")`
-  margin-bottom: 6em;
+  padding: 4em 0;
   text-align: center;
+  max-width: ${dimensions.maxwidthTablet}px;
+
+  p {
+    padding-top: 4em;
+  }
 `
 
 const WorkGrid = styled("div")`
@@ -156,11 +145,11 @@ const WorkGrid = styled("div")`
 
 const WorkAction = styled(Link)`
   margin-left: auto;
-  padding: 8em 0 6em;
+  padding: 4em 0 6em;
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
-  transition: all 150ms ease-in-out;
+  transition: all 0.5s ease;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin: 0 auto;
@@ -175,12 +164,10 @@ const WorkAction = styled(Link)`
 
   &:hover {
     color: ${colors.orange500};
-    transition: all 150ms ease-in-out;
 
     span {
       transform: translateX(0px);
       opacity: 1;
-      transition: transform 150ms ease-in-out;
     }
   }
 `

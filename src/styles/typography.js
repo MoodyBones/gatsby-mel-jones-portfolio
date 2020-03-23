@@ -15,10 +15,10 @@ const typeStyles = css`
   }
 
   h1 {
-    font-size: 3em;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    line-height: 1.5;
+    font-size: 4em;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -1px;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 1.75em;

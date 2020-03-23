@@ -3,9 +3,7 @@ import PropTypes from "prop-types"
 import styled from "@emotion/styled"
 import Img from "gatsby-image"
 
-const Image = ({ input }) => (
-  <Img fluid={input.primary.image.localFile.childImageSharp.fluid} />
-)
+const Image = ({ data }) => <Img fluid={data.childImageSharp.fluid} />
 
 export default Image
 

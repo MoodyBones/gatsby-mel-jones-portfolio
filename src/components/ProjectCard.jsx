@@ -13,18 +13,12 @@ const ProjectCardContainer = styled(Link)`
   color: currentColor;
   text-decoration: none;
 
-  &:not(:last-child) {
-    border-bottom: 2px solid ${colors.grey400};
-  }
-
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     align-items: center;
-    border-bottom: 2px solid transparent;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     align-items: center;
-    border-bottom: 2px solid transparent;
   }
 
   &:hover,

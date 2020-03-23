@@ -52,8 +52,8 @@ module.exports = {
       resolve: "gatsby-source-prismic-graphql",
       options: {
         repositoryName: "mel-jones-portfolio-prist", // (REQUIRED, replace with your own)
-        accessToken: `${process.env.API_KEY}`,
-        linkResolver: ({ node, key, value }) => post => `/${post.uid}`,
+        // accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({}) => post => `/${post.uid}`,
       },
     },
     {

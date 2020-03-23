@@ -5,13 +5,15 @@ import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 import Button from "components/_ui/Button"
-import Art from "components/HeroArt"
+import Art from "components/_ui/HeroArt"
+import Img from "gatsby-image"
+import HeroImage from "images/mel-jones.jpg"
 
 const HeroSection = styled("section")`
   grid-column: 1 / -1;
 
-  background: ${colors.blue600};
-  color: ${colors.grey200};
+  background: ${colors.grey100};
+  color: ${colors.orange500};
   padding-top: 6em;
   padding-bottom: 6em;
   display: grid;
@@ -33,17 +35,19 @@ const HeroTitle = styled("div")`
   @media (max-width: ${dimensions.maxwidthMobile}px) {
   }
   .welcome-text {
-    font-size: 4em;
-    font-weight: 600;
-    line-height: 1.2;
+    opacity: 0.8;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      // font-size: 1.9em;
+      font-size: 1.9em;
     }
   }
 
   p {
     padding: 4em 0;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5em;
+    line-height: 1.2s;
+    color: ${colors.grey800};
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       // font-size: 0.9em;
@@ -67,8 +71,15 @@ const HeroArt = styled("div")`
 
   width: 100%;
   height: auto;
-  border-radius: 3px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  // border-radius: 3px;
+  // box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+
+  img {
+    max-width: 100%
+    height: auto;
+    object-fit: cover;
+  }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     // grid-column: 1 / span 1;
@@ -78,12 +89,12 @@ const HeroArt = styled("div")`
   }
 `
 
-const Hero = ({ title, buttonLink, buttonText }) => (
+const Hero = ({ title, buttonLink, buttonText, content }) => (
   <HeroSection>
     <HeroTitle>
       <h1 className="welcome-text">
-        Heya, how's it going? I'm Mel Jones! An <i>Australian</i> born,
-        <i> Berlin</i> based, self-taught <b>WEB DEV.</b>
+        Heya, how's it going? I'm Mel Jones! <br />
+        An Australian born, Berlin based, self-taught <b>WEB DEV.</b>
       </h1>
       <p>
         All of my progress is public on <i> GitHub</i>, where you can follow
@@ -101,16 +112,19 @@ const Hero = ({ title, buttonLink, buttonText }) => (
         <Button>{RichText.render(buttonText)}</Button>
       </a> */}
     </HeroTitle>
+
     <HeroArt>
-      <Art />
+      <img src={HeroImage} width="500" height="750" />
+      {/* // <Art /> */}
     </HeroArt>
-    {/* <HeroImage src={ImageHero} width="500" height="750" /> */}
   </HeroSection>
 )
 
 export default Hero
 
 Hero.propTypes = {
-  bio: PropTypes.array.isRequired,
-  socialLinks: PropTypes.array.isRequired,
+  title: PropTypes.array.isRequired,
+  buttonLink: PropTypes.array.isRequired,
+  buttonText: PropTypes.array.isRequired,
+  content: PropTypes.array.isRequired,
 }
