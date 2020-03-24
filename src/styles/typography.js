@@ -15,18 +15,22 @@ const typeStyles = css`
   }
 
   h1 {
-    font-size: 4em;
+    font-size: 3.75em;
     font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: -1px;
+    line-height: 1;
+    letter-spacing: -3px;
+
+    @media (max-width: 1000px) {
+      font-size: 3em;
+    }
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 1.75em;
+      font-size: 2.6em;
     }
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 1.5em;
-    }
+    // @media (max-width: ${dimensions.maxwidthMobile}px) {
+    //   font-size: 1.5em;
+    // }
   }
 
   h2 {
@@ -36,6 +40,10 @@ const typeStyles = css`
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1.2;
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      font-size: 4em;
+    }
   }
 
   h3 {

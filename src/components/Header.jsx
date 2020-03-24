@@ -15,6 +15,10 @@ const HeaderContainer = styled("header")`
   width: 100%;
   z-index: 9999;
   border-bottom: 1px solid ${colors.grey300};
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 1em 1em 0.5em;
+  }
 `
 
 const HeaderContent = styled("div")`
@@ -39,6 +43,10 @@ const HeaderContent = styled("div")`
     color: currentColor;
     text-decoration: none;
     margin-left: 2.5em;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      margin-left: 2em;
+    }
   }
 
   .logo-link {
