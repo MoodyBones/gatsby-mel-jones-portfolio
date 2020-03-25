@@ -83,13 +83,12 @@ const HeroTitle = styled("div")`
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       grid-column: 1 / -1;  
       grid-row: 5 / 6; 
-      // font-size: 1em;
     }
 
     a {
       color: ${colors.grey800};
       text-decoration: none;
-      border-bottom: 2px solid ${colors.grey700};
+      border-bottom: 2px solid ${colors.grey500};
       padding-bottom: 1px;
 
       :hover,
@@ -121,9 +120,7 @@ const Hero = ({ title, buttonLink, buttonText, content }) => (
   <HeroSection>
     <HeroTitle>
       <h1>Heya, how's it going?</h1>
-      <h1>
-        I'm <span>Mel Jones</span>
-      </h1>
+      <h1>I'm Mel Jones</h1>
       <h1>
         an Australian born, Berlin based, self-taught <b>WEB DEV.</b>
       </h1>
@@ -139,7 +136,7 @@ const Hero = ({ title, buttonLink, buttonText, content }) => (
         </AnchorLink>
       </p>
       <div className="hero-img">
-        <img src={HeroImage} width="500" height="750" />
+        <img src={HeroImage} width="750" height="750" />
       </div>
     </HeroTitle>
   </HeroSection>
