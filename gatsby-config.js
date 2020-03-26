@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Mel Jones | Portfolio`,
@@ -23,7 +27,7 @@ module.exports = {
             variants: [`400`, `700`],
           },
           {
-            family: `Merriweather`,
+            family: `Montserrat`,
             variants: [`400`, `900`],
           },
         ],
@@ -42,13 +46,14 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: "gatsby-source-prismic-graphql",
       options: {
         repositoryName: "mel-jones-portfolio-prist", // (REQUIRED, replace with your own)
-        linkResolver: () => post => `/${post.uid}`,
+        // accessToken: `${process.env.API_KEY}`,
+        linkResolver: ({}) => post => `/${post.uid}`,
       },
     },
     {

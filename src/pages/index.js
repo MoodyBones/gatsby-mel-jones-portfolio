@@ -7,142 +7,149 @@ import { RichText } from "prismic-reactjs"
 import colors from "styles/colors"
 import Link from "components/Link"
 import dimensions from "styles/dimensions"
+import Hero from "components/Hero"
 import About from "components/About"
 import Button from "components/_ui/Button"
-import Form from "components/Form"
+import Form from "components/_ui/Form"
 import Layout from "components/Layout"
 import ProjectCard from "components/ProjectCard"
-import Art from "components/HeroArt"
 import ImageAbout from "images/eva-test-only.png"
 
 const LayoutGridWrapper = styled("div")``
-
-const HeroSection = styled("section")`
-  grid-column: 2 / -2;
-
-  margin: 6em 0 6em 0;
-  padding-bottom: 6em;
-  display: grid;
-  grid-gap: 1em;
-  grid-template-columns: repeat(6, minmax(100px, 320px));
-  grid-template-rows: repeat(6, 100px);
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin: 1em 0 4em;
-    grid-column-gap: 0;
-    grid-row-gap: 4em;
-    grid-template-columns: 350px;
-    grid-template-rows: auto auto auto auto;
-  }
-
-  .hero-button {
-    grid-column: -3 / -1;
-    grid-row: -2 / -1;
-    align-self: end;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / span 1;
-      grid-row: 3 / -1;
-      justify-self: center;
-      align-self: center;
-    }
-
-    button {
-      width: 100%;
-    }
-  }
-`
-
-const HeroTitle = styled("div")`
-  padding: 2em 0 0 0;
-  grid-column: 1 / 5;
-  grid-row: 1 / 5;
-  align-self: start;
-  z-index: 999;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 3em 0;
-    grid-column: 1 / span 1;
-    grid-row: 2 / 3;
-  }
-  .welcome-text {
-    font-size: 2.5em;
-    font-weight: 600;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 1.9em;
-    }
-  }
-
-  p {
-    font-weight: 600;
-    font-size: 1em;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 0.9em;
-    }
-  }
-`
-
-const HeroArt = styled("div")`
-  grid-column: -3 / -1;
-  grid-row: 1 / 5;
-  align-self: end;
-
-  width: 100%;
-  height: auto;
-  border-radius: 3px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / span 1;
-    grid-row: 1 / 2;
-    justify-self: start;
-    align-self: center;
-  }
-`
 
 const WorkSection = styled("section")`
   grid-column: 2 / -2;
 
   margin: 0 auto;
   padding-top: 6em;
-  max-width: ${dimensions.maxwidthTablet}px;
   display: flex;
   flex-direction: column;
-
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    right top,
-    from(#ee65de),
-    to(#26cbff)
-  );
-  background-image: linear-gradient(
-    to right,
-    ${colors.purple500},
-    ${colors.orange500}
-  );
-  background-size: 100% 2px;
-  background-position: center top;
+  align-items: center;
 
   &:last-of-type {
     margin-bottom: 0;
   }
 `
 const WorkTitleContainer = styled("div")`
-  margin-bottom: 6em;
+  padding: 4em 0;
   text-align: center;
+  max-width: ${dimensions.maxwidthTablet}px;
+
+  p {
+    padding-top: 4em;
+  }
+`
+
+const WorkGrid = styled("div")`
+  margin-top: 4em;
+  display: grid;
+  grid-gap: 4em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 1fr;
+
+  @media (max-width: 1000px) {
+    grid-gap: 2em;
+  }
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    margin-top: 2em;
+    grid-gap: 4em;
+  }
+
+  a:nth-child(1) {
+    & > div:first-of-type {
+      background: ${colors.blue600};
+    }
+
+    &:hover,
+    :active {
+      h3,
+      span {
+        color: ${colors.blue600};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+
+  a:nth-child(2) {
+    & > div:first-of-type {
+      background: ${colors.orange500};
+    }
+
+    &:hover,
+    :active {
+      h3,
+      span {
+        color: ${colors.orange500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(3) {
+    & > div:first-of-type {
+      background: ${colors.purple500};
+    }
+
+    &:hover,
+    :active {
+      h3,
+      span {
+        color: ${colors.purple500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(4) {
+    & > div:first-of-type {
+      background: ${colors.blue600};
+    }
+
+    &:hover,
+    :active {
+      h3,
+      span {
+        color: ${colors.blue600};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(5) {
+    & > div:first-of-type {
+      background: ${colors.orange500};
+    }
+
+    &:hover,
+    :active {
+      h3,
+      span {
+        color: ${colors.orange500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
+  a:nth-child(6) {
+    & > div:first-of-type {
+      background: ${colors.purple500};
+    }
+
+    &:hover,
+    :active {
+      h3,
+      span {
+        color: ${colors.purple500};
+        transition: all 150ms ease-in-out;
+      }
+    }
+  }
 `
 
 const WorkAction = styled(Link)`
   margin-left: auto;
-  padding: 8em 0 6em;
+  padding: 4em 0 6em;
   font-weight: 600;
   text-decoration: none;
   color: currentColor;
-  transition: all 150ms ease-in-out;
+  transition: all 0.5s ease;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     margin: 0 auto;
@@ -157,12 +164,10 @@ const WorkAction = styled(Link)`
 
   &:hover {
     color: ${colors.orange500};
-    transition: all 150ms ease-in-out;
 
     span {
       transform: translateX(0px);
       opacity: 1;
-      transition: transform 150ms ease-in-out;
     }
   }
 `
@@ -311,61 +316,29 @@ const RenderBody = ({ home, projects, meta }) => (
       ].concat(meta)}
     />
     <LayoutGridWrapper className="main-grid">
-      <HeroSection>
-        <HeroTitle>
-          {RichText.render(home.hero_title)}
-          <div>
-            {/* <p>A driven self-taught Developer</p>
-            <p>Based in Berlin</p>
-            <p>Lover of </p>
-            <p>Welcome to my Portfolio Site!</p> */}
-            {/* <h1>
-              Hey, how's it going? I'm Mel Jones. An <i>Australian</i>
-              self-taught <b>Web Dev</b> based in Berlin. I'm looking for a
-              mentored role to bridge the gap between the learning environment
-              and real world engineering team.
-            </h1> */}
-            <h1 className="welcome-text">
-              Heya, how's it going? I'm Mel Jones! An <i>Australian</i> born,
-              <i> Berlin</i> based, self-taught <b>WEB DEV.</b>
-            </h1>
-            <p>
-              All of my progress is public on <i> GitHub</i>, where you can
-              follow along, offer guidance or <b>hire me!</b>
-              <span> 👩‍💻</span>
-              <span> 💖</span>
-              <span> 👋</span>
-            </p>
-          </div>
-        </HeroTitle>
-        <HeroArt>
-          <Art />
-        </HeroArt>
-        {/* <HeroImage src={ImageHero} width="500" height="750" /> */}
-        <a
-          className="hero-button"
-          href={home.hero_button_link.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button>{RichText.render(home.hero_button_text)}</Button>
-        </a>
-      </HeroSection>
+      <Hero
+        title={home.hero_title}
+        buttonLink={home.hero_button_link.url}
+        buttonText={home.hero_button_text}
+        content={home.content}
+      />
       <WorkSection>
         <WorkTitleContainer>
           <h2>Featured Work</h2>
           <p>CSS • JavaScript • HTML</p>
         </WorkTitleContainer>
-        {projects.map((project, i) => (
-          <ProjectCard
-            key={i}
-            category={project.node.project_category}
-            title={project.node.project_title}
-            description={project.node.project_preview_description}
-            thumbnail={project.node.project_preview_thumbnail}
-            uid={project.node._meta.uid}
-          />
-        ))}
+        <WorkGrid>
+          {projects.map((project, i) => (
+            <ProjectCard
+              key={i}
+              category={project.node.project_category}
+              title={project.node.project_title}
+              description={project.node.project_preview_description}
+              thumbnail={project.node.project_preview_thumbnail}
+              uid={project.node._meta.uid}
+            />
+          ))}
+        </WorkGrid>
         <WorkAction to={"/work"}>
           <span>
             See more work <span>&#8594;</span>

@@ -8,75 +8,59 @@ import PropTypes from "prop-types"
 
 const ProjectCardContainer = styled(Link)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   color: currentColor;
   text-decoration: none;
-  padding-bottom: 5em;
-
-  &:not(:last-child) {
-    border-bottom: 2px solid ${colors.grey400};
-  }
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    flex-direction: column;
     align-items: center;
-    border-bottom: 2px solid transparent;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    flex-direction: column;
     align-items: center;
-    border-bottom: 2px solid transparent;
-    padding-bottom: 1em;
   }
 
   &:hover,
   :active {
-    // filter: brightness(0.9);
-    transition: all 150ms ease-in-out;
     cursor: pointer;
 
     h3,
     span {
       color: ${colors.orange500};
-      transition: all 150ms ease-in-out;
     }
 
     .ProjectCardAction {
       span {
         transform: translateX(0px);
         opacity: 1;
-        transition: transform 150ms ease-in-out;
       }
     }
 
     img {
-      filter: brightness(0.9);
-      transition: all 150ms ease-in-out;
+      // filter: brightness(0.9);
+      transform: scale(1);
     }
   }
 `
 
 const ProjectCardContent = styled("div")`
-  padding: 0 0 0 3em;
   position: relative;
   text-align: left;
-  width: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-top: 2em;
+  padding-bottom: 5em;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    padding: 1.5em 1em;
+    padding: 1.5em 0;
     text-align: center;
-    width: auto;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1.5em 1em;
+    padding: 1.5em 0;
     text-align: center;
-    width: auto;
   }
 `
 
@@ -89,10 +73,8 @@ const ProjectCardCategory = styled("h6")`
 const ProjectCardTitle = styled("h3")`
   margin-top: 0.7em;
   margin-bottom: 0.7em;
-  font-family: "Merriweather", serif;
-  font-weight: 900;
   color: ${colors.grey900};
-  transition: all 150ms ease-in-out;
+  transition: all 0.5s ease;
 `
 
 const ProjectCardBlurb = styled("div")`
@@ -113,45 +95,30 @@ const ProjectCardAction = styled("span")`
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: ${colors.grey700};
-  transition: all 150ms ease-in-out;
+  transition: all 0.5s ease;
 
   span {
     margin-left: 1em;
     transform: translateX(-8px);
     display: inline-block;
-    transition: transform 400ms ease-in-out;
+    transition: all 0.5s ease;
   }
 `
 
 const ProjectCardImageContainer = styled("div")`
   position: relative;
   display: flex;
-  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  padding: 3.5em 2.5em;
 
   img {
-    align-self: flex-end;
-    max-width: 100%;
-    height: 400px;
+    width: 100%;
+    height: 300px;
+    transform: scale(0.95);
     object-fit: cover;
-    transition: all 150ms ease-in-out;
-  }
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    img {
-      align-self: flex-end;
-      max-width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    img {
-      align-self: flex-end;
-      max-width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+    transition: all 0.5s ease;
   }
 `
 

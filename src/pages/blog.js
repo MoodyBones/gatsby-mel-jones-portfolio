@@ -40,9 +40,12 @@ const BlogGrid = styled("div")`
   grid-auto-rows: 1fr;
   grid-gap: 2.5em;
 
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    margin-top: 2em;
+  }
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    margin-left: 2em;
-    margin-right: 2em;
+    margin: 2em;
     grid-gap: 4em;
   }
 

@@ -3,39 +3,58 @@ import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 
 const typeStyles = css`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  p {
+    margin: 0;
+  }
+
   h1 {
-    font-size: 3em;
-    font-weight: 600;
-    letter-spacing: -0.5px;
-    line-height: 1.5;
+    font-size: 3.75em;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -3px;
+
+    @media (max-width: 1000px) {
+      font-size: 3em;
+    }
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 1.75em;
+      font-size: 2.6em;
     }
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 1.5em;
-    }
+    // @media (max-width: ${dimensions.maxwidthMobile}px) {
+    //   font-size: 1.5em;
+    // }
   }
 
   h2 {
-    // font-family: "Merriweather", serif;
+    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-size: 5em;
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1.2;
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      font-size: 4em;
+    }
   }
 
   h3 {
+    font-family: "Montserrat", sans-serif;
     line-height: 1;
-    font-size: 3em;
-    font-weight: 600;
+    font-size: 2.5em;
+    font-weight: 900;
     letter-spacing: -1px;
   }
 
   h4 {
-    margin: 0;
     letter-spacing: -2px;
     line-height: 1;
     text-transform: uppercase;
@@ -52,7 +71,6 @@ const typeStyles = css`
   }
 
   h6 {
-    margin: 0;
     font-size: 0.9em;
     font-weight: 600;
     text-transform: uppercase;

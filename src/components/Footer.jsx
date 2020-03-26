@@ -7,6 +7,7 @@ import Logo from "images/logo-mel-jones.svg"
 import SocialIcons from "components/SocialIcons"
 
 const FooterContainer = styled("footer")`
+  padding: 5em 3em;
   background-repeat: no-repeat;
   background-image: -webkit-gradient(
     linear,
@@ -17,31 +18,25 @@ const FooterContainer = styled("footer")`
   );
   background-image: linear-gradient(
     to right,
-    ${colors.purple500},
-    ${colors.orange500}
+    ${colors.orange500},
+    ${colors.purple500}
   );
-  background-size: 90% 2px;
+  background-size: 100% 1px;
   background-position: center top;
 `
 
-const FooterBg = styled("div")`
-  margin-top: 2px;
-  grid-column: 1 / -1;
-  // background: ${colors.grey300};
-`
-
 const FooterWrapper = styled("div")`
-  grid-column: 2 / -2;
+  grid-column: 1 / -1;
 
-  padding: 3em 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 
   div {
-    font-size: 0.8em;
+    font-size: 0.95em;
     line-height: 2.5;
+    letter-spacing: -1px;
   }
 
   .heart-wrapped-emoji {
@@ -95,23 +90,26 @@ const FooterAuthor = styled("a")`
 
 const Footer = () => (
   <FooterContainer className="main-grid">
-    <FooterBg className="main-grid">
-      <FooterWrapper>
-        <div>
-          <span>Love saves the day!</span>
-          <br />
-          <span>©️ 2020 Mel Jones</span>
-          <br />
-          <span>Gatsby Starter by Marguerite Roth</span>
-          <br />
-          <span className="heart-wrapped-emoji">💝</span>
-        </div>
-        <SocialIcons />
-        <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
-          <img className="footer-logo" src={Logo} />
-        </FooterAuthor>
-      </FooterWrapper>
-    </FooterBg>
+    <FooterWrapper>
+      <div>
+        <span
+          role="img"
+          aria-label="Emoji - heart wrapped"
+          className="heart-wrapped-emoji"
+        >
+          💝
+        </span>
+        <span>Love saves the day!</span>
+        <br />
+        <span>©️ 2020 Mel Jones</span>
+        <br />
+        <span>Gatsby Starter by Marguerite Roth </span>
+      </div>
+      <SocialIcons />
+      <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
+        <img className="footer-logo" src={Logo} />
+      </FooterAuthor>
+    </FooterWrapper>
   </FooterContainer>
 )
 

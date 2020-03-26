@@ -47,6 +47,7 @@
     "smooth-scroll": "^16.0.3"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "gatsby-plugin-remove-trailing-slashes": "^2.0.11",
     "prettier": "^1.18.2"
   },

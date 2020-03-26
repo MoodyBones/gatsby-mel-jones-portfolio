@@ -8,31 +8,45 @@ import dimensions from "styles/dimensions"
 import Logo from "components/_ui/Logo"
 
 const HeaderContainer = styled("header")`
-  padding-top: 3em;
-  padding-bottom: 1em;
+  padding: 1em 4em 0.5em;
+  position: sticky;
+  top: 0;
   background: ${colors.grey100};
+  width: 100%;
+  z-index: 9999;
+  border-bottom: 1px solid ${colors.grey300};
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1.5em 0 1em 0;
+    padding: 1em 1em 0.5em;
   }
 `
 
 const HeaderContent = styled("div")`
-  grid-column: 2 / -2;
+  grid-column: 1 / -1;
 
   display: flex;
   justify-content: space-between;
 
+  svg {
+    height: 60px;
+    width: auto;
+  }
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     svg {
-      height: 100px;
+      height: 30px;
+      width: auto;
     }
   }
 
   a {
     color: currentColor;
     text-decoration: none;
-    margin-left: 2em;
+    margin-left: 2.5em;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      margin-left: 2em;
+    }
   }
 
   .logo-link {
@@ -42,15 +56,8 @@ const HeaderContent = styled("div")`
 `
 
 const HeaderNav = styled("nav")`
-  // position: sticky;
-  // background: ${colors.grey100};
-  // top: 2em;
-  // right: 2em;
-  // // bottom: 0;
-  // // left: 0;
-
   display: flex;
-  flex-direction: row;
+  align-items: center;
 
   // a:not(:last-child) {
   //   margin-right: 2em;
@@ -59,9 +66,9 @@ const HeaderNav = styled("nav")`
 
 const NavLinks = styled("div")`
   display: flex;
-  flex-direction: row;
 
   a {
+    // font-family: "Montserrat", sans-serif;
     font-size: 0.95em;
     font-weight: 600;
     text-transform: uppercase;
@@ -81,7 +88,7 @@ const NavLinks = styled("div")`
       visibility: hidden;
       transform-origin: left;
       transform: scale(0);
-      transition: 0.25s ease-out;
+      transition: 0.5s ease;
     }
 
     &:hover {
@@ -106,10 +113,10 @@ const IconLinks = styled("div")`
 
   .icon-social {
     font-size: 1.3em;
-    transition: 0.25s ease-in-out;
+    transition: 0.5s ease;
 
     &:hover {
-      transform: scale(1.3);
+      transform: scale(1.5);
     }
   }
 
