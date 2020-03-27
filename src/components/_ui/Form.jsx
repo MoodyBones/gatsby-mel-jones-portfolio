@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Button from "components/_ui/Button"
 
 const ContactFormContainer = styled("div")`
-  padding: 4em 2.5em 1.5em 2.5em;
+  padding: 4em 2.5em 1.5em;
   position: relative;
   display: grid;
   color: ${colors.blue600};
@@ -20,7 +20,7 @@ const ContactFormContainer = styled("div")`
     position: absolute;
     justify-self: center;
     background: ${colors.grey100};
-    top: -50px;
+    top: -20px;
     font-weight: 600;
   }
 

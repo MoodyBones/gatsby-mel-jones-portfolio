@@ -39,7 +39,7 @@ const ProjectCardContainer = styled(Link)`
 
     img {
       // filter: brightness(0.9);
-      transform: scale(1);
+      transform: scale(1.07);
     }
   }
 `
@@ -110,14 +110,13 @@ const ProjectCardImageContainer = styled("div")`
   display: flex;
   width: 100%;
   overflow: hidden;
-  padding: 3.5em 2.5em;
+  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
   img {
     width: 100%;
-    height: 300px;
-    transform: scale(0.95);
+    height: 350px;
+    transform: scale(1);
     object-fit: cover;
-    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
     transition: all 0.5s ease;
   }
 `

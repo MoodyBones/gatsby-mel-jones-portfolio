@@ -136,7 +136,7 @@ const Hero = ({ title, buttonLink, buttonText, content }) => (
         </AnchorLink>
       </p>
       <div className="hero-img">
-        <img src={HeroImage} width="750" height="750" />
+        <img src={HeroImage} alt="Mel Jones standing in the Jardin Majorelle botanical garden in sunny Marrakech, Morocco." width="750" height="750" />
       </div>
     </HeroTitle>
   </HeroSection>

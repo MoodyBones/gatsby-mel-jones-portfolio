@@ -35,8 +35,8 @@ const WorkTitle = styled("div")`
 const WorkGrid = styled("div")`
   margin-top: 4em;
   display: grid;
-  grid-gap: 4em;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-column-gap: 6em;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-auto-rows: 1fr;
 
   @media (max-width: 1000px) {
