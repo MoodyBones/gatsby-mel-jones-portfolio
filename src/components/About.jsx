@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Form from "components/_ui/Form"
-// import ImageAbout from "images/eva-test-only.png"
+import Image from "images/eva-test-only.png"
 
 const AboutLayout = styled("div")`
   grid-column: 2 /-2;
@@ -36,8 +36,8 @@ const Title = styled("div")`
 `
 
 const Text = styled("div")`
-  grid-row: 2 / 3;
   grid-column: 1 / -2;
+  grid-row: 2 / 3;
 
   column-count: 2;
   column-width: 150px;
@@ -54,13 +54,11 @@ const Text = styled("div")`
   }
 `
 
-const Quote = styled("div")`
-
-`
+const Quote = styled("div")``
 
 const ContactForm = styled("div")`
-  grid-row: 3 / 4;
   grid-column: -2 / -1;
+  grid-row: 3 / 4;
 
   // justify-self: center;
   align-self: end;
@@ -70,23 +68,19 @@ const ContactForm = styled("div")`
   }
 `
 
-// const Image = styled("div")`
-//   grid-column: 2 / -1;
-//   grid-row: 1 / 4;
-//   justify-self: end;
+const AboutImage = styled("div")`
+  grid-column: -2 / -1;
+  grid-row: 2 / 3;
 
-//   @media (max-width: ${dimensions.maxwidthMobile}px) {
-//     grid-column: 1 / span 1;
-//     grid-row: 2 / 3;
-//   }
-// `
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  }
 
-// const AboutImage = styled("img")`
-//   width: 100%;
-//   height: auto;
-//   border-radius: 3px;
-//   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
-// `
+  img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  }
+`
 
 const About = ({ title, bio, socialLinks }) => (
   <AboutLayout>
@@ -102,9 +96,9 @@ const About = ({ title, bio, socialLinks }) => (
     <ContactForm id="anchor-contact-form">
       <Form />
     </ContactForm>
-    {/* <AboutImage>
-            <AboutImage src={ImageAbout} width="598" height="599" />
-          </AboutImage> */}
+    <AboutImage>
+      <img src={Image} width="598" height="599" />
+    </AboutImage>
   </AboutLayout>
 )
 
