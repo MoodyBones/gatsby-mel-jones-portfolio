@@ -36,11 +36,11 @@ const Title = styled("div")`
     }
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 5em;
+      font-size: 7em;
     }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 5em;
+      font-size: 6em;
     }
   }
 `
@@ -48,7 +48,14 @@ const AboutImage = styled("div")`
   grid-column: -3 / -1;
   grid-row: 2 / 3;
 
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 2 / 3;
   }
 
   img {
@@ -66,7 +73,19 @@ const Text = styled("div")`
   column-width: 150px;
   column-gap: 3.5em;
 
+  @media (max-width: 900px) {
+    column-count: 2;
+  }
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-row: 2 / 3;
+  }
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-row: 3 / 4;
+
+    column-count: 1;
+    padding: 0 2em;
   }
 
   p {
@@ -89,6 +108,14 @@ const Quote = styled("div")`
     text-align: right;
     border-right: 8px solid ${colors.blue600};
   }
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-row: 3 / 4;
+  }
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+  }
 `
 
 const ContactForm = styled("div")`
@@ -98,8 +125,13 @@ const ContactForm = styled("div")`
   justify-self: center;
   // align-self: end;
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
     grid-row: 3 / 4;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 4 / 5;
   }
 `
 
@@ -126,8 +158,8 @@ const About = ({ title, bio, socialLinks }) => (
       </blockquote> */}
       <blockquote>
         <b>When I code I use:</b> <br />
-        Semantic HTML, (S)CSS, JavaScript (ES6+), Node, React, Gatsby, Styled
-        Components(Emotion), Studio Visual Code & GitHub.
+        Semantic HTML, (S)CSS, JavaScript (ES6+), React, Gatsby, Styled
+        Components(Emotion), Node, Express, Studio Visual Code & GitHub.
       </blockquote>
       <blockquote>
         <b>I have completed workshops on:</b> <br />

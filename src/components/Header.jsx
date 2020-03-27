@@ -144,7 +144,7 @@ const Header = () => (
           </Link>
         </NavLinks>
         <IconLinks>
-          <Link href="https://github.com/MoodyBones">
+          {/* <Link href="https://github.com/MoodyBones">
             <span>
               <FontAwesomeIcon
                 className="icon-social"
@@ -159,7 +159,7 @@ const Header = () => (
                 icon={["fab", "twitter"]}
               />
             </span>
-          </Link>
+          </Link> */}
           <AnchorLink to="/#anchor-contact-form" title="Email">
             <span>
               <FontAwesomeIcon className="icon-social" icon="paper-plane" />

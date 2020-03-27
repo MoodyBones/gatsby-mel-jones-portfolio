@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Button from "components/_ui/Button"
 
 const ContactFormContainer = styled("div")`
-  padding: 4em 2.5em 1.5em;
+  padding: 3em 1.5em 1.5em;
   position: relative;
   // max-width: 500px;
   display: grid;
@@ -37,7 +37,7 @@ const ContactFormContainer = styled("div")`
     margin-bottom: 0.75em;
     padding: 0.75em;
     width: 100%;
-    color: ${colors.blue600};
+    color: ${colors.purple500};
     font-family: inherit;
     font-size: 1.4em;
     font-weight: 600;
