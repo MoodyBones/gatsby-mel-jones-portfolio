@@ -56,11 +56,9 @@ const typeStyles = css`
 
   h4 {
     letter-spacing: -2px;
-    line-height: 1;
-    text-transform: uppercase;
-    font-size: 10em;
+    line-height: .8;
+    font-size: 8em;
     font-weight: 900;
-    color: rgba(244, 107, 63, 0.5); // oranges500
   }
 
   h5 {

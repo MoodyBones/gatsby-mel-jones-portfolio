@@ -7,16 +7,19 @@ import dimensions from "styles/dimensions"
 import Form from "components/_ui/Form"
 import Image from "images/eva-test-only.png"
 
-const AboutLayout = styled("div")`
+const AboutGrid = styled("div")`
   grid-column: 2 /-2;
 
-  padding: 6em 0;
+  padding: 20em 0;
 
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr) minmax(
+      min-content,
+      1fr
+    );
   grid-template-rows: repeat(auto-fit, auto);
-  grid-column-gap: 2em;
-  grid-row-gap: 4em;
+  grid-column-gap: 3.5em;
+  grid-row-gap: 10em;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-template-columns: 1fr;
@@ -24,52 +27,25 @@ const AboutLayout = styled("div")`
 `
 
 const Title = styled("div")`
-  grid-row: 1 / 2;
-  grid-column: -2 / -1;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-  }
-
   h4 {
-    font-size: 9em;
+    padding-bottom: 0.5em;
+    text-align: right;
+    color: ${colors.blue600};
+    @media (max-width: 1000px) {
+      font-size: 7em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      font-size: 5em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 5em;
+    }
   }
 `
-
-const Text = styled("div")`
-  grid-column: 1 / -2;
-  grid-row: 2 / 3;
-
-  column-count: 2;
-  column-width: 150px;
-  column-gap: 3em;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-  }
-
-  p {
-    font-family: "Montserrat", sans-serif;
-    line-height: 2.1;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-  }
-`
-
-const Quote = styled("div")``
-
-const ContactForm = styled("div")`
-  grid-column: -2 / -1;
-  grid-row: 3 / 4;
-
-  // justify-self: center;
-  align-self: end;
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-row: 3 / 4;
-  }
-`
-
 const AboutImage = styled("div")`
-  grid-column: -2 / -1;
+  grid-column: -3 / -1;
   grid-row: 2 / 3;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
@@ -82,24 +58,83 @@ const AboutImage = styled("div")`
   }
 `
 
+const Text = styled("div")`
+  grid-column: 1 / -1;
+  grid-row: 3 / 4;
+
+  column-count: 3;
+  column-width: 150px;
+  column-gap: 3.5em;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+  }
+
+  p {
+    margin-bottom: 2em;
+    font-family: "Montserrat", sans-serif;
+    line-height: 2.1;
+    font-size: 1.1em;
+    text-align: justify;
+  }
+`
+
+const Quote = styled("div")`
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+
+  blockquote {
+    margin: 0;
+    padding: 1em 2em 1em 0;
+    font-size: 1.2em;
+    text-align: right;
+    border-right: 8px solid ${colors.blue600};
+  }
+`
+
+const ContactForm = styled("div")`
+  grid-column: -3 / -1;
+  grid-row: 4 / 5;
+
+  justify-self: center;
+  // align-self: end;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-row: 3 / 4;
+  }
+`
+
 const About = ({ title, bio, socialLinks }) => (
-  <AboutLayout>
-    <Title>{RichText.render(title)}</Title>
-    <Text>{RichText.render(bio)}</Text>
-    <Quote>
-      <blockquote>
-        I really enjoy connecting with a wide range of customers. I think
-        listening, trust and a good team is very important. I care about the
-        human side of things and the impact of technology in our society.
-      </blockquote>
-    </Quote>
+  <AboutGrid>
+    <AboutImage>
+      <img src={Image} width="598" height="599" />
+      <span>
+        Illustration by{" "}
+        <a href="https://www.evagoncalves.com/">Eva Gonçalves</a>{" "}
+      </span>
+    </AboutImage>
+    <Text>
+      <Title>{RichText.render(title)}</Title>
+      {RichText.render(bio)}
+    </Text>
     <ContactForm id="anchor-contact-form">
       <Form />
     </ContactForm>
-    <AboutImage>
-      <img src={Image} width="598" height="599" />
-    </AboutImage>
-  </AboutLayout>
+    <Quote>
+      {/* <blockquote>
+        I care about the human side of Software and the impact of Technology in
+        our society.
+      </blockquote> */}
+      <blockquote>
+        <b>When I code I use:</b> <br />
+        Semantic HTML, (S)CSS, JavaScript (ES6+), Node, React, Gatsby, Styled
+        Components(Emotion), Studio Visual Code & GitHub.
+      </blockquote>
+      <blockquote>
+        <b>I have completed workshops on:</b> <br />
+        TypeScript, GraphQL, Vue.js, MongoDB & Docker
+      </blockquote>
+    </Quote>
+  </AboutGrid>
 )
 
 export default About
