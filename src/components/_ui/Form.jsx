@@ -8,9 +8,10 @@ import Button from "components/_ui/Button"
 const ContactFormContainer = styled("div")`
   padding: 4em 2.5em 1.5em;
   position: relative;
+  // max-width: 500px;
   display: grid;
-  color: ${colors.blue600};
-  border: 2px solid ${colors.blue600};
+  color: ${colors.grey900};
+  border: 2px solid ${colors.grey900};
   border-radius: 3px;
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
@@ -41,11 +42,11 @@ const ContactFormContainer = styled("div")`
     font-size: 1.4em;
     font-weight: 600;
     background: inherit;
-    border: 2px solid ${colors.blue600};
+    border: 2px solid ${colors.grey900};
     border-radius: 3px;
 
     &:focus {
-      outline: 4px dotted ${colors.grey500};
+      outline: 4px dotted ${colors.grey400};
       outline-offset: 6px;
     }
   }
