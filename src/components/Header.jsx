@@ -68,11 +68,11 @@ const NavLinks = styled("div")`
   display: flex;
 
   a {
-    // font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.95em;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     height: 100%;
     display: block;
     position: relative;
@@ -84,7 +84,7 @@ const NavLinks = styled("div")`
       width: 96%;
       height: 2px;
       top: 2em;
-      background: ${colors.grey700};
+      background: ${colors.purple500};
       visibility: hidden;
       transform-origin: left;
       transform: scale(0);
