@@ -55,7 +55,8 @@ const BlogGrid = styled("div")`
       border: 0.3em solid ${colors.blue600};
       transition: all 150ms ease-in-out;
 
-      h3 {
+      h3,
+      h6 {
         color: ${colors.blue600};
         transition: all 150ms ease-in-out;
       }
@@ -67,7 +68,8 @@ const BlogGrid = styled("div")`
       border: 0.3em solid ${colors.orange500};
       transition: all 150ms ease-in-out;
 
-      h3 {
+      h3,
+      h6 {
         color: ${colors.orange500};
         transition: all 150ms ease-in-out;
       }
@@ -80,7 +82,8 @@ const BlogGrid = styled("div")`
       border: 0.3em solid ${colors.purple500};
       transition: all 150ms ease-in-out;
 
-      h3 {
+      h3,
+      h6 {
         color: ${colors.purple500};
         transition: all 150ms ease-in-out;
       }
@@ -93,7 +96,8 @@ const BlogGrid = styled("div")`
       border: 0.3em solid ${colors.blue600};
       transition: all 150ms ease-in-out;
 
-      h3 {
+      h3,
+      h6 {
         color: ${colors.blue600};
         transition: all 150ms ease-in-out;
       }
@@ -105,7 +109,8 @@ const BlogGrid = styled("div")`
       border: 0.3em solid ${colors.orange500};
       transition: all 150ms ease-in-out;
 
-      h3 {
+      h3,
+      h6 {
         color: ${colors.orange500};
         transition: all 150ms ease-in-out;
       }
@@ -118,7 +123,8 @@ const BlogGrid = styled("div")`
       border: 0.3em solid ${colors.purple500};
       transition: all 150ms ease-in-out;
 
-      h3 {
+      h3,
+      h6 {
         color: ${colors.purple500};
         transition: all 150ms ease-in-out;
       }

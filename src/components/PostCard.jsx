@@ -13,17 +13,19 @@ const PostCardContainer = styled(Link)`
   text-decoration: none;
   color: ${colors.grey300};
   background: ${colors.grey900};
+  border: 0.3em solid transparent;
   border: 0.3em solid ${colors.grey200};
-  transition: all 150ms ease-in-out;
+  border-radius: 10px;
+  // box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
+  transition: all 0.5s ease;
 
   &:hover,
   :focus {
     border: 0.3em solid ${colors.orange500};
-    transition: all 150ms ease-in-out;
 
-    h3 {
+    h3,
+    h6 {
       color: ${colors.orange500};
-      transition: all 150ms ease-in-out;
     }
   }
 `
@@ -45,6 +47,7 @@ const PostDate = styled("div")`
 const PostTitle = styled("h3")`
   margin: 0.5em 0;
   font-weight: 700;
+  transition: transform 0.5s ease;
 `
 
 const PostDescription = styled("div")`
