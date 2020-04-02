@@ -6,106 +6,27 @@ import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import Link from "components/API/Link"
 import Hero from "components/Home/Hero"
-// import WorkHome from "components/Home/WorkHome"
 import About from "components/Home/About"
 import Layout from "components/Layout"
-import ProjectCard from "components/Cards/ProjectCard"
+import CurrentWork from "../components/Home/CurrentWork"
 
 const LayoutGridWrapper = styled("div")``
 
+const HeroSection = styled("section")`
+  grid-column: 1 / -1;
+
+  color: ${colors.grey800};
+  background: ${colors.grey100};
+`
+
 const WorkSection = styled("section")`
   grid-column: 2 / -2;
-
-  margin: 0 auto;
-  padding: 6em 0 20em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-`
-
-const HomeWorkGrid = styled("div")`
-  margin-top: 4em;
-  display: grid;
-  grid-column-gap: 6em;
-  grid-row-gap: 6em;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fit, auto);
-
-  @media (max-width: 1000px) {
-    grid-column-gap: 2em;
-  }
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin-top: 2em;
-    grid-column-gap: 4em;
-    grid-row-gap: 2em;
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-template-columns: 1fr;
-    grid-row-gap: 6em;
-  }
-`
-
-const WorkTitleContainer = styled("div")`
-  grid-column: 1 / 2;
-
-  justify-self: end;
-
-  max-width: min-content;
-
-  h4 {
-    color: ${colors.orange500};
-    // text-align: right;
-  }
-`
-
-const WhiteSpace = styled("div")`
-  grid-column: 2 / 3;
-`
-
-const WorkAction = styled(Link)`
-  grid-column: 1 / -1;
-  justify-self: end;
-  align-self: end;
-  font-size: 2.5em;
-
-  font-weight: 600;
-  text-decoration: none;
-  color: ${colors.grey800};
-  transition: all 0.5s ease;
-
-  span {
-    margin-left: 1em;
-    transform: translateX(-8px);
-    display: inline-block;
-    transition: transform 400ms ease-in-out;
-  }
-
-  &:hover {
-    color: ${colors.orange500};
-
-    span {
-      transform: translateX(0px);
-      opacity: 1;
-    }
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    font-size: 2em;
-    justify-self: center;
-    color: ${colors.orange500};
-  }
 `
 
 const AboutSection = styled("section")`
   grid-column: 1 / -1;
+
   background: ${colors.grey100};
 `
 
@@ -172,34 +93,16 @@ const RenderBody = ({ home, projects, meta }) => (
       ].concat(meta)}
     />
     <LayoutGridWrapper className="main-grid">
-      <Hero
-        title={home.hero_title}
-        buttonLink={home.hero_button_link.url}
-        buttonText={home.hero_button_text}
-        content={home.content}
-      />
+      <HeroSection>
+        <Hero
+          title={home.hero_title}
+          buttonLink={home.hero_button_link.url}
+          buttonText={home.hero_button_text}
+          content={home.content}
+        />
+      </HeroSection>
       <WorkSection>
-        <HomeWorkGrid>
-          <WorkTitleContainer>
-            <h4>Some of my work</h4>
-          </WorkTitleContainer>
-          <WhiteSpace></WhiteSpace>
-          {projects.slice(-2).map((project, i) => (
-            <ProjectCard
-              key={i}
-              category={project.node.project_category}
-              title={project.node.project_title}
-              description={project.node.project_preview_description}
-              thumbnail={project.node.project_preview_thumbnail}
-              uid={project.node._meta.uid}
-            />
-          ))}
-          <WorkAction to={"/work"}>
-            <span>
-              See more work <span>&#8594;</span>
-            </span>
-          </WorkAction>
-        </HomeWorkGrid>
+        <CurrentWork projects={projects} />
       </WorkSection>
       <AboutSection className="main-grid" id="anchor-about-section">
         <AboutZigZag>
