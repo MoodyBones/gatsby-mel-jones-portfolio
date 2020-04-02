@@ -1,8 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "components/Link"
-import colors from "styles/colors"
+import Link from "../API/Link"
+import colors from "../../styles/colors"
 
 const SocialContainer = styled("nav")`
   .icon-social {

@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
-import colors from "styles/colors"
+import colors from "../../styles/colors"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Button from "components/_ui/Button"
+import Button from "./Button"
 
 const ContactFormContainer = styled("div")`
   padding: 3em 1.5em 1.5em;

@@ -1,9 +1,9 @@
 import React from "react"
 import Moment from "react-moment"
-import Link from "components/Link"
+import Link from "../API/Link"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
-import colors from "styles/colors"
+import colors from "../../styles/colors"
 import PropTypes from "prop-types"
 
 const PostCardContainer = styled(Link)`

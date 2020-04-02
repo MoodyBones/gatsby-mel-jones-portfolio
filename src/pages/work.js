@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
-import ProjectCard from "components/ProjectCard"
+import ProjectCard from "components/Cards/ProjectCard"
 
 const WorkWrapper = styled("section")`
   padding-bottom: 10em;

@@ -5,7 +5,7 @@ import styled from "@emotion/styled"
 import colors from "styles/colors"
 import { Link, graphql } from "gatsby"
 import { RichText } from "prismic-reactjs"
-import Button from "components/_ui/Button"
+import Button from "components/UI/Button"
 import Layout from "components/Layout"
 
 const ProjectWrapper = styled("section")`

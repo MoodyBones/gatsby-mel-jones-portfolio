@@ -1,11 +1,11 @@
 import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "components/Link"
+import Link from "./API/Link"
 import styled from "@emotion/styled"
-import colors from "styles/colors"
-import dimensions from "styles/dimensions"
-import Logo from "components/_ui/Logo"
+import colors from "../styles/colors"
+import dimensions from "../styles/dimensions"
+import Logo from "./UI/Logo"
 
 const HeaderContainer = styled("header")`
   padding: 1em 4em 0.5em;

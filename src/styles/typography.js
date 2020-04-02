@@ -63,6 +63,18 @@ const typeStyles = css`
     line-height: .8;
     font-size: 8em;
     font-weight: 900;
+    
+    @media (max-width: 1000px) {
+      font-size: 7em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      font-size: 7em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 6em;
+    }
   }
 
   h5 {

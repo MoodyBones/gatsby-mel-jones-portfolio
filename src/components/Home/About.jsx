@@ -2,10 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
-import colors from "styles/colors"
-import dimensions from "styles/dimensions"
-import Form from "components/_ui/Form"
-import Image from "images/eva-test-only.png"
+import colors from "../../styles/colors"
+import dimensions from "../../styles/dimensions"
+import Form from "../UI/Form"
+import Image from "../../images/eva-test-only.png"
 
 const AboutGrid = styled("div")`
   grid-column: 2 /-2;
@@ -43,17 +43,6 @@ const Title = styled("div")`
     padding-bottom: 0.5em;
     text-align: right;
     color: ${colors.blue600};
-    @media (max-width: 1000px) {
-      font-size: 7em;
-    }
-
-    @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 7em;
-    }
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 6em;
-    }
   }
 `
 const AboutImage = styled("div")`
@@ -114,7 +103,7 @@ const Text = styled("div")`
   }
 `
 
-const Quote = styled("div")`
+const Tech = styled("div")`
   grid-column: 1 / 2;
   grid-row: 1 / 3;
 
@@ -129,6 +118,7 @@ const Quote = styled("div")`
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
     grid-row: 3 / 4;
+    font-size: 0.8em;
   }
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / -1;
@@ -169,11 +159,7 @@ const About = ({ title, bio, socialLinks }) => (
     <ContactForm id="anchor-contact-form">
       <Form />
     </ContactForm>
-    <Quote>
-      {/* <blockquote>
-        I care about the human side of Software and the impact of Technology in
-        our society.
-      </blockquote> */}
+    <Tech>
       <blockquote>
         <b>Technology I use:</b> <br />
         Semantic HTML, (S)CSS, JavaScript (ES6+), React, Gatsby, GraphQL, Styled
@@ -183,7 +169,7 @@ const About = ({ title, bio, socialLinks }) => (
         <b> Workshops I have completed:</b> <br />
         TypeScript, Node, Express, Vue.js, MongoDB & Docker
       </blockquote>
-    </Quote>
+    </Tech>
   </AboutGrid>
 )
 

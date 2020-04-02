@@ -7,8 +7,8 @@ import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import Button from "components/_ui/Button"
 import Layout from "components/Layout"
+import Button from "components/UI/Button"
 
 const PostWrapper = styled("section")`
   padding-bottom: 10em;

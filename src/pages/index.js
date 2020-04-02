@@ -6,12 +6,11 @@ import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import Link from "components/Link"
-import About from "components/About"
-import Button from "components/_ui/Button"
-import Hero from "components/Hero"
+import Link from "components/API/Link"
+import About from "components/Home/About"
+import Hero from "components/Home/Hero"
 import Layout from "components/Layout"
-import ProjectCard from "components/ProjectCard"
+import ProjectCard from "components/Cards/ProjectCard"
 
 const LayoutGridWrapper = styled("div")``
 
@@ -54,14 +53,20 @@ const HomeWorkGrid = styled("div")`
 `
 
 const WorkTitleContainer = styled("div")`
-  grid-column: 1 / -1;
-  align-self: start;
+  grid-column: 1 / 2;
+
+  justify-self: end;
 
   max-width: min-content;
 
   h4 {
     color: ${colors.orange500};
+    // text-align: right;
   }
+`
+
+const WhiteSpace = styled("div")`
+  grid-column: 2 / 3;
 `
 
 const WorkAction = styled(Link)`
@@ -177,6 +182,7 @@ const RenderBody = ({ home, projects, meta }) => (
           <WorkTitleContainer>
             <h4>Some of my work</h4>
           </WorkTitleContainer>
+          <WhiteSpace></WhiteSpace>
           {projects.slice(-2).map((project, i) => (
             <ProjectCard
               key={i}

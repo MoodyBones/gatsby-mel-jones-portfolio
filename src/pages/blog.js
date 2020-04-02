@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
-import PostCard from "components/PostCard"
+import PostCard from "components/Cards/PostCard"
 
 const BlogWrapper = styled("section")`
   padding-bottom: 10em;

@@ -1,11 +1,11 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
-import dimensions from "styles/dimensions"
-import colors from "styles/colors"
-import HeroImage from "images/image.png"
-import Link from "components/Link"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import colors from "../../styles/colors"
+import dimensions from "../../styles/dimensions"
+import HeroImage from "../../images/image.png"
+import Link from "../API/Link"
 
 const HeroSection = styled("section")`
   grid-column: 1 / -1;
@@ -136,7 +136,12 @@ const Hero = ({ title, buttonLink, buttonText, content }) => (
         </AnchorLink>
       </p>
       <div className="hero-img">
-        <img src={HeroImage} alt="Mel Jones standing in the Jardin Majorelle botanical garden in sunny Marrakech, Morocco." width="750" height="750" />
+        <img
+          src={HeroImage}
+          alt="Mel Jones standing in the Jardin Majorelle botanical garden in sunny Marrakech, Morocco."
+          width="750"
+          height="750"
+        />
       </div>
     </HeroTitle>
   </HeroSection>
