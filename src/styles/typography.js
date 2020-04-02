@@ -67,9 +67,7 @@ const typeStyles = css`
 
   h5 {
     font-weight: 600;
-    font-size: 0.95em;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 2em;
   }
 
   h6 {

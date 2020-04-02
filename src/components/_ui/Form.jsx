@@ -11,17 +11,17 @@ const ContactFormContainer = styled("div")`
   // max-width: 500px;
   display: grid;
   color: ${colors.grey900};
-  border: 2px solid ${colors.grey900};
+  border: 1px solid ${colors.grey900};
   border-radius: 3px;
   box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
 
-  h3 {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
+  h5 {
+    padding-right: 0.2em;
+    padding-left: 0.2em;
     position: absolute;
     justify-self: center;
     background: ${colors.grey100};
-    top: -20px;
+    top: -35px;
     font-weight: 600;
   }
 
@@ -29,12 +29,13 @@ const ContactFormContainer = styled("div")`
     margin-bottom: 1em;
     font-size: 1em;
     font-weight: 600;
+    letter-spacing: 0.5px;
   }
 
   input,
   textarea {
     margin-top: 0.5em;
-    margin-bottom: 0.75em;
+    margin-bottom: 1.5em;
     padding: 0.75em;
     width: 100%;
     color: ${colors.purple500};
@@ -42,7 +43,7 @@ const ContactFormContainer = styled("div")`
     font-size: 1.4em;
     font-weight: 600;
     background: inherit;
-    border: 2px solid ${colors.grey900};
+    border: 1px solid ${colors.grey900};
     border-radius: 3px;
 
     &:focus {
@@ -77,7 +78,7 @@ const ContactFormContainer = styled("div")`
 
 const ContactForm = () => (
   <ContactFormContainer>
-    <h3>Get in touch!</h3>
+    <h5>Get in touch!</h5>
     <form method="post" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field" />
 
