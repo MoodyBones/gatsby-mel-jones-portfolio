@@ -104,6 +104,17 @@ const PostBody = styled("div")`
       width: 100%;
     }
   }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  p {
+    padding-bottom: 3em;
+  }
 `
 
 const BlogLink = styled(Link)`

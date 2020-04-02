@@ -13,10 +13,9 @@ const PostCardContainer = styled(Link)`
   text-decoration: none;
   color: ${colors.grey300};
   background: ${colors.grey900};
-  border: 0.3em solid transparent;
   border: 0.3em solid ${colors.grey200};
   border-radius: 10px;
-  // box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
+  // box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px; // this shows the border, how can i fix?
   transition: all 0.5s ease;
 
   &:hover,
@@ -32,9 +31,6 @@ const PostCardContainer = styled(Link)`
 
 const PostMetas = styled("div")`
   align-self: flex-end;
-
-  // display: flex;
-  // justify-content: space-between;
   font-size: 0.85em;
   color: ${colors.grey600};
   font-weight: 700;
@@ -47,6 +43,7 @@ const PostDate = styled("div")`
 const PostTitle = styled("h3")`
   margin: 0.5em 0;
   font-weight: 700;
+  color: ${colors.grey600};
   transition: transform 0.5s ease;
 `
 
