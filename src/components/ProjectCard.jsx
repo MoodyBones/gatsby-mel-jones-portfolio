@@ -73,7 +73,6 @@ const ProjectCardCategory = styled("h6")`
 const ProjectCardTitle = styled("h3")`
   margin-top: 0.7em;
   margin-bottom: 0.7em;
-  color: ${colors.grey900};
   transition: all 0.5s ease;
 `
 
@@ -111,7 +110,7 @@ const ProjectCardImageContainer = styled("div")`
   width: 100%;
   overflow: hidden;
   background: ${colors.orange500};
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
 
   img {
     width: 100%;
@@ -119,6 +118,7 @@ const ProjectCardImageContainer = styled("div")`
     transform: scale(1);
     object-fit: cover;
     transition: all 0.5s ease;
+    border-style: none;
   }
 `
 

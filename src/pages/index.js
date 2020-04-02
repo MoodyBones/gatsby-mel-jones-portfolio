@@ -32,9 +32,9 @@ const WorkSection = styled("section")`
 const HomeWorkGrid = styled("div")`
   margin-top: 4em;
   display: grid;
-  grid-column-gap: 2em;
+  grid-column-gap: 6em;
   grid-row-gap: 6em;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fit, auto);
 
   @media (max-width: 1000px) {
@@ -72,7 +72,7 @@ const WorkAction = styled(Link)`
 
   font-weight: 600;
   text-decoration: none;
-  color: currentColor;
+  color: ${colors.grey800};
   transition: all 0.5s ease;
 
   span {
@@ -177,7 +177,7 @@ const RenderBody = ({ home, projects, meta }) => (
           <WorkTitleContainer>
             <h4>Some of my work</h4>
           </WorkTitleContainer>
-          {projects.map((project, i) => (
+          {projects.slice(-2).map((project, i) => (
             <ProjectCard
               key={i}
               category={project.node.project_category}
