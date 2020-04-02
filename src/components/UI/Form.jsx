@@ -5,10 +5,9 @@ import colors from "../../styles/colors"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Button from "./Button"
 
-const ContactFormContainer = styled("div")`
+const Container = styled("div")`
   padding: 3em 1.5em 1.5em;
   position: relative;
-  // max-width: 500px;
   display: grid;
   color: ${colors.grey900};
   border: 1px solid ${colors.grey900};
@@ -29,7 +28,7 @@ const ContactFormContainer = styled("div")`
     margin-bottom: 1em;
     font-size: 1em;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
   }
 
   input,
@@ -76,8 +75,8 @@ const ContactFormContainer = styled("div")`
   }
 `
 
-const ContactForm = () => (
-  <ContactFormContainer>
+const Form = () => (
+  <Container>
     <h5>Get in touch!</h5>
     <form method="post" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field" />
@@ -115,7 +114,7 @@ const ContactForm = () => (
         </Button>
       </div>
     </form>
-  </ContactFormContainer>
+  </Container>
 )
 
-export default ContactForm
+export default Form

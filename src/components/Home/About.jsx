@@ -1,7 +1,6 @@
 import React from "react"
-import PropTypes from "prop-types"
-import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
+import { RichText } from "prismic-reactjs"
 import colors from "../../styles/colors"
 import dimensions from "../../styles/dimensions"
 import Form from "../UI/Form"
@@ -19,10 +18,12 @@ const AboutGrid = styled("div")`
     );
   grid-template-rows: repeat(auto-fit, auto);
   grid-column-gap: 3.5em;
-  grid-row-gap: 10em;
+  grid-row-gap: 20em;
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 10em 0;
     grid-template-columns: 1fr;
+    grid-row-gap: 10em;
   }
 
   a {
@@ -38,11 +39,26 @@ const AboutGrid = styled("div")`
   }
 `
 
-const Title = styled("div")`
-  h4 {
-    padding-bottom: 0.5em;
+const Tech = styled("div")`
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  border-right: 8px solid ${colors.blue600};
+
+  blockquote {
+    margin: 0;
+    padding: 0 2em 2em 0;
+    font-size: 1.4em;
     text-align: right;
-    color: ${colors.blue600};
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-row: 1 / 2;
+    font-size: 0.8em;
+  }
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
   }
 `
 const AboutImage = styled("div")`
@@ -50,7 +66,7 @@ const AboutImage = styled("div")`
   grid-row: 2 / 3;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-column: 1 / -1;
+    grid-column: 2 / -1;
     grid-row: 1 / 2;
   }
 
@@ -68,6 +84,14 @@ const AboutImage = styled("div")`
   div {
     text-align: right;
     padding-top: 2em;
+  }
+`
+
+const Title = styled("div")`
+  h4 {
+    padding-bottom: 0.5em;
+    text-align: right;
+    color: ${colors.blue600};
   }
 `
 
@@ -91,7 +115,6 @@ const Text = styled("div")`
     grid-row: 3 / 4;
 
     column-count: 1;
-    padding: 0 2em;
   }
 
   p {
@@ -103,62 +126,49 @@ const Text = styled("div")`
   }
 `
 
-const Tech = styled("div")`
+const Emoji = styled("div")`
   grid-column: 1 / 2;
-  grid-row: 1 / 3;
-
-  blockquote {
-    margin: 0;
-    padding: 1em 2em 1em 0;
-    font-size: 1.4em;
-    text-align: right;
-    letter-spacing: 1px;
-    border-right: 8px solid ${colors.blue600};
-  }
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-row: 3 / 4;
-    font-size: 0.8em;
-  }
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / -1;
-    grid-row: 1 / 2;
-  }
-`
-
-const ContactForm = styled("div")`
-  grid-column: -3 / -1;
   grid-row: 4 / 5;
 
-  justify-self: center;
-  // align-self: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 5em;
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-column: 1 / 2;
     grid-row: 3 / 4;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-column: 1 / -1;
     grid-row: 4 / 5;
+    justify-self: center;
+    // flex-direction: row;
+    // font-size: 2em;
+  }
+`
+
+const ContactForm = styled("div")`
+  grid-column: 2 / -1;
+  grid-row: 4 / 5;
+
+  justify-self: center;
+  align-self: center;
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-column: 2 / -1;
+    grid-row: 3 / 4;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-column: 1 / -1;
+    grid-row: 5 / 6;
   }
 `
 
 const About = ({ title, bio, socialLinks }) => (
   <AboutGrid>
-    <AboutImage>
-      <img src={Image} width="598" height="599" />
-      <div>
-        Illustration by{" "}
-        <a href="https://www.evagoncalves.com/">Eva Gonçalves</a>{" "}
-      </div>
-    </AboutImage>
-    <Text>
-      <Title>{RichText.render(title)}</Title>
-      {RichText.render(bio)}
-    </Text>
-    <ContactForm id="anchor-contact-form">
-      <Form />
-    </ContactForm>
     <Tech>
       <blockquote>
         <b>Technology I use:</b> <br />
@@ -170,13 +180,28 @@ const About = ({ title, bio, socialLinks }) => (
         TypeScript, Node, Express, Vue.js, MongoDB & Docker
       </blockquote>
     </Tech>
+    <AboutImage>
+      <img src={Image} width="598" height="599" />
+      <div>
+        Illustration by{" "}
+        <a href="https://www.evagoncalves.com/">Eva Gonçalves</a>{" "}
+      </div>
+    </AboutImage>
+    <Text>
+      <Title>{RichText.render(title)}</Title>
+      {RichText.render(bio)}
+    </Text>
+    <Emoji>
+      <span>✨</span>
+      <span>👩🏻‍💻</span>
+      <span>🌴</span>
+      <span>🚀</span>
+      <span>✌️</span>
+    </Emoji>
+    <ContactForm id="anchor-contact-form">
+      <Form />
+    </ContactForm>
   </AboutGrid>
 )
 
 export default About
-
-About.propTypes = {
-  title: PropTypes.string.isRequired,
-  bio: PropTypes.array.isRequired,
-  socialLinks: PropTypes.array.isRequired,
-}

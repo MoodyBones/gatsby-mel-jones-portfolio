@@ -8,17 +8,14 @@ import dimensions from "../styles/dimensions"
 import Logo from "./UI/Logo"
 
 const HeaderContainer = styled("header")`
-  padding: 1em 4em 0.5em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
   position: sticky;
   top: 0;
   background: ${colors.grey100};
   width: 100%;
   z-index: 9999;
   border-bottom: 1px solid ${colors.grey300};
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1em 1em 0.5em;
-  }
 `
 
 const HeaderContent = styled("div")`
