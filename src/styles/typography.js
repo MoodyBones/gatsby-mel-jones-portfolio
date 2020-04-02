@@ -40,6 +40,8 @@ const typeStyles = css`
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1.2;
+    color: ${colors.grey800};  
+
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 4em;
@@ -52,6 +54,8 @@ const typeStyles = css`
     font-size: 2.5em;
     font-weight: 900;
     letter-spacing: -1px;
+    color: ${colors.grey800};  
+
   }
 
   h4 {
@@ -95,6 +99,7 @@ const typeStyles = css`
   }
 
   p,
+  span,
   ul {
     a {
       color: currentColor;

@@ -24,6 +24,18 @@ const AboutGrid = styled("div")`
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     grid-template-columns: 1fr;
   }
+
+  a {
+    color: ${colors.grey800};
+    text-decoration: none;
+    border-bottom: 2px solid ${colors.grey500};
+    padding-bottom: 1px;
+
+    :hover,
+    :active {
+      border-bottom: 2px solid ${colors.blue600};
+    }
+  }
 `
 
 const Title = styled("div")`
@@ -62,6 +74,11 @@ const AboutImage = styled("div")`
     width: 100%;
     height: auto;
     box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  }
+
+  div {
+    text-align: right;
+    padding-top: 2em;
   }
 `
 
@@ -104,8 +121,9 @@ const Quote = styled("div")`
   blockquote {
     margin: 0;
     padding: 1em 2em 1em 0;
-    font-size: 1.2em;
+    font-size: 1.4em;
     text-align: right;
+    letter-spacing: 1px;
     border-right: 8px solid ${colors.blue600};
   }
 
@@ -139,10 +157,10 @@ const About = ({ title, bio, socialLinks }) => (
   <AboutGrid>
     <AboutImage>
       <img src={Image} width="598" height="599" />
-      <span>
+      <div>
         Illustration by{" "}
         <a href="https://www.evagoncalves.com/">Eva Gonçalves</a>{" "}
-      </span>
+      </div>
     </AboutImage>
     <Text>
       <Title>{RichText.render(title)}</Title>
@@ -157,13 +175,13 @@ const About = ({ title, bio, socialLinks }) => (
         our society.
       </blockquote> */}
       <blockquote>
-        <b>When I code I use:</b> <br />
-        Semantic HTML, (S)CSS, JavaScript (ES6+), React, Gatsby, Styled
-        Components(Emotion), Node, Express, Studio Visual Code & GitHub.
+        <b>Technology I use:</b> <br />
+        Semantic HTML, (S)CSS, JavaScript (ES6+), React, Gatsby, GraphQL, Styled
+        Components (Emotion), Codepen, VS Code & GitHub.
       </blockquote>
       <blockquote>
-        <b>I have completed workshops on:</b> <br />
-        TypeScript, GraphQL, Vue.js, MongoDB & Docker
+        <b> Workshops I have completed:</b> <br />
+        TypeScript, Node, Express, Vue.js, MongoDB & Docker
       </blockquote>
     </Quote>
   </AboutGrid>

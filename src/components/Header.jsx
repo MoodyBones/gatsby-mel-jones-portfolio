@@ -22,7 +22,7 @@ const HeaderContainer = styled("header")`
 `
 
 const HeaderContent = styled("div")`
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
 
   display: flex;
   justify-content: space-between;
@@ -40,7 +40,7 @@ const HeaderContent = styled("div")`
   }
 
   a {
-    color: currentColor;
+    color: ${colors.grey800};
     text-decoration: none;
     margin-left: 2.5em;
 
