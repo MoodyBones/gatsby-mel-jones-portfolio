@@ -6,22 +6,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Button from "./Button"
 
 const Container = styled("div")`
-  padding: 3em 1.5em 1.5em;
+  padding: 3em 0 1.5em;
   position: relative;
   display: grid;
-  color: ${colors.grey900};
-  border: 1px solid ${colors.grey900};
-  border-radius: 3px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  color: ${colors.grey800};
 
-  h5 {
-    padding-right: 0.2em;
-    padding-left: 0.2em;
-    position: absolute;
-    justify-self: center;
-    background: ${colors.grey100};
-    top: -35px;
-    font-weight: 600;
+  h4 {
+    justify-self: end;
+    text-align: right;
+    letter-spacing: -2px;
+    color: ${colors.purple500};
+    margin-bottom: 0.5em;
+    border-radius: 3px;
+    width: min-content;
   }
 
   label {
@@ -42,12 +39,14 @@ const Container = styled("div")`
     font-size: 1.4em;
     font-weight: 600;
     background: inherit;
-    border: 1px solid ${colors.grey900};
+    background: ${colors.grey300};
+    border: none;
     border-radius: 3px;
+    border-radius: 10px;
 
-    &:focus {
-      outline: 4px dotted ${colors.grey400};
-      outline-offset: 6px;
+    &:hover,
+    :focus {
+      background: ${colors.purple200};
     }
   }
 
@@ -63,21 +62,24 @@ const Container = styled("div")`
     justify-self: end;
   }
   span {
-    margin: 0.2em;
+    // margin: 0.2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    svg {
+      width: 80%;
+    }
   }
 
   svg {
-    padding-bottom: 0.4em;
+    padding-bottom: 0.2em;
   }
 `
 
 const Form = () => (
   <Container>
-    <h5>Get in touch!</h5>
+    <h4>Get in touch!</h4>
     <form method="post" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field" />
 

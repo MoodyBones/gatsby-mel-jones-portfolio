@@ -20,6 +20,10 @@ const AboutGrid = styled("div")`
   grid-column-gap: 3.5em;
   grid-row-gap: 20em;
 
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-row-gap: 10em;
+  }
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 10em 0;
     grid-template-columns: 1fr;
@@ -42,7 +46,23 @@ const AboutGrid = styled("div")`
 const Tech = styled("div")`
   grid-column: 1 / 2;
   grid-row: 1 / 3;
-  border-right: 8px solid ${colors.blue600};
+  // border-right: 8px solid ${colors.blue600};
+
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#ee65de),
+    to(#26cbff)
+  );
+  background-image: linear-gradient(
+    to bottom,
+    ${colors.purple500},
+    ${colors.blue500}
+  );
+  background-size: 3px 100%;
+  background-position: bottom right;
 
   blockquote {
     margin: 0;
@@ -92,6 +112,12 @@ const Title = styled("div")`
     padding-bottom: 0.5em;
     text-align: right;
     color: ${colors.blue600};
+    width: min-content;
+
+    // @media (max-width: ${dimensions.maxwidthMobile}px) {
+    //   margin: 0 auto;
+    //   text-align: center;
+    // }
   }
 `
 

@@ -30,7 +30,7 @@ const ButtonContainer = styled("button")`
   :focus {
     cursor: pointer;
     color: black;
-    background: ${colors.purple100};
+    // background: ${colors.purple100};
     background: white;
     border: 1.5px solid black;
     border-radius: 3px;

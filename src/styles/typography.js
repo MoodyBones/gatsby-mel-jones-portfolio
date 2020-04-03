@@ -55,25 +55,25 @@ const typeStyles = css`
   h4 {
     letter-spacing: -2px;
     line-height: 0.9;
-    font-size: 8em;
+    font-size: 7.5em;
     font-weight: 900;
 
     @media (max-width: 1000px) {
-      font-size: 7em;
+      font-size: 6em;
     }
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 7em;
+      font-size: 5em;
     }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 6em;
+      font-size: 5em;
     }
   }
 
   h5 {
     font-weight: 600;
-    font-size: 2em;
+    font-size: 2.5em;
   }
 
   h6 {
