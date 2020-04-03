@@ -1,10 +1,10 @@
 import React from "react"
-import Link from "components/Link"
+import PropTypes from "prop-types"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
-import dimensions from "styles/dimensions"
-import colors from "styles/colors"
-import PropTypes from "prop-types"
+import dimensions from "../../styles/dimensions"
+import colors from "../../styles/colors"
+import Link from "../API/Link"
 
 const ProjectCardContainer = styled(Link)`
   display: flex;
@@ -39,7 +39,7 @@ const ProjectCardContainer = styled(Link)`
 
     img {
       // filter: brightness(0.9);
-      transform: scale(1);
+      transform: scale(1.07);
     }
   }
 `
@@ -73,7 +73,6 @@ const ProjectCardCategory = styled("h6")`
 const ProjectCardTitle = styled("h3")`
   margin-top: 0.7em;
   margin-bottom: 0.7em;
-  color: ${colors.grey900};
   transition: all 0.5s ease;
 `
 
@@ -110,15 +109,16 @@ const ProjectCardImageContainer = styled("div")`
   display: flex;
   width: 100%;
   overflow: hidden;
-  padding: 3.5em 2.5em;
+  background: ${colors.orange500};
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
 
   img {
     width: 100%;
-    height: 300px;
-    transform: scale(0.95);
+    height: 350px;
+    transform: scale(1);
     object-fit: cover;
-    box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
     transition: all 0.5s ease;
+    border-style: none;
   }
 `
 

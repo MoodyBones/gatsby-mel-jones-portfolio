@@ -1,28 +1,25 @@
 import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "components/Link"
+import Link from "./API/Link"
 import styled from "@emotion/styled"
-import colors from "styles/colors"
-import dimensions from "styles/dimensions"
-import Logo from "components/_ui/Logo"
+import colors from "../styles/colors"
+import dimensions from "../styles/dimensions"
+import Logo from "./UI/Logo"
 
 const HeaderContainer = styled("header")`
-  padding: 1em 4em 0.5em;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
   position: sticky;
   top: 0;
   background: ${colors.grey100};
   width: 100%;
   z-index: 9999;
   border-bottom: 1px solid ${colors.grey300};
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 1em 1em 0.5em;
-  }
 `
 
 const HeaderContent = styled("div")`
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
 
   display: flex;
   justify-content: space-between;
@@ -40,7 +37,7 @@ const HeaderContent = styled("div")`
   }
 
   a {
-    color: currentColor;
+    color: ${colors.grey800};
     text-decoration: none;
     margin-left: 2.5em;
 
@@ -68,11 +65,11 @@ const NavLinks = styled("div")`
   display: flex;
 
   a {
-    // font-family: "Montserrat", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 0.95em;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     height: 100%;
     display: block;
     position: relative;
@@ -84,7 +81,7 @@ const NavLinks = styled("div")`
       width: 96%;
       height: 2px;
       top: 2em;
-      background: ${colors.grey700};
+      background: ${colors.purple500};
       visibility: hidden;
       transform-origin: left;
       transform: scale(0);
@@ -144,7 +141,7 @@ const Header = () => (
           </Link>
         </NavLinks>
         <IconLinks>
-          <Link href="https://github.com/MoodyBones">
+          {/* <Link href="https://github.com/MoodyBones">
             <span>
               <FontAwesomeIcon
                 className="icon-social"
@@ -159,7 +156,7 @@ const Header = () => (
                 icon={["fab", "twitter"]}
               />
             </span>
-          </Link>
+          </Link> */}
           <AnchorLink to="/#anchor-contact-form" title="Email">
             <span>
               <FontAwesomeIcon className="icon-social" icon="paper-plane" />

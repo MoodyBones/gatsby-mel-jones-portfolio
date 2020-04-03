@@ -1,10 +1,10 @@
 import React from "react"
-import Link from "components/Link"
 import styled from "@emotion/styled"
-import colors from "styles/colors"
-import dimensions from "styles/dimensions"
-import Logo from "images/logo-mel-jones.svg"
-import SocialIcons from "components/SocialIcons"
+import colors from "../styles/colors"
+import dimensions from "../styles/dimensions"
+import Link from "./API/Link"
+import SocialIcons from "./UI/SocialIcons"
+import Logo from "../images/logo-mel-jones.svg"
 
 const FooterContainer = styled("footer")`
   padding: 5em 3em;

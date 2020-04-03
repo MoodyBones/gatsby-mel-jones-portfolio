@@ -24,13 +24,9 @@ const typeStyles = css`
       font-size: 3em;
     }
 
-    @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 2.6em;
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 2.8em;
     }
-
-    // @media (max-width: ${dimensions.maxwidthMobile}px) {
-    //   font-size: 1.5em;
-    // }
   }
 
   h2 {
@@ -40,6 +36,7 @@ const typeStyles = css`
     font-weight: 900;
     letter-spacing: 1px;
     line-height: 1.2;
+    color: ${colors.grey800};
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 4em;
@@ -52,22 +49,31 @@ const typeStyles = css`
     font-size: 2.5em;
     font-weight: 900;
     letter-spacing: -1px;
+    color: ${colors.grey800};
   }
 
   h4 {
     letter-spacing: -2px;
-    line-height: 1;
-    text-transform: uppercase;
-    font-size: 10em;
+    line-height: 0.9;
+    font-size: 7.5em;
     font-weight: 900;
-    color: rgba(244, 107, 63, 0.5); // oranges500
+
+    @media (max-width: 1000px) {
+      font-size: 6em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      font-size: 5em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      font-size: 5em;
+    }
   }
 
   h5 {
     font-weight: 600;
-    font-size: 0.95em;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 2.5em;
   }
 
   h6 {
@@ -97,6 +103,7 @@ const typeStyles = css`
   }
 
   p,
+  span,
   ul {
     a {
       color: currentColor;

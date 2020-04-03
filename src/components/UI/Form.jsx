@@ -1,52 +1,52 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
-import colors from "styles/colors"
+import colors from "../../styles/colors"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Button from "components/_ui/Button"
+import Button from "./Button"
 
-const ContactFormContainer = styled("div")`
-  padding: 4em 2.5em 1.5em 2.5em;
+const Container = styled("div")`
+  padding: 3em 0 1.5em;
   position: relative;
   display: grid;
-  color: ${colors.blue600};
-  border: 2px solid ${colors.blue600};
-  border-radius: 3px;
-  box-shadow: 0px 3px 30px rgba(0, 0, 0, 0.06);
+  color: ${colors.grey800};
 
-  h3 {
-    padding-right: 0.5em;
-    padding-left: 0.5em;
-    position: absolute;
-    justify-self: center;
-    background: ${colors.grey100};
-    top: -50px;
-    font-weight: 600;
+  h4 {
+    justify-self: end;
+    text-align: right;
+    letter-spacing: -2px;
+    color: ${colors.purple500};
+    margin-bottom: 0.5em;
+    border-radius: 3px;
+    width: min-content;
   }
 
   label {
     margin-bottom: 1em;
     font-size: 1em;
     font-weight: 600;
+    letter-spacing: 1px;
   }
 
   input,
   textarea {
     margin-top: 0.5em;
-    margin-bottom: 0.75em;
+    margin-bottom: 1.5em;
     padding: 0.75em;
     width: 100%;
-    color: ${colors.blue600};
+    color: ${colors.purple500};
     font-family: inherit;
     font-size: 1.4em;
     font-weight: 600;
     background: inherit;
-    border: 2px solid ${colors.blue600};
+    background: ${colors.grey300};
+    border: none;
     border-radius: 3px;
+    border-radius: 10px;
 
-    &:focus {
-      outline: 4px dotted ${colors.grey500};
-      outline-offset: 6px;
+    &:hover,
+    :focus {
+      background: ${colors.purple200};
     }
   }
 
@@ -62,21 +62,24 @@ const ContactFormContainer = styled("div")`
     justify-self: end;
   }
   span {
-    margin: 0.2em;
+    // margin: 0.2em;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    svg {
+      width: 80%;
+    }
   }
 
   svg {
-    padding-bottom: 0.4em;
+    padding-bottom: 0.2em;
   }
 `
 
-const ContactForm = () => (
-  <ContactFormContainer>
-    <h3>Get in touch!</h3>
+const Form = () => (
+  <Container>
+    <h4>Get in touch!</h4>
     <form method="post" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field" />
 
@@ -113,7 +116,7 @@ const ContactForm = () => (
         </Button>
       </div>
     </form>
-  </ContactFormContainer>
+  </Container>
 )
 
-export default ContactForm
+export default Form

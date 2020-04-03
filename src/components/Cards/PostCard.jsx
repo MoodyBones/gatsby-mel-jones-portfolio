@@ -1,9 +1,9 @@
 import React from "react"
 import Moment from "react-moment"
-import Link from "components/Link"
+import Link from "../API/Link"
 import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
-import colors from "styles/colors"
+import colors from "../../styles/colors"
 import PropTypes from "prop-types"
 
 const PostCardContainer = styled(Link)`
@@ -14,25 +14,23 @@ const PostCardContainer = styled(Link)`
   color: ${colors.grey300};
   background: ${colors.grey900};
   border: 0.3em solid ${colors.grey200};
-  transition: all 150ms ease-in-out;
+  border-radius: 10px;
+  // box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px; // this shows the border, how can i fix?
+  transition: all 0.5s ease;
 
   &:hover,
   :focus {
     border: 0.3em solid ${colors.orange500};
-    transition: all 150ms ease-in-out;
 
-    h3 {
+    h3,
+    h6 {
       color: ${colors.orange500};
-      transition: all 150ms ease-in-out;
     }
   }
 `
 
 const PostMetas = styled("div")`
   align-self: flex-end;
-
-  // display: flex;
-  // justify-content: space-between;
   font-size: 0.85em;
   color: ${colors.grey600};
   font-weight: 700;
@@ -45,6 +43,8 @@ const PostDate = styled("div")`
 const PostTitle = styled("h3")`
   margin: 0.5em 0;
   font-weight: 700;
+  color: ${colors.grey600};
+  transition: transform 0.5s ease;
 `
 
 const PostDescription = styled("div")`
