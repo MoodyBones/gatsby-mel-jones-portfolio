@@ -12,105 +12,54 @@ const ButtonContainer = styled("button")`
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: ${colors.blue600};
-  background: rgba(255, 255, 255, 0.95); //white
-  border: 2px solid ${colors.blue600};
+  color: ${colors.grey800};
+  background: inherit;
+  border: 1.5px solid ${colors.grey800};
   border-radius: 3px;
-  transition: background 250ms ease-in-out, transform 150ms ease;
+  box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
+  transition: all 0.5s ease;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    padding: 0.8em 1.8em;
-    font-size: 1em;
-  }
 
   p {
     margin: 0;
   }
 
-  &:before {
-    content: "";
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    width: 100%;
-    height: 100%;
-    border: 2px solid ${colors.grey200};
-    border-radius: 3px;
-    background: linear-gradient(
-      135deg,
-      ${colors.purple500} 0%,
-      ${colors.orange500} 100%
-    );
-    overflow: hidden;
-    z-index: -1;
-  }
 
   &:hover,
   :focus {
     cursor: pointer;
-    color: white;
-    background: transparent;
-    // transition: background 150ms ease-in-out;
-    border: 2px solid ${colors.grey200};
+    color: black;
+    background: ${colors.purple100};
+    background: white;
+    border: 1.5px solid black;
     border-radius: 3px;
+  }
 
-    &:before {
-      width: 100%;
-    }
+  &::-moz-focus-inner {
+    border: 0;
   }
 
   &:focus {
-    outline: 1px solid #fff;
-    outline-offset: -4px;
-  }
-
-  &:active {
-    transform: scale(0.99);
+    outline: 4px dotted ${colors.grey400};
+    outline-offset: 6px;
   }
 
   &.Button--secondary {
-    padding: 0.8em 1.8em;
-    display: inline-block;
-    // width: 100%;
-    font-family: inherit;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: ${colors.grey200};
-    background: ${colors.blue600};
+    font-size: .8rem;
     border: none;
-    border-radius: 3px;
-    box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
-    transition: background 250ms ease-in-out, transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    background: ${colors.purple100};
+    color: ${colors.purple300};
+    // opacity: 75%;
+    transition: background 0.5s ease;
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      padding: 0.8em 1.8em;
-      font-size: 1em;
-    }
     &:hover,
     :focus {
-      color: white;
-      background: linear-gradient(
-        135deg,
-        ${colors.orange500} 0%,
-        ${colors.blue600} 100%
-      );
-    }
+    cursor: pointer;
+    background: ${colors.purple200};
+    color: ${colors.purple600};
+    opacity: 100%;
 
-    &:focus {
-      outline: 1px solid #fff;
-      outline-offset: -4px;
-    }
-
-    &:active {
-      transform: scale(0.99);
-    }
   }
 `
 
