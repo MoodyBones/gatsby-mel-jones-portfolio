@@ -32,11 +32,12 @@ const FooterWrapper = styled("div")`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  color: ${colors.grey800};
 
   div {
     font-size: 0.95em;
     line-height: 2.5;
-    letter-spacing: -1px;
+    letter-spacing: 0.5px;
   }
 
   .heart-wrapped-emoji {
@@ -61,7 +62,7 @@ const FooterWrapper = styled("div")`
   }
 `
 
-const FooterAuthor = styled("a")`
+const FooterAuthor = styled(Link)`
   text-decoration: none;
 
   .footer-logo {
@@ -103,10 +104,15 @@ const Footer = () => (
         <br />
         <span>©️ 2020 Mel Jones</span>
         <br />
-        <span>Gatsby Starter by Marguerite Roth </span>
+        <span>
+          Gatsby Starter by{" "}
+          <Link to="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
+            Marguerite Roth
+          </Link>
+        </span>
       </div>
       <SocialIcons />
-      <FooterAuthor href="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
+      <FooterAuthor to="/">
         <img className="footer-logo" src={Logo} />
       </FooterAuthor>
     </FooterWrapper>
