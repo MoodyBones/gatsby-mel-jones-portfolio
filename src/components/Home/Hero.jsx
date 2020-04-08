@@ -53,7 +53,6 @@ const HeroGrid = styled("div")`
       max-width: 100%;
       height: auto;
       object-fit: cover;
-      border-radius: 3px;
       background: ${colors.grey100};
       // box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
 
