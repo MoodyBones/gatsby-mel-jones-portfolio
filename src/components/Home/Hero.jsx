@@ -144,7 +144,7 @@ const Hero = ({ title, buttonLink, buttonText, content }) => (
       <p>How's it going?</p>
       <h1>
         I'm Mel Jones, an Australian born, Berlin based, self-taught{" "}
-        <b> WEB DEVELOPER!</b>
+        <b> WEB DEV!</b>
       </h1>
     </div>
     <div className="hero-img">
