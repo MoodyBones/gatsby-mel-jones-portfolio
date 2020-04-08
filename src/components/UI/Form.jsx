@@ -79,7 +79,7 @@ const Container = styled("div")`
 
 const Form = () => (
   <Container>
-    <h4>Get in touch!</h4>
+    <h4>get in TOUCH</h4>
     <form method="post" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field" />
 

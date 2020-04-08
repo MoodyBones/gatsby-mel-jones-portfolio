@@ -15,13 +15,11 @@ const LayoutGridWrapper = styled("div")``
 
 const HeroSection = styled("section")`
   grid-column: 1 / -1;
-
-  color: ${colors.grey800};
-  background: ${colors.grey100};
+  background: linear-gradient(${colors.grey100}, ${colors.grey200});
 `
 
 const WorkSection = styled("section")`
-  grid-column: 2 / -2;
+  grid-column: 1 / -1;
 `
 
 const AboutSection = styled("section")`
@@ -93,7 +91,7 @@ const RenderBody = ({ home, projects, meta }) => (
       ].concat(meta)}
     />
     <LayoutGridWrapper className="main-grid">
-      <HeroSection>
+      <HeroSection className="main-grid">
         <Hero
           title={home.hero_title}
           buttonLink={home.hero_button_link.url}
@@ -101,7 +99,7 @@ const RenderBody = ({ home, projects, meta }) => (
           content={home.content}
         />
       </HeroSection>
-      <WorkSection>
+      <WorkSection className="main-grid">
         <CurrentWork projects={projects} />
       </WorkSection>
       <AboutSection className="main-grid" id="anchor-about-section">

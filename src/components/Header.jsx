@@ -16,6 +16,7 @@ const HeaderContainer = styled("header")`
   width: 100%;
   z-index: 9999;
   border-bottom: 1px solid ${colors.grey300};
+  transition: background 0.5s ease;
 `
 
 const HeaderContent = styled("div")`
@@ -37,7 +38,7 @@ const HeaderContent = styled("div")`
   }
 
   a {
-    color: ${colors.grey800};
+    color: ${colors.grey900};
     text-decoration: none;
     margin-left: 2.5em;
 

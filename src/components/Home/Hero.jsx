@@ -7,79 +7,125 @@ import HeroImage from "../../images/image.png"
 import Link from "../API/Link"
 
 const HeroGrid = styled("div")`
-  padding: 10em 3em;
+  grid-column: 2 / -2;
+
+  padding-top: 4em;
   display: grid;
-  grid-template-columns:
-    minmax(min-content, 1fr) max-content minmax(min-content, 1fr)
-    minmax(300px, 1fr);
+  grid-template-columns: repeat(6, minmax(min-content, 1fr));
   grid-template-rows: repeat(6, auto);
-  grid-gap: 2em;
+  grid-row-gap: 3em;
+  color: ${colors.grey800};
+
+  @media (max-width: ${dimensions.maxwidthTablet}px) {
+    grid-column: 1 / -1;
+
+    grid-template-columns: 5em 1fr 5em;
+    grid-template-rows: minmax(100px, 400px) auto auto;
+    grid-row-gap: 4em;
+  }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 8em 1em;
-    grid-template-columns: 1fr min-content;
-    grid-column-gap: 1em;
-    grid-row-gap: 5em;
+    grid-column: 1 / -1;
+
+    padding-top: 2em;
+    grid-template-columns: 1em 1fr 1em;
+    grid-template-rows: 25vh auto auto;
   }
 
-  h1:nth-child(1) {
+  .hero-img {
     grid-column: 1 / -1;
     grid-row: 1 / 2;
-    justify-self: start;
-    // color: ${colors.orange500};
+
+    overflow: hidden;
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      grid-column: 1 / -1;
+      grid-row: 1 / 3;
+    }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       grid-column: 1 / -1;
-      grid-row: 1 / 2;
+      grid-row: 1 / 3;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 3px;
+      background: ${colors.grey100};
+      box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
+
+      @media (max-width: ${dimensions.maxwidthMobile}px) {
+        transform: scale(1.1);
+      }
     }
   }
 
-  h1:nth-child(2) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-    align-self: start;
-    color: ${colors.orange500};
-    // font-weight: 600;
-    writing-mode: vertical-rl;
+  .hero-h {
+    grid-column: 5 / -1;
+    grid-row: 1 / 2;
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 2 / -1;
+    padding: 1em 0.8em;
+    text-align: center;
+    background: ${colors.grey200};
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      margin-top: 0.6em;
+    }
+
+    p {
+      color: ${colors.orange500};
+      font-weight: 600;
+      font-size: 1.2em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      grid-column: 2 / -2;
       grid-row: 2 / 3;
-    }
-  }
 
-  h1:nth-child(3) {
-    grid-column: 3 / 5;
-    grid-row: 2 / 3;
-    align-self: end;
+      padding: 2.5em 3em 2em;
+      justify-content: start;
+    }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / -1;
-      grid-row: 3 / 4;
-      text-align: right;
+      grid-column: 2 / -2;
+      grid-row: 2 / 3;
+
+      padding: 2.2em 0.8em 1.8em;
     }
   }
 
   .hero-p {
-    grid-column: 1 / 3;
-    grid-row: 4 / 5;
+    grid-column: 2 / -2;
+    grid-row: 3 / 4;
+    align-items: center;
     font-family: "Montserrat", sans-serif;
     font-size: 1.2em;
-    color: ${colors.grey800};
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 1.1em;
+      grid-column: 2 / -2;
+      grid-row: 3 / 4;
     }
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / -1;
-      grid-row: 5 / 6;
+      grid-column: 2 / -2;
+      grid-row: 3 / 4;
+
+      font-size: 1.1em;
     }
 
     a {
-      color: ${colors.grey800};
+      color: inherit;
       text-decoration: none;
-      border-bottom: 2px solid ${colors.grey500};
+      border-bottom: 2px solid ${colors.grey600};
       padding-bottom: 1px;
+      transition: border 0.5s ease;
 
       :hover,
       :active {
@@ -87,32 +133,23 @@ const HeroGrid = styled("div")`
       }
     }
   }
-
-  .hero-img {
-    grid-column: 3 / 5;
-    grid-row: 4 / -1;
-    overflow: hidden;
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      grid-column: 1 / 2;
-      grid-row: 2 / 3;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-  }
 `
 
 const Hero = ({ title, buttonLink, buttonText, content }) => (
   <HeroGrid>
-    <h1>Heya, how's it going?</h1>
-    <h1>I'm Mel Jones</h1>
-    <h1>
-      an Australian born, Berlin based, self-taught <b>WEB DEV.</b>
-    </h1>
+    <div className="hero-h">
+      <p>How's it going?</p>
+      <h1>
+        I'm Mel Jones, an Australian born, Berlin based, self-taught{" "}
+        <b> WEB DEVELOPER!</b>
+      </h1>
+    </div>
+    <div className="hero-img">
+      <img
+        src={HeroImage}
+        alt="Mel Jones standing in the Jardin Majorelle botanical garden in sunny Marrakech, Morocco."
+      />
+    </div>
     <p className="hero-p">
       For the past 18 months my focus has been to learn all about Frontend
       Development. All of my progress is{"  "}
@@ -124,12 +161,6 @@ const Hero = ({ title, buttonLink, buttonText, content }) => (
         <b>hire me!</b>
       </AnchorLink>
     </p>
-    <div className="hero-img">
-      <img
-        src={HeroImage}
-        alt="Mel Jones standing in the Jardin Majorelle botanical garden in sunny Marrakech, Morocco."
-      />
-    </div>
   </HeroGrid>
 )
 

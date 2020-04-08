@@ -2,7 +2,7 @@
 const dimensions = {
   //pixels
   maxwidthDesktop: 1200,
-  maxwidthTablet: 768,
+  maxwidthTablet: 850,
   maxwidthMobile: 600,
 
   //ems

@@ -52,26 +52,20 @@ const BlogGrid = styled("div")`
   a:nth-child(1) {
     &:hover,
     :focus {
-      border: 0.3em solid ${colors.blue600};
-      transition: all 0.5s ease;
+      background: ${colors.blue100};
 
-      h3,
       h6 {
         color: ${colors.blue600};
-        transition: all 0.5s ease;
       }
     }
   }
   a:nth-child(2) {
     &:hover,
     :focus {
-      border: 0.3em solid ${colors.orange500};
-      transition: all 0.5s ease;
+      background: ${colors.orange100};
 
-      h3,
       h6 {
         color: ${colors.orange500};
-        transition: all 0.5s ease;
       }
     }
   }
@@ -79,13 +73,10 @@ const BlogGrid = styled("div")`
   a:nth-child(3) {
     &:hover,
     :focus {
-      border: 0.3em solid ${colors.purple500};
-      transition: all 0.5s ease;
+      background: ${colors.purple100};
 
-      h3,
       h6 {
-        color: ${colors.purple500};
-        transition: all 0.5s ease;
+        color: ${colors.purple600};
       }
     }
   }
@@ -93,26 +84,20 @@ const BlogGrid = styled("div")`
   a:nth-child(4) {
     &:hover,
     :focus {
-      border: 0.3em solid ${colors.blue600};
-      transition: all 0.5s ease;
+      background: ${colors.blue100};
 
-      h3,
       h6 {
         color: ${colors.blue600};
-        transition: all 0.5s ease;
       }
     }
   }
   a:nth-child(5) {
     &:hover,
     :focus {
-      border: 0.3em solid ${colors.orange500};
-      transition: all 0.5s ease;
+      background: ${colors.orange100};
 
-      h3,
       h6 {
         color: ${colors.orange500};
-        transition: all 0.5s ease;
       }
     }
   }
@@ -120,13 +105,10 @@ const BlogGrid = styled("div")`
   a:nth-child(6) {
     &:hover,
     :focus {
-      border: 0.3em solid ${colors.purple500};
-      transition: all 0.5s ease;
+      background: ${colors.purple100};
 
-      h3,
       h6 {
         color: ${colors.purple500};
-        transition: all 0.5s ease;
       }
     }
   }

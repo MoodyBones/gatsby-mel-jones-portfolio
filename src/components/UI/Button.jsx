@@ -49,9 +49,9 @@ const ButtonContainer = styled("button")`
     font-size: .8rem;
     border: none;
     background: ${colors.purple100};
-    color: ${colors.purple300};
-    // opacity: 75%;
-    transition: background 0.5s ease;
+    color: ${colors.purple500};
+    // opacity: 90%;
+    transition: background 0.5s ease, color 0.2s ease;
 
     &:hover,
     :focus {

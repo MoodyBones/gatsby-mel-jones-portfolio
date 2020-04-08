@@ -7,7 +7,7 @@ import SocialIcons from "./UI/SocialIcons"
 import Logo from "../images/logo-mel-jones.svg"
 
 const FooterContainer = styled("footer")`
-  padding: 5em 3em;
+  padding: 5em 0;
   background-repeat: no-repeat;
   background-image: -webkit-gradient(
     linear,
@@ -26,7 +26,7 @@ const FooterContainer = styled("footer")`
 `
 
 const FooterWrapper = styled("div")`
-  grid-column: 1 / -1;
+  grid-column: 2 / -2;
 
   display: flex;
   flex-direction: row;
@@ -51,10 +51,6 @@ const FooterWrapper = styled("div")`
       order: -1;
     }
 
-    a {
-      padding: 2em 0;
-    }
-
     div {
       order: 99;
       text-align: center;
@@ -64,6 +60,7 @@ const FooterWrapper = styled("div")`
 
 const FooterAuthor = styled(Link)`
   text-decoration: none;
+  padding: 3.5em 0;
 
   .footer-logo {
     max-width: 120px;
@@ -105,7 +102,7 @@ const Footer = () => (
         <span>©️ 2020 Mel Jones</span>
         <br />
         <span>
-          Gatsby Starter by{" "}
+          Thanks to{" "}
           <Link to="https://github.com/margueriteroth/gatsby-prismic-starter-prist">
             Marguerite Roth
           </Link>

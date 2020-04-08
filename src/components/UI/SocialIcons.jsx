@@ -3,51 +3,36 @@ import styled from "@emotion/styled"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Link from "../API/Link"
 import colors from "../../styles/colors"
+import dimensions from "../../styles/dimensions"
 
 const SocialContainer = styled("nav")`
   .icon-social {
     font-size: 2em;
     transition: all 0.5s ease;
 
-    &:hover,:active {
+    &:hover,
+    :active {
       transform: scale(1.4);
       transition: all 0.5s ease;
-
     }
   }
 
   a {
     text-decoration: none;
-    color: ${colors.grey800};  
+    color: ${colors.grey800};
   }
-
 
   a:not(:last-child) {
     margin-right: 2.5em;
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
+      margin-right: 2em;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      margin-right: 1.5em;
+    }
   }
-
-  //   &:hover,
-  //   :focus {
-  //     cursor: pointer;
-  //     transition: all 150ms ease-in-out;
-
-  //     &:nth-of-type(1) {
-  //       color: ${colors.orange500};
-  //     }
-  //     &:nth-of-type(2) {
-  //       color: ${colors.green500};
-  //     }
-  //     &:nth-of-type(3) {
-  //       color: ${colors.purple500};
-  //     }
-  //     &:nth-of-type(4) {
-  //       color: ${colors.teal500};
-  //     }
-  //     &:nth-of-type(5) {
-  //       color: ${colors.blue600};
-  //     }
-  //   }
-  // }
 `
 
 const Social = () => (
