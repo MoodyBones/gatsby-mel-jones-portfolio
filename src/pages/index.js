@@ -72,7 +72,7 @@ const ContactSection = styled("section")`
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       padding: 0.5em;
-      background: none;
+      // background: none;
     }
   }
 `
