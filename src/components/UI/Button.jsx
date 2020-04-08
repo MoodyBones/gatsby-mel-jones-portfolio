@@ -12,14 +12,14 @@ const ButtonContainer = styled("button")`
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: ${colors.grey800};
-  background: inherit;
-  border: 1.5px solid ${colors.grey800};
-  border-radius: 3px;
   box-shadow: 0 1px 0.5px rgba(0, 0, 0, 0.13);
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  border: none;
+  border-radius: 3px;
+  background: ${colors.purple200};
+  background: ${colors.grey900};
+  color: ${colors.grey200};
+  transition: background 0.5s ease;
+
 
   p {
     margin: 0;
@@ -29,11 +29,7 @@ const ButtonContainer = styled("button")`
   &:hover,
   :focus {
     cursor: pointer;
-    color: black;
-    // background: ${colors.purple100};
-    background: white;
-    border: 1.5px solid black;
-    border-radius: 3px;
+    background: ${colors.orange500};
   }
 
   &::-moz-focus-inner {
@@ -48,9 +44,8 @@ const ButtonContainer = styled("button")`
   &.Button--secondary {
     font-size: .8rem;
     border: none;
-    background: ${colors.purple100};
+    background: ${colors.grey300};
     color: ${colors.purple500};
-    // opacity: 90%;
     transition: background 0.5s ease, color 0.2s ease;
 
     &:hover,
@@ -58,8 +53,6 @@ const ButtonContainer = styled("button")`
     cursor: pointer;
     background: ${colors.purple200};
     color: ${colors.purple600};
-    opacity: 100%;
-
   }
 `
 

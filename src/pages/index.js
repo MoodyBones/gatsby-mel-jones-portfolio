@@ -6,15 +6,17 @@ import { RichText } from "prismic-reactjs"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import Hero from "components/Home/Hero"
-import About from "components/Home/About"
 import Layout from "components/Layout"
-import CurrentWork from "../components/Home/CurrentWork"
+import Hero from "components/Home/Hero"
+import CurrentWork from "components/Home/CurrentWork"
+import About from "components/Home/About"
+import ContactForm from "components/Home/Form"
 
 const LayoutGridWrapper = styled("div")``
 
 const HeroSection = styled("section")`
   grid-column: 1 / -1;
+
   background: linear-gradient(${colors.grey100}, ${colors.grey200});
 `
 
@@ -47,6 +49,31 @@ const AboutZigZag = styled("div")`
       linear-gradient(45deg, transparent 74%, ${colors.purple500} 75%) 0 50%;
     background-repeat: repeat-x;
     background-size: 5em 5em, 5em 5em;
+  }
+`
+
+const ContactSection = styled("section")`
+  grid-column: 1 / -1;
+  padding: 6em 0;
+  background: linear-gradient(${colors.grey100}, ${colors.grey200});
+
+  .color-container {
+    grid-column: 1 / -1;
+    padding: 0.5em;
+    justify-self: center;
+    border-radius: 3px;
+    background: linear-gradient(${colors.purple500}, ${colors.blue600});
+
+    .form-container {
+      background: linear-gradient(${colors.grey100}, ${colors.grey200});
+      justify-self: center;
+      border-radius: 3px;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+      padding: 0.5em;
+      background: none;
+    }
   }
 `
 
@@ -113,6 +140,13 @@ const RenderBody = ({ home, projects, meta }) => (
           socialLinks={home.about_links}
         />
       </AboutSection>
+      <ContactSection id="anchor-contact-form" className="main-grid">
+        <div className="color-container">
+          <div className="form-container">
+            <ContactForm />
+          </div>
+        </div>
+      </ContactSection>
     </LayoutGridWrapper>
   </>
 )

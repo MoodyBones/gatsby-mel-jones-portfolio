@@ -3,17 +3,23 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import colors from "../../styles/colors"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Button from "./Button"
+import Button from "../UI/Button"
+import dimensions from "../../styles/dimensions"
 
 const Container = styled("div")`
-  padding: 3em 0 1.5em;
-  position: relative;
+  // position: relative;
+  max-width: 700px;
+  padding: 5em 3em 3em;
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 2em 1em 1em;
+  }
+
   display: grid;
   color: ${colors.grey800};
 
   h4 {
-    justify-self: end;
-    text-align: right;
+    justify-self: center;
+    text-align: center;
     letter-spacing: -2px;
     color: ${colors.purple500};
     margin-bottom: 0.5em;
@@ -56,11 +62,13 @@ const Container = styled("div")`
 
   .ButtonFormContainer {
     display: grid;
+    background: inherit;
   }
 
   button {
     justify-self: end;
   }
+
   span {
     // margin: 0.2em;
     display: flex;

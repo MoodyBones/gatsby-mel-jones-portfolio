@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 import { RichText } from "prismic-reactjs"
 import colors from "../../styles/colors"
 import dimensions from "../../styles/dimensions"
-import Form from "../UI/Form"
 import Image from "../../images/eva-test-only.png"
 
 const AboutGrid = styled("div")`
@@ -147,47 +146,6 @@ const Text = styled("div")`
   }
 `
 
-const Emoji = styled("div")`
-  grid-column: 1 / 2;
-  grid-row: 4 / 5;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  font-size: 4.5em;
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / -1;
-    grid-row: 4 / 5;
-    justify-self: center;
-    // flex-direction: row;
-    // font-size: 2em;
-  }
-`
-
-const ContactForm = styled("div")`
-  grid-column: 2 / -1;
-  grid-row: 4 / 5;
-
-  justify-self: center;
-  align-self: center;
-
-  @media (max-width: ${dimensions.maxwidthTablet}px) {
-    grid-column: 2 / -1;
-    grid-row: 3 / 4;
-  }
-
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    grid-column: 1 / -1;
-    grid-row: 5 / 6;
-  }
-`
-
 const About = ({ title, bio, socialLinks }) => (
   <AboutGrid>
     <Tech>
@@ -212,16 +170,6 @@ const About = ({ title, bio, socialLinks }) => (
       <Title>{RichText.render(title)}</Title>
       {RichText.render(bio)}
     </Text>
-    <Emoji>
-      <span>✨</span>
-      <span>👩🏻‍💻</span>
-      <span>🌴</span>
-      <span>🚀</span>
-      <span>✌️</span>
-    </Emoji>
-    <ContactForm id="anchor-contact-form">
-      <Form />
-    </ContactForm>
   </AboutGrid>
 )
 

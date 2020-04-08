@@ -20,10 +20,6 @@ const typeStyles = css`
     line-height: 1.2;
     letter-spacing: -1px;
 
-    // @media (max-width: 1050px) {
-    //   font-size: 2.1em;
-    // }
-
     @media (max-width: ${dimensions.maxwidthMobile}px) {
       font-size: 1.8em;
     }
@@ -65,7 +61,7 @@ const typeStyles = css`
     }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 5.2em;
+      font-size: 4.2em;
     }
   }
 
