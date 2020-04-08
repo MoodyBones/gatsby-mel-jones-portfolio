@@ -6,10 +6,12 @@ import Link from "../API/Link"
 import ProjectCard from "../Cards/ProjectCard"
 
 const WorkGrid = styled("div")`
+  grid-column: 2 / -2;
+
   padding-top: 10em;
-  padding-bottom: 20em;
+  padding-bottom: 10em;
   display: grid;
-  grid-column-gap: 6em;
+  grid-column-gap: 10em;
   grid-row-gap: 6em;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-rows: repeat(auto-fit, auto);
@@ -19,12 +21,13 @@ const WorkGrid = styled("div")`
   }
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin-top: 2em;
     grid-column-gap: 4em;
     grid-row-gap: 2em;
   }
 
   @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding-top: 6em;
+    padding-bottom: 6em;
     grid-template-columns: 1fr;
     grid-row-gap: 6em;
   }
@@ -49,8 +52,9 @@ const WorkAction = styled(Link)`
   grid-column: 1 / -1;
   justify-self: end;
   align-self: end;
-  font-size: 2.5em;
+  font-size: 1.8em;
   font-weight: 600;
+  letter-spacing: -1px;
   text-decoration: none;
   color: ${colors.grey800};
   transition: all 0.5s ease;
@@ -60,6 +64,10 @@ const WorkAction = styled(Link)`
     transform: translateX(-8px);
     display: inline-block;
     transition: transform 400ms ease-in-out;
+
+    span {
+      color: ${colors.orange500};
+    }
   }
 
   &:hover {
@@ -74,14 +82,13 @@ const WorkAction = styled(Link)`
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     justify-self: center;
     font-size: 2em;
-    color: ${colors.orange500};
   }
 `
 
 const CurrentWork = ({ projects }) => (
   <WorkGrid>
     <WorkTitle>
-      <h4>Some of my work</h4>
+      <h4>my current WORK</h4>
     </WorkTitle>
     {projects.slice(-2).map((project, i) => (
       <ProjectCard
@@ -95,7 +102,7 @@ const CurrentWork = ({ projects }) => (
     ))}
     <WorkAction to={"/work"}>
       <span>
-        See more work <span>&#8594;</span>
+        See more work<span>&#8594;</span>
       </span>
     </WorkAction>
   </WorkGrid>

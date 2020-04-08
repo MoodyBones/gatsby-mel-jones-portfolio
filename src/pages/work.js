@@ -20,7 +20,6 @@ const WorkTitle = styled("div")`
   margin: auto;
   padding: 1.5em 0;
   text-align: center;
-  color: currentColor;
 
   h2 {
     margin: 0.5em 0;
@@ -35,7 +34,7 @@ const WorkTitle = styled("div")`
 const WorkGrid = styled("div")`
   margin-top: 4em;
   display: grid;
-  grid-column-gap: 6em;
+  grid-column-gap: 8em;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-auto-rows: 1fr;
 
@@ -44,8 +43,12 @@ const WorkGrid = styled("div")`
   }
 
   @media (max-width: ${dimensions.maxwidthTablet}px) {
-    margin-top: 2em;
     grid-gap: 4em;
+  }
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 6em;
   }
 
   a:nth-child(1) {

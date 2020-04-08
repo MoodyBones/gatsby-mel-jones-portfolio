@@ -15,17 +15,13 @@ const typeStyles = css`
   }
 
   h1 {
-    font-size: 3.75em;
+    font-size: 2.1em;
     font-weight: 400;
-    line-height: 1;
-    letter-spacing: -3px;
-
-    @media (max-width: 1000px) {
-      font-size: 3em;
-    }
+    line-height: 1.2;
+    letter-spacing: -1px;
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 2.8em;
+      font-size: 1.8em;
     }
   }
 
@@ -33,10 +29,9 @@ const typeStyles = css`
     font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-size: 5em;
-    font-weight: 900;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: -2px;
     line-height: 1.2;
-    color: ${colors.grey800};
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 4em;
@@ -46,28 +41,27 @@ const typeStyles = css`
   h3 {
     font-family: "Montserrat", sans-serif;
     line-height: 1;
-    font-size: 2.5em;
-    font-weight: 900;
+    font-size: 2.2em;
+    font-weight: 600;
     letter-spacing: -1px;
-    color: ${colors.grey800};
   }
 
   h4 {
     letter-spacing: -2px;
-    line-height: 0.9;
-    font-size: 7.5em;
+    line-height: 1;
+    font-size: 6.2em;
     font-weight: 900;
 
-    @media (max-width: 1000px) {
+    // @media (max-width: 1000px) {
+    //   font-size: 6em;
+    // }
+
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
       font-size: 6em;
     }
 
-    @media (max-width: ${dimensions.maxwidthTablet}px) {
-      font-size: 5em;
-    }
-
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 5em;
+      font-size: 4.2em;
     }
   }
 
