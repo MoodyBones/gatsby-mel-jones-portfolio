@@ -15,17 +15,17 @@ const typeStyles = css`
   }
 
   h1 {
-    font-size: 2.6em;
+    font-size: 2.1em;
     font-weight: 400;
     line-height: 1.2;
     letter-spacing: -1px;
 
-    @media (max-width: 1050px) {
-      font-size: 2.3em;
-    }
+    // @media (max-width: 1050px) {
+    //   font-size: 2.1em;
+    // }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
-      font-size: 2em;
+      font-size: 1.8em;
     }
   }
 

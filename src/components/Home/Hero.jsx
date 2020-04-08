@@ -34,7 +34,7 @@ const HeroGrid = styled("div")`
 
   .hero-img {
     grid-column: 1 / -1;
-    grid-row: 1 / 2;
+    grid-row: 1 / 3;
 
     overflow: hidden;
 
@@ -55,7 +55,7 @@ const HeroGrid = styled("div")`
       object-fit: cover;
       border-radius: 3px;
       background: ${colors.grey100};
-      box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
+      // box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
 
       @media (max-width: ${dimensions.maxwidthMobile}px) {
         transform: scale(1.1);
@@ -65,23 +65,25 @@ const HeroGrid = styled("div")`
 
   .hero-h {
     grid-column: 5 / -1;
-    grid-row: 1 / 2;
+    grid-row: 2 / 3;
 
-    padding: 1em 0.8em;
+    padding: 1.4em 1.6em 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
     text-align: center;
     background: ${colors.grey200};
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 10px 20px;
     z-index: 99;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: end;
 
     h1 {
       margin-top: 0.6em;
     }
 
     p {
-      color: ${colors.orange500};
+      color: ${colors.purple500};
       font-weight: 600;
       font-size: 1.2em;
     }
@@ -90,6 +92,7 @@ const HeroGrid = styled("div")`
       grid-column: 2 / -2;
       grid-row: 2 / 3;
 
+      margin: 0;
       padding: 2.5em 3em 2em;
       justify-content: start;
     }
