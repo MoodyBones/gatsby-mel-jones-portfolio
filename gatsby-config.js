@@ -1,7 +1,3 @@
-require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: `Mel Jones | Portfolio`,
@@ -10,8 +6,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-image`,
     `gatsby-plugin-catch-links`,
     `gatsby-plugin-sass`,
