@@ -14,7 +14,16 @@ const typeStyles = css`
     margin: 0;
   }
 
+  h1,
+  h2,
+  h3,
+  blockquote,
+  footer {
+    font-family: "Inconsolata", sans-serif;
+  }
+
   h1 {
+    font-family: "Inconsolata", sans-serif;
     font-size: 2.1em;
     font-weight: 400;
     line-height: 1.2;
@@ -26,7 +35,6 @@ const typeStyles = css`
   }
 
   h2 {
-    font-family: "Montserrat", sans-serif;
     text-transform: uppercase;
     font-size: 5em;
     font-weight: 600;
@@ -39,7 +47,6 @@ const typeStyles = css`
   }
 
   h3 {
-    font-family: "Montserrat", sans-serif;
     line-height: 1;
     font-size: 2.2em;
     font-weight: 600;

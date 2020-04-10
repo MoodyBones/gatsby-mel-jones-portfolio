@@ -108,7 +108,6 @@ const HeroGrid = styled("div")`
     grid-column: 2 / -2;
     grid-row: 3 / 4;
     align-items: center;
-    font-family: "Montserrat", sans-serif;
     font-size: 1.2em;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {

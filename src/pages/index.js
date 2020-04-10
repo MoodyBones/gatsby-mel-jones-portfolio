@@ -10,7 +10,7 @@ import Layout from "components/Layout"
 import Hero from "components/Home/Hero"
 import CurrentWork from "components/Home/CurrentWork"
 import About from "components/Home/About"
-import ContactForm from "components/Home/Form"
+import ContactForm from "components/UI/Form"
 
 const LayoutGridWrapper = styled("div")``
 
@@ -58,22 +58,22 @@ const ContactSection = styled("section")`
   background: linear-gradient(${colors.grey100}, ${colors.grey200});
 
   .color-container {
-    grid-column: 1 / -1;
-    padding: 0.5em;
+    grid-column: 2 / -2;
     justify-self: center;
-    border-radius: 3px;
-    background: linear-gradient(${colors.purple500}, ${colors.blue600});
+    //   padding: 0.25em;
+  //   border-radius: 30px;
+  //   background: linear-gradient(${colors.purple500}, ${colors.blue600});
 
-    .form-container {
-      background: linear-gradient(${colors.grey100}, ${colors.grey200});
-      justify-self: center;
-      border-radius: 3px;
-    }
+  //   .form-container {
+  //     background: linear-gradient(${colors.grey100}, ${colors.grey200});
+  //     justify-self: center;
+  //     border-radius: 30px;
+  //   }
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-      padding: 0.5em;
-      // background: none;
-    }
+  //   @media (max-width: ${dimensions.maxwidthMobile}px) {
+  //     padding: 0.5em;
+  //     background: none;
+  //   }
   }
 `
 

@@ -139,10 +139,9 @@ const Text = styled("div")`
 
   p {
     margin-bottom: 2em;
-    font-family: "Montserrat", sans-serif;
     line-height: 2.1;
     font-size: 1.1em;
-    text-align: justify;
+    color: ${colors.grey800};
   }
 `
 

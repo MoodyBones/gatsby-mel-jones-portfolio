@@ -66,7 +66,6 @@ const NavLinks = styled("div")`
   display: flex;
 
   a {
-    font-family: "Montserrat", sans-serif;
     font-size: 0.95em;
     font-weight: 600;
     text-transform: uppercase;

@@ -3,21 +3,24 @@ import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import colors from "../../styles/colors"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Button from "../UI/Button"
+import Button from "./Button"
 import dimensions from "../../styles/dimensions"
 
 const Container = styled("div")`
   // position: relative;
-  max-width: 700px;
+  max-width: 550px;
   padding: 5em 3em 3em;
+
   @media (max-width: ${dimensions.maxwidthMobile}px) {
     padding: 2em 1em 1em;
   }
 
   display: grid;
   color: ${colors.grey800};
+  font-family: "Inconsolata", sans-serif;
 
   h4 {
+    font-family: "Quicksand", sans-serif;
     justify-self: center;
     text-align: center;
     letter-spacing: -2px;
@@ -53,6 +56,7 @@ const Container = styled("div")`
     &:hover,
     :focus {
       background: ${colors.purple200};
+      outline: none;
     }
   }
 
