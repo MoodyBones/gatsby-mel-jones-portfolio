@@ -15,7 +15,6 @@ const typeStyles = css`
   }
 
   h1,
-  h2,
   h3,
   blockquote,
   footer {
