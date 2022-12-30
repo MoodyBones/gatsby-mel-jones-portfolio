@@ -12,7 +12,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "gatsby": "^2.12.0",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-anchor-links": "^1.1.0",
     "gatsby-plugin-catch-links": "^2.0.12",
